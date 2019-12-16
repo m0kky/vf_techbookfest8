@@ -8,7 +8,7 @@ GEM
       rouge
       rubyzip
     rouge (3.9.0)
-    rubyzip (1.2.3)
+    rubyzip (2.0.0)
 
 PLATFORMS
   ruby
