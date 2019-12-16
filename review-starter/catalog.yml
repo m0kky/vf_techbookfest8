@@ -1,0 +1,20 @@
+PREDEF:
+  - chap00-preface.re
+
+CHAPS:
+  #- chap01-starter.re
+  #- chap02-faq.re
+
+  - chapxx-mr-mo.re
+  - chapxx-aiminakajima.re
+  - chapxx-fukumura-kaigo.re
+  - chapxx-gaomar.re
+  - chapxx-kun432.re
+  - chapxx-magistralla.re
+  - chapxx-sitopp.re
+  - chapxx-vui-rie.re
+
+APPENDIX:
+
+POSTDEF:
+  - chap99-postscript.re

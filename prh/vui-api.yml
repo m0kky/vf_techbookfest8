@@ -1,0 +1,11 @@
+# Rules for VUI_Experts
+meta:
+  reviewer:
+    - VUI_Experts
+
+version: 1
+rules:
+  - expected: VUI
+    pattern:
+      - Vui
+      - vui

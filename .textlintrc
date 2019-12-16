@@ -1,0 +1,22 @@
+{
+  "filters": {
+    "whitelist": {
+      "allow": [
+        "xxx"
+      ]
+    }
+  },
+  "rules": {
+    "prh": {
+      "rulePaths": [
+        "./prh/media/WEB+DB_PRESS.yml",
+        "./prh/media/techbooster.yml",
+        "./prh/line-api.yml"
+      ]
+    },
+    "preset-ja-technical-writing": true
+  },
+  "plugins": [
+    "review"
+  ]
+}

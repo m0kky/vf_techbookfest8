@@ -1,0 +1,27 @@
+{
+  "name": "techbookfest8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "replace": "^1.1.0",
+    "textlint": "^11.3.1",
+    "textlint-filter-rule-comments": "^1.2.2",
+    "textlint-filter-rule-whitelist": "^2.0.0",
+    "textlint-plugin-review": "^0.3.3",
+    "textlint-rule-preset-ja-technical-writing": "^3.1.3",
+    "textlint-rule-prh": "^5.2.1",
+    "tslint": "^5.20.1"
+  },
+  "devDependencies": {
+    "textlint-rule-preset-ja-spacing": "^2.0.1"
+  },
+  "scripts": {
+    "test": "echo This is Test-Script",
+    "deploy": "echo This is Deploy-Script",
+    "lint": "textlint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
