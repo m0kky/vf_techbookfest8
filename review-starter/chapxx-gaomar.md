@@ -24,9 +24,9 @@ Voiceflowで構築したAlexaに対して身長と体重を答えます。その
 #### リソースを作成する
 AWS にアクセスし、お持ちの AWS アカウントでログインします。
 
-[https://aws.amazon.com/jp/](https://aws.amazon.com/jp/)
+[https://aws.amazon.com/jp/](https://aws.amazon.com/jp/)@<br>{}
 
-コンソール画面が開いたら、サービス検索から【Amazon Connect】と入力して検索します。出てきた［Amazon Connect］をクリックします。
+コンソール画面が開いたら、サービス検索から【Amazon Connect】と入力して検索します。出てきた `Amazon Connect` をクリックします。
 
 ![AmazonConnect](images/chapxx-gaomar/g101.png)
 
@@ -184,7 +184,7 @@ Amazon Connectで電話がかかってきたときのフローを作成します
 ![保存→公開ボタンをクリック](images/chapxx-gaomar/s117.png)
 
 #### IDをメモしておく
-問い合わせフローの名前の下に「追加のフロー情報の表示」という項目があるので、それを展開します。展開するとARNの情報が表示されるのでinstanceのIDとconstact-flowのIDをそれぞれメモしておきます。
+問い合わせフローの名前の下に「追加のフロー情報の表示」という項目があるので、それを展開します。展開するとARNの情報が表示されるので `instance` のIDと `constact-flow` のIDをそれぞれメモしておきます。
 
 ![IDをメモする](images/chapxx-gaomar/s118.png)
 
@@ -328,7 +328,7 @@ APIエンドポイントのURLをメモしておきましょう
 ![保存をクリック](images/chapxx-gaomar/s156.png)
 
 ## Voiceflowを設定しよう！
-ここからVoicelflowで設定を行います。Voiceflowにアクセスしてログインしてください。
+ここからVoicelflowで設定を行います。Voiceflowにアクセスしてログインしてください。@<br>{}
 
 [https://www.voiceflow.com/](https://www.voiceflow.com/)
 
