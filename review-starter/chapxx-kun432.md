@@ -14,7 +14,7 @@ VoiceflowのGoogleスプレッドシート連携機能を使うと、Excelライ
 
 ### データベーススキル
 
-- 「Voiceflow Tips #12 Googleスプレッドシート連携で作るゼロカロリースキルもどき 〜スプレッドシートの検索〜」
+- 「Voiceflow Tips #12 Googleスプレッドシート連携で作るゼロカロリースキル 〜スプレッドシートの検索〜」
 - 「Voiceflow Tips #14 Googleスプレッドシート連携で作るゼロカロリースキル 〜スプレッドシートへの登録〜」
 - 「Voiceflow Tips #18 Googleスプレッドシート連携で作るゼロカロリースキル 〜スプレッドシートの更新〜」
 - 「Voiceflow Tips #19 Googleスプレッドシート連携で作るゼロカロリースキル 〜スプレッドシートの削除〜」
