@@ -11,7 +11,7 @@
       "rulePaths": [
         "./prh/media/WEB+DB_PRESS.yml",
         "./prh/media/techbooster.yml",
-        "./prh/line-api.yml"
+        "./prh/vui-api.yml"
       ]
     },
     "preset-ja-technical-writing": true
