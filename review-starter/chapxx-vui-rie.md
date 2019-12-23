@@ -1,6 +1,6 @@
 ### 見出し
 
-Markdownを使ってみよう
+Markdownを使ってみよう！
 ============
 
 Markdonwとは？
