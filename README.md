@@ -10,3 +10,4 @@ Re:VIEWファイル: `/review-starter/chapxx-<discord name>.md`
 	* カラー: 350dpi
 	* モノクロ: 600dpi
 
+*
