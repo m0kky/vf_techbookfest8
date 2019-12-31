@@ -131,6 +131,7 @@ Voiceflowでは、思いついたらすぐにスキル開発を始めること�
 
 ### 音を鳴らす
 
+![Alexa Skills Kitサウンドライブラリ](images/chapxx-magistralla/soundlib.png)
 [Alexa Skills Kitサウンドライブラリ]（https://developer.amazon.com/ja-JP/docs/alexa/custom-skills/ask-soundlibrary.html）
 
 
@@ -152,6 +153,7 @@ Voiceflowでは、思いついたらすぐにスキル開発を始めること�
 
 ### Alexaのセリフに抑揚や強弱をつける
 
+![音声合成マークアップ言語（SSML）](images/chapxx-magistralla/ssml.png)
 [音声合成マークアップ言語（SSML）](https://developer.amazon.com/ja-JP/docs/alexa/custom-skills/speech-synthesis-markup-language-ssml-reference.html)
 
 
