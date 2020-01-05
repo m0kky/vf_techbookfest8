@@ -1,6 +1,6 @@
 # M5StickCで赤外線リモコンを作り、AlexaやGoogle Homeから家電を操作する。
 
-Nature remo　Miniなどのスマートハブは便利ですが、買うと結構高いので、使わなくなったM5StickCを使って自作してみます。M5Stack用赤外線送受信ユニット（308円）だけは買い足しました。
+Nature remo　Miniなどのスマートハブは便利ですが、買うと結構高いので、使わなくなったM5StickCを使って自作してみます。M5Stack用の赤外線送受信ユニット（308円）だけは買い足しました。
 IoTに使えるいろんなテクを寄せ集めていますので、何かのヒントになると幸いです。
 
 ## やること 
@@ -20,7 +20,7 @@ IoTに使えるいろんなテクを寄せ集めていますので、何かの�
 * * M5StickC ¥1980
 * * M5StickCに付属のUSB Type-Cケーブル（注1）
 * * M5用、赤外線送受信ユニット ¥308
-* * Mac Book Air（OS: OS 10.13.6 High Sierra）
+* * MacBook Air（OS: OS 10.13.6 High Sierra）
 * * VSCode
 * * Arduino IDE 1.8.9
 * * スマートフォン、GoogleアシスタントApp
@@ -35,7 +35,7 @@ IoTに使えるいろんなテクを寄せ集めていますので、何かの�
  * * Firebaseアカウント
  * * Voiceflowアカウント
 
-では早速やっていきます。
+ではさっそくやっていきます。
 
 ## M5StickCで赤外線リモコン作成
 
@@ -140,10 +140,13 @@ cd ~/workspace/firebase/functions
 npm install mqtt --save
 ```
 
-VSCodeを起動して、index.jsファイルを開き、中身を編集します。
-/Users/ユーザー名/workspace/firebase/functions
+この「functions」ディレクトリ以下にファイル一式が生成されます。
+VSCodeを起動して、index.jsファイルを開き、中身を編集しましょう。
+「mynameeeeeee/voiceflow/mqtt/infrared」の部分が自分専用となるよう、
+「mynameeeeeee」の所を、自分の名前など、わかりやすいものに変更してください。
+もし他人が宣言した名前とかぶっていた場合、エラーは出ないで、ただ単に混線してしまいます…。
 
-```index.js
+```/Users/ユーザー名/workspace/firebase/functions/index.js
 const functions = require('firebase-functions');
 var mqtt = require('mqtt');
 var client = mqtt.connect('mqtt://mqtt.eclipse.org');
@@ -181,23 +184,17 @@ firebase serve --only functions
 functions[mqtt]: http function initialized (http://localhost:5000/voiceflow-mqtt-publisher/us-central1/mqtt).
 ```
 
-というメッセージが出たら、Chromeで、文中に表示されたURLにアクセスしてみましょう。
+「voiceflow-mqtt-publisher」の部分は先ほど自分でつけたプロジェクト名になっているはずです。
+末尾のURLをコピーし、末尾に「?p=on」をつけて、Chromeからアクセスしてみましょう。
 
-
-http://localhost:5000/プロジェクト名/us-central1/mqtt
-
-
-プロジェクト名のところは先ほど自分で決めた名前に差し替えてください。
-
-
-例）http://localhost:5000/voiceflow-mqtt-publisher/us-central1/mqtt
-
+```
+例）http://localhost:5000/voiceflow-mqtt-publisher/us-central1/mqtt/?p=on
+```
 
 ![Firebaseローカル](images/chapxx-sitopp/s010.png)
 
-
-ブラウザに「Hello From Firebase!」と表示され、
-ターミナルには、以下のように表示されればOKです。
+うまくいけば、ブラウザに「Hello From Firebase!」と表示されるはずです。
+「firebase serve」コマンドを実行したターミナルには、以下のように表示されれるはずです。
 
 ```
 i  functions: Beginning execution of "mqtt"
@@ -207,7 +204,7 @@ i  functions: Finished "mqtt" in ~1s
 ```
 
 ターミナル上で、Coutrol + cでプロセスを終了します。
-ではFirebaseにデプロイしてみましょう。
+ではFirebaseにもデプロイしてみましょう。
 
 ```
 firebase deploy 
@@ -221,15 +218,14 @@ Hosting URL: https://voiceflow-mqtt-publisher.firebaseapp.com
 
 「Deploy complete!」 というメッセージが出れば完了です。初回は1〜2分、2回目以降でも数十秒かかります。
 
-「? Would you like to proceed with deletion? Selecting no will continue the rest of the deployments.」というメッセージが出たら、「y」と入力して進めます。
+（もし「? Would you like to proceed with deletion? Selecting no will continue the rest of the deployments.」というメッセージが出ても、exportsするFunction名を変更したことに対する確認なので問題ありません。「y」と入力して進めてください。）
 
-Chromeから、いま生成したFunctionに、パラメタ付きでアクセスします。
+ではChromeから、いま生成したばかりのFunctionにアクセスします。
 
 ```
 https://voiceflow-mqtt-publisher.firebaseapp.com/?p=on
 ```
 
-ではブラウザから「Hosting URL:〜」のURLにアクセスしてみましょう。
 
 <!-- 
 firebase serve --only functions
