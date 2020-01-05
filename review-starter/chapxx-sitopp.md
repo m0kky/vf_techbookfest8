@@ -146,7 +146,7 @@ VSCodeを起動して、index.jsファイルを開き、中身を編集しまし
 「mynameeeeeee」の所を、自分の名前など、わかりやすいものに変更してください。
 もし他人が宣言した名前とかぶっていた場合、エラーは出ないで、ただ単に混線してしまいます…。
 
-```/Users/ユーザー名/workspace/firebase/functions/index.js
+```ndex.js
 const functions = require('firebase-functions');
 var mqtt = require('mqtt');
 var client = mqtt.connect('mqtt://mqtt.eclipse.org');
@@ -154,8 +154,6 @@ var command = ''; //初期化
 
 exports.mqtt = functions.https.onRequest((request, response) => {
   response.send("Hello from Firebase!");
-
-  console.log(JSON.stringify(request)); //デバッグ
 
   var result = request.url.replace('/?p=', '');
   var command = '0';
@@ -198,9 +196,10 @@ functions[mqtt]: http function initialized (http://localhost:5000/voiceflow-mqtt
 
 ```
 i  functions: Beginning execution of "mqtt"
->  result=/
->  publisher.publish:topic=mynameeeeeee/voiceflow/mqtt/infrared,command= 0
+>  result=on
+>  publisher.publish:topic= mynameeeeeee/voiceflow/mqtt/infrared ,command= 1
 i  functions: Finished "mqtt" in ~1s
+>  publisher.connected.
 ```
 
 ターミナル上で、Coutrol + cでプロセスを終了します。
@@ -218,7 +217,7 @@ Hosting URL: https://voiceflow-mqtt-publisher.firebaseapp.com
 
 「Deploy complete!」 というメッセージが出れば完了です。初回は1〜2分、2回目以降でも数十秒かかります。
 
-（もし「? Would you like to proceed with deletion? Selecting no will continue the rest of the deployments.」というメッセージが出ても、exportsするFunction名を変更したことに対する確認なので問題ありません。「y」と入力して進めてください。）
+（もし「Would you like to proceed with deletion？ Selecting no will continue the rest of the deployments.」というメッセージが出ても、exportsするFunction名を変更したことに対する確認なので問題ありません。「y」と入力して進めてください。）
 
 ではChromeから、いま生成したばかりのFunctionにアクセスします。
 
