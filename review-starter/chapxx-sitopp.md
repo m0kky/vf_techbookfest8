@@ -1,16 +1,87 @@
 # M5StickCで赤外線リモコンを作り、AlexaやGoogle Homeから家電を操作する。
 
+Nature remo　Miniなどのスマートハブは便利ですが、買うと結構高いので、使わなくなったM5StickCを使って自作してみます。M5Stack用赤外線送受信ユニット（308円）だけは買い足しました。
+IoTに使えるいろんなテクを寄せ集めておりますので、何かのヒントになると幸いです。
 
-## 手に入る知識
+## やること 
 
-- M5StickCで赤外線リモコンを作成
-- VoiceflowからMQTTを使う方法
+* M5StickCで赤外線リモコン作成
+* FirebaseにNode.jsをホスティング
+* VoiceflowでActions On Googleを作成
+* Google HomeからM5StickへMQTTでメッセージ送信
+* 導通確認
 
+![アーキテクチャ](images/chapxx-sitopp/s000.png)
+
+## 使用した機材やアカウント
+
+機材：
+
+* M5StickC ¥1980
+* M5StickCに付属のUSB Type-Cケーブル (注1)
+* M5用赤外線送受信ユニット ¥308
+* Mac Book Air (OS: OS 10.13.6 High Sierra)
+* VSCode
+* Arduino IDE 1.8.9
+* スマホ、Googleアシスタントアプリ
+（※ Google アシスタントの代わりに、Amazon EchoやGoogle Home / Nestも使えます。）
+
+注1　MacとM5StickCをつなぐ時、M5StickCに付属のUSB Type-Cケーブルを使わないと認識しない事が多いので、無くさないように大事に使いましょう。
+
+
+アカウント：
+
+* Googleアカウント
+* Firebaseアカウント
+* Voiceflowアカウント
+
+では早速やっていきます。
+
+## M5StickCで赤外線リモコン作成
+
+あらかじめ、Arduino IDEでM5StickCを使えるようにしておきます。
+参考：https://〜
+
+M5StickCにM5Stack赤外線送受信ユニットをさします。Groveケーブルが若干きついので、「やっぱM5Stackじゃないとダメかな」と言う考えが一瞬頭をよぎりますが、ちゃんと入ります。
+
+Arduino IDEを起動し、M5StickCをUSB Type-Cケーブルで接続します。
+
+Arduino IDEの「ツール」→「ライブラリを管理」→「IRremoteESP8266」と入力し、表示されたライブラリをインストールします。
+
+Arduino IDEの「ファイル」→「スケッチ例」→「IRremoteESP8266」→「IRrecvDumpV2」を開きます。
+
+「ファイル」→「新規ファイル」でスケッチエディタを開き、上で開いた「IRrecvDumpV2」を全文コピーして貼り付け、
+以下の一行だけ書き換えます。
+
+```
+const uint16_t kRecvPin = 14;
+↓
+const uint16_t kRecvPin = 33;
+```
+
+daikinのコードが取れたら、
+出力してみます。
+
+（略）
+
+### MQTTのサブスクライバ
+
+knolleary/pubsubclient を取り込みます
+
+https://github.com/knolleary/pubsubclient
+から clone or Downloadボタンを押してダウンロードします。
+
+スケッチ→ライブラリをインクルード→.zip形式のライブラリをインストール
+
+
+
+
+## FirebaseにNode.jsをホスティング
 
 
 FirebaseにNode.jsをホスティングし、MQTTのパブリッシャを動かしましょう。
 
-node.js、npmのバージョンを確認します。
+node.jsは、npmのバージョンは、
 node --version
 npm --version
 
@@ -250,6 +321,7 @@ i  functions: Finished "mqtt" in ~1s
 >  0
 とログが出るはずです。
 
+
 ここまでできたら、Firebaseにデプロイしましょう。
 ファンクション名をhelloworldからmqttに変更したので、
 「? Would you like to proceed with deletion? Selecting no will continue the rest of the deployments.」というメッセージが出るはず。yと入力して進めます。
@@ -258,4 +330,10 @@ i  functions: Finished "mqtt" in ~1s
 デプロイした新しいFunctionにChromeからパラメタ付きでアクセスします。
 
 https://voiceflow-mqtt-publisher.firebaseapp.com/?p=on
+
+
+## VoiceflowでActions On Googleを作成
+## Google HomeからM5StickへMQTTでメッセージ送信
+## 導通確認
+
 
