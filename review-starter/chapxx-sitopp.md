@@ -59,6 +59,8 @@ const uint16_t kRecvPin = 14;
 const uint16_t kRecvPin = 33;
 ```
 
+実行し、
+
 daikinのコードが取れたら、
 出力してみます。
 
