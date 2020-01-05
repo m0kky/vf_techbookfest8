@@ -1,7 +1,7 @@
 # M5StickCで赤外線リモコンを作り、AlexaやGoogle Homeから家電を操作する。
 
 Nature remo　Miniなどのスマートハブは便利ですが、買うと結構高いので、使わなくなったM5StickCを使って自作してみます。M5Stack用赤外線送受信ユニット（308円）だけは買い足しました。
-IoTに使えるいろんなテクを寄せ集めておりますので、何かのヒントになると幸いです。
+IoTに使えるいろんなテクを寄せ集めていますので、何かのヒントになると幸いです。
 
 ## やること 
 
@@ -19,7 +19,7 @@ IoTに使えるいろんなテクを寄せ集めておりますので、何か�
 
 * M5StickC ¥1980
 * M5StickCに付属のUSB Type-Cケーブル (注1)
-* M5用赤外線送受信ユニット ¥308
+* M5用、赤外線送受信ユニット ¥308
 * Mac Book Air (OS: OS 10.13.6 High Sierra)
 * VSCode
 * Arduino IDE 1.8.9
@@ -59,21 +59,17 @@ const uint16_t kRecvPin = 14;
 const uint16_t kRecvPin = 33;
 ```
 
-実行し、
+daikinのコードが取れたら、出力してみます。
 
-daikinのコードが取れたら、
-出力してみます。
-
-（略）
 
 ### MQTTのサブスクライバ
 
-knolleary/pubsubclient を取り込みます
+knolleary/pubsubclient を取り込みます。
 
 https://github.com/knolleary/pubsubclient
 から clone or Downloadボタンを押してダウンロードします。
 
-スケッチ→ライブラリをインクルード→.zip形式のライブラリをインストール
+スケッチ→ライブラリをインクルード→.zip形式のライブラリをインストール。
 
 
 
@@ -81,196 +77,86 @@ https://github.com/knolleary/pubsubclient
 ## FirebaseにNode.jsをホスティング
 
 
-FirebaseにNode.jsをホスティングし、MQTTのパブリッシャを動かしましょう。
-
-node.jsは、npmのバージョンは、
-node --version
-npm --version
-
-nodeは8以上、
-npmはインストールされてればOKです。自分の環境でnpmは6.9.0でした。
-
-Firebaseのアカウントを作成し、プロジェクトも作成します。
+Firebase
 https://firebase.google.com/
-「使ってみる」＞「プロジェクトを作成」から画面通りに進めます。
-自分の場合、プロジェクトの名前は「MQTT-publisher-demo」としました。
+アカウントを持っていなければ作成しておきます。
 
-FirebaseのCLIをインストール
+公式のリファレンス 
+https://firebase.google.com/docs/cli?hl=ja を参照しながら、
+プロジェクト作成をしていきます。
+以下はコマンドの抜粋です。
+
+
+Macローカルのバージョン確認
+
+```
+node --version
+→8以上であること
+npm --version
+→入っていればOK、自分の環境で6.9.0でした。動かなければ最新版にあげてください。
+
 npm install -g firebase-tools
-
-ログイン
-firebase login
-
-cd
+cd ~
 mkdir workspace
 cd workspace
 mkdir firebase
 cd firebase
+firebase login
 firebase init
 
-「Which Firebase CLI features do you want to set up〜」というメッセージが出たら、
-カーソルの上下で移動して「Function」でスペースキーを入力して選択状態にし、と「Hosting」も同様にします。
-選んだらエンター。
+Which Firebase CLI features do you want to set up〜
+→ Function と Hostingを選択してエンター。
 
-「First, let's associate this project diary with a Firebase project.〜」というメッセージが出たら、
-カーソルの上下で移動して、「Create a new project」でエンター。
+First, let's associate this project diary with a Firebase project.〜
+→ Create a new project」を選択してエンター。
 
- Please specify a unique project id (warning: cannot be modified afterward) [6-
-30 characters]:
-
-というメッセージが出たら、好きな単語を入力してください。
+Please specify a unique project id (warning: cannot be modified 〜
+→プロジェクトIDを決めて入力。
 例）voiceflow-mqtt-publisher
 
-What would you like to call your project? (defaults to your project ID) ()
-は特に入力せずにエンター。
+What would you like to call your project? (defaults to your project ID) 
+→特に入力せずにエンター。
 
-あたらしいプロジェクトを作成するのに、数十秒かかります。
-続けて、node.jsの設定をしていきます。
-
-「What language would you like to use to write Cloud Functions? 」
+What language would you like to use to write Cloud Functions? 
 → JavaScript
+
 Do you want to use ESLint to catch probable bugs and enforce style?
 →y
- Do you want to install dependencies with npm now?
+
+Do you want to install dependencies with npm now?
 →y
 
- What do you want to use as your public directory? (public)
+What do you want to use as your public directory? (public)
 → エンター
+
 Configure as a single-page app (rewrite all urls to /index.html)? 
 →N
+```
 
-プロジェクトができたら
+プロジェクトが作成できたら、npmパッケージをインストールします。
 
-cd functions
-vi index.js
-===
-
-1 const functions = require('firebase-functions');
-2   
-3 // // Create and Deploy Your First Cloud Functions
-4 // // https://firebase.google.com/docs/functions/write-firebase-functions
-5 //
-6 // exports.helloWorld = functions.https.onRequest((request, response) => {
-7 //  response.send("Hello from Firebase!");
-8 // });
-
-====
-上記の6〜8行目のコメントアウトを外して保存します。
-viのコマンドが苦手な人は、VSCodeなどのエディタでファイルを開いてもOKです。
-====
-1 const functions = require('firebase-functions');
-2   
-3 // // Create and Deploy Your First Cloud Functions
-4 // // https://firebase.google.com/docs/functions/write-firebase-functions
-5 //
-6  exports.helloWorld = functions.https.onRequest((request, response) => {
-7   response.send("Hello from Firebase!");
-8  });
-====
-
-ファイルを保存したら、ターミナルで以下のコマンドを実行します。
-Macのローカル上でのみアクセス可能なホストを立ち上げる命令です。
-firebase serve --only functions
-
-数秒待って「functions[helloWorld]: http function initialized (http://localhost:5000/voiceflow-mqtt-publisher/us-central1/helloWorld).」というメッセージが出たら、
-
-Chromeで、以下のURLにアクセスしてみましょう。
-http://localhost:5000/プロジェクト名/us-central1/helloWorld
-
-例）http://localhost:5000/voiceflow-mqtt-publisher/us-central1/helloWorld
-
-「Hello from Firebase!」という文字が表示されればOKです。
-ターミナルに戻り、Control+Cでプロセスを終了させます。
-
-
-ではFirebaseにデプロイしてみましょう。
-
-
-firebase deploy 
-
-1〜2分ほどかかります。
-
-✔  Deploy complete!
-
-Project Console: https://console.firebase.google.com/project/voiceflow-mqtt-publisher/overview
-Hosting URL: https://voiceflow-mqtt-publisher.firebaseapp.com
-というメッセージが出れば完了です。
-
-ブラウザから「Hosting URL:〜」のURLにアクセスしてみましょう。
-
-Welcome
-Firebase Hosting Setup Complete
-というメッセージが出れば、OKです。
-
-
-次に、このindex.jsに、MQTTのトピックスを送るコードを付け足します。
-
-現在位置を確認します。
-
-pwd
-「/Users/ユーザー/workspace/firebase/functions」のはず。
-違う場所にいたら移動してきましょう。
+```
 cd ~/workspace/firebase/functions
-
-「MQTT.js」を使いますので、必要なパッケージをインストールします。
 npm install mqtt --save
+```
 
-===
-const functions = require('firebase-functions');
-var mqtt    = require('mqtt');
-var client  = mqtt.connect('mqtt://test.mosquitto.org');
+VSCodeを起動して、index.jsファイルを開き、中身を編集します。
+/Users/ユーザー名/workspace/firebase/functions
 
-exports.helloWorld = functions.https.onRequest((request, response) => {
- response.send("Hello from Firebase!");
- 
- client.subscribe('presence');
- client.publish('presence', 'Hello mqtt');
- 
- client.on('message', function (topic, message) {
-   // message is Buffer
-   console.log(message.toString());
- });
-client.end();
-});
-===
-
-ローカルにデプロイ
-firebase serve --only functions
-
-「✔  functions[helloWorld]: http function initialized (http://localhost:5000/voiceflow-mqtt-publisher/us-central1/helloWorld).」
-というメッセージが表示されたら、Chromeから上記のURLにアクセス。
-
-例）http://localhost:5000/voiceflow-mqtt-publisher/us-central1/helloWorld
-
-ブラウザに「Hello From Firebase!」と表示され、
-ターミナルには、
-
-i  functions: Beginning execution of "helloWorld"
-i  functions: Finished "helloWorld" in ~1s
->  Hello mqtt 23
->  Hello mqtt
-
-のように表示されればOKです。
-ターミナル上で、Coutrol + cでプロセスを終了します。
-
-次に、index.jsを以下のように変更します。
-MQTTのトピックスは、他の人とは違うものをつける必要がありますので、
-mynameeeeeeeのところは、「sitopharahetta」のように自分だけの文字列に変更してください。
-
-===
+```index.js
 const functions = require('firebase-functions');
 var mqtt = require('mqtt');
-var client = mqtt.connect('mqtt://test.mosquitto.org');
+var client = mqtt.connect('mqtt://mqtt.eclipse.org');
 var command = ''; //初期化
 
 exports.mqtt = functions.https.onRequest((request, response) => {
   response.send("Hello from Firebase!");
 
-  // console.log(JSON.stringify(request)); //デバッグ
+  console.log(JSON.stringify(request)); //デバッグ
 
   var result = request.url.replace('/?p=', '');
   var command = '0';
-  // console.log("result=" + result);
+  console.log("result=" + result);
 
   if (result === 'on') {
     command = '1';
@@ -278,20 +164,69 @@ exports.mqtt = functions.https.onRequest((request, response) => {
     command = '0';
   }
 
-  client.subscribe('mynameeeeeee/voiceflow/mqtt/infrared');
+  client.on('connect', () => console.log('publisher.connected.'));
   client.publish('mynameeeeeee/voiceflow/mqtt/infrared', command);
+  console.log('publisher.publish:topic=mynameeeeeee/voiceflow/mqtt/infrared,command=', command);
 
-  client.on('message', function (topic, message) {
-    // message is Buffer
-    console.log(message.toString());
-  });
-  client.end();
 });
+```
 
-===
 
-保存したら、ローカルで実行してテストします。
+ファイルを保存したら、ターミナルで以下のコマンドを実行して、Macのローカル上にホストを立ち上げます。
 
+```
+firebase serve --only functions
+
+（中略）
+functions[helloWorld]: http function initialized (http://localhost:5000/voiceflow-mqtt-publisher/us-central1/helloWorld).
+```
+
+というメッセージが出たら、
+Chromeで、以下のURLにアクセスしてみましょう。
+http://localhost:5000/プロジェクト名/us-central1/mqtt
+プロジェクト名のところは先ほど自分で決めた名前に差し替えてください。
+例）http://localhost:5000/voiceflow-mqtt-publisher/us-central1/mqtt
+✔  functions[mqtt]: http function initialized (http://localhost:5000/voiceflow-mqtt-publisher/us-central1/mqtt).
+
+![Firebaseローカル](images/chapxx-sitopp/s010.png)
+
+
+ブラウザに「Hello From Firebase!」と表示され、
+ターミナルには、以下のように表示されればOKです。
+
+```
+i  functions: Beginning execution of "mqtt"
+>  result=/
+>  publisher.publish:topic=mynameeeeeee/voiceflow/mqtt/infrared,command= 0
+i  functions: Finished "mqtt" in ~1s
+```
+
+ターミナル上で、Coutrol + cでプロセスを終了します。
+ではFirebaseにデプロイしてみましょう。
+
+```
+firebase deploy 
+
+（中略）
+✔  Deploy complete!
+
+Project Console: https://console.firebase.google.com/project/voiceflow-mqtt-publisher/overview
+Hosting URL: https://voiceflow-mqtt-publisher.firebaseapp.com
+```
+
+「Deploy complete!」 というメッセージが出れば完了です。初回は1〜2分、2回目以降でも数十秒かかります。
+
+「? Would you like to proceed with deletion? Selecting no will continue the rest of the deployments.」というメッセージが出たら、「y」と入力して進めます。
+
+Chromeから、いま生成したFunctionに、パラメタ付きでアクセスします。
+
+```
+https://voiceflow-mqtt-publisher.firebaseapp.com/?p=on
+```
+
+ではブラウザから「Hosting URL:〜」のURLにアクセスしてみましょう。
+
+<!-- 
 firebase serve --only functions
 
 ✔  functions[mqtt]: http function initialized (http://localhost:5000/voiceflow-mqtt-publisher/us-central1/mqtt).
@@ -307,31 +242,27 @@ http://localhost:5000/プロジェクト名/us-central1/mqtt?p=on
 
 i  functions: Beginning execution of "mqtt"
 i  functions: Finished "mqtt" in ~1s
->  1
+>  1 -->
 
-上記のように「1」、が正解です。
+<!-- 上記のように「1」、が正解です。
 一度ターミナルからcontrol+cで終了させて、再度
 firebase serve --only functions
 でプロセスを起動し、今度は末尾を「off」にしてリクエストしてみましょう。
-http://localhost:5000/プロジェクト名/us-central1/mqtt?p=off
+http://localhost:5000/プロジェクト名/us-central1/mqtt?p=off -->
 
-例）http://localhost:5000/voiceflow-mqtt-publisher/us-central1/mqtt?p=off
+<!-- 例）http://localhost:5000/voiceflow-mqtt-publisher/us-central1/mqtt?p=off -->
 
-ターミナル上で、
+<!-- ターミナル上で、
 i  functions: Beginning execution of "mqtt"
 i  functions: Finished "mqtt" in ~1s
 >  0
-とログが出るはずです。
+とログが出るはずです。 -->
 
 
-ここまでできたら、Firebaseにデプロイしましょう。
+<!-- ここまでできたら、Firebaseにデプロイしましょう。
 ファンクション名をhelloworldからmqttに変更したので、
-「? Would you like to proceed with deletion? Selecting no will continue the rest of the deployments.」というメッセージが出るはず。yと入力して進めます。
+「? Would you like to proceed with deletion? Selecting no will continue the rest of the deployments.」というメッセージが出るはず。yと入力して進めます。 -->
 
-
-デプロイした新しいFunctionにChromeからパラメタ付きでアクセスします。
-
-https://voiceflow-mqtt-publisher.firebaseapp.com/?p=on
 
 
 ## VoiceflowでActions On Googleを作成
