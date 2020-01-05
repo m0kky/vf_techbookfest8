@@ -141,12 +141,10 @@ npm install mqtt --save
 ```
 
 この「functions」ディレクトリ以下にファイル一式が生成されます。
-VSCodeを起動して、index.jsファイルを開き、中身を編集しましょう。
-「mynameeeeeee/voiceflow/mqtt/infrared」の部分が自分専用となるよう、
-「mynameeeeeee」の所を、自分の名前など、わかりやすいものに変更してください。
-もし他人が宣言した名前とかぶっていた場合、エラーは出ないで、ただ単に混線してしまいます…。
+VSCodeを起動して、index.jsファイルを開き、中身を編集しましょう。「mynameeeeeee/voiceflow/mqtt/infrared」の部分が自分専用となるよう、「mynameeeeeee」の部分を自分の名前などに変更してください。
+もし他人が宣言した名前とかぶっていた場合、エラーは出ません。混線します(^o^;)
 
-```ndex.js
+```index.js
 const functions = require('firebase-functions');
 var mqtt = require('mqtt');
 var client = mqtt.connect('mqtt://mqtt.eclipse.org');
@@ -182,7 +180,7 @@ firebase serve --only functions
 functions[mqtt]: http function initialized (http://localhost:5000/voiceflow-mqtt-publisher/us-central1/mqtt).
 ```
 
-「voiceflow-mqtt-publisher」の部分は先ほど自分でつけたプロジェクト名になっているはずです。
+「voiceflow-mqtt-publisher」の部分は先ほど自分で名前をつけたプロジェクト名になっているはずです。
 末尾のURLをコピーし、末尾に「?p=on」をつけて、Chromeからアクセスしてみましょう。
 
 ```
@@ -224,44 +222,6 @@ Hosting URL: https://voiceflow-mqtt-publisher.firebaseapp.com
 ```
 https://voiceflow-mqtt-publisher.firebaseapp.com/?p=on
 ```
-
-
-<!-- 
-firebase serve --only functions
-
-✔  functions[mqtt]: http function initialized (http://localhost:5000/voiceflow-mqtt-publisher/us-central1/mqtt).
-
-URLの末尾がmqttに変化していますね。
-ではブラウザから以下のURLにアクセスしてください。
-
-http://localhost:5000/プロジェクト名/us-central1/mqtt?p=on
-
-例）http://localhost:5000/voiceflow-mqtt-publisher/us-central1/mqtt?p=on
-
-すると、ターミナルにURL引数がカットされて表示される筈です。
-
-i  functions: Beginning execution of "mqtt"
-i  functions: Finished "mqtt" in ~1s
->  1 -->
-
-<!-- 上記のように「1」、が正解です。
-一度ターミナルからcontrol+cで終了させて、再度
-firebase serve --only functions
-でプロセスを起動し、今度は末尾を「off」にしてリクエストしてみましょう。
-http://localhost:5000/プロジェクト名/us-central1/mqtt?p=off -->
-
-<!-- 例）http://localhost:5000/voiceflow-mqtt-publisher/us-central1/mqtt?p=off -->
-
-<!-- ターミナル上で、
-i  functions: Beginning execution of "mqtt"
-i  functions: Finished "mqtt" in ~1s
->  0
-とログが出るはずです。 -->
-
-
-<!-- ここまでできたら、Firebaseにデプロイしましょう。
-ファンクション名をhelloworldからmqttに変更したので、
-「? Would you like to proceed with deletion? Selecting no will continue the rest of the deployments.」というメッセージが出るはず。yと入力して進めます。 -->
 
 
 
