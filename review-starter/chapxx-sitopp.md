@@ -214,8 +214,6 @@ Hosting URL: https://voiceflow-mqtt-publisher.firebaseapp.com
 
 「Deploy complete」 というメッセージが出れば完了です。初回は1〜2分、2回目以降でも数十秒かかります。
 
-（もし「Would you like to proceed with deletion？ Selecting no will continue the rest of the deployments.」というメッセージが出ても、exportsするFunction名を変更したことに対する確認なので問題ありません。「y」と入力して進めてください。）
-
 ではChromeから、いま生成したばかりのFunctionにアクセスします。
 
 ```
