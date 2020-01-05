@@ -15,25 +15,25 @@ IoTに使えるいろんなテクを寄せ集めていますので、何かの�
 
 ## 使用した機材やアカウント
 
-機材：
+* 機材：
 
-* M5StickC ¥1980
-* M5StickCに付属のUSB Type-Cケーブル (注1)
-* M5用、赤外線送受信ユニット ¥308
-* Mac Book Air (OS: OS 10.13.6 High Sierra)
-* VSCode
-* Arduino IDE 1.8.9
-* スマホ、Googleアシスタントアプリ
+* * M5StickC ¥1980
+* * M5StickCに付属のUSB Type-Cケーブル（注1）
+* * M5用、赤外線送受信ユニット ¥308
+* * Mac Book Air（OS: OS 10.13.6 High Sierra）
+* * VSCode
+* * Arduino IDE 1.8.9
+* * スマートフォン、GoogleアシスタントApp
 （※ Google アシスタントの代わりに、Amazon EchoやGoogle Home / Nestも使えます。）
 
-注1　MacとM5StickCをつなぐ時、M5StickCに付属のUSB Type-Cケーブルを使わないと認識しない事が多いので、無くさないように大事に使いましょう。
+注1　MacとM5StickCをつなぐ時、M5StickCに付属のUSB Type-Cケーブルを使わないと認識しないことが多いので、なくさないよう大切に保管しておきましょう。
 
 
-アカウント：
+* アカウント：
 
-* Googleアカウント
-* Firebaseアカウント
-* Voiceflowアカウント
+ * * Googleアカウント
+ * * Firebaseアカウント
+ * * Voiceflowアカウント
 
 では早速やっていきます。
 
@@ -87,7 +87,7 @@ https://firebase.google.com/docs/cli?hl=ja を参照しながら、
 以下はコマンドの抜粋です。
 
 
-Macローカルのバージョン確認
+* Macローカルのバージョン確認
 
 ```
 node --version
@@ -178,15 +178,20 @@ exports.mqtt = functions.https.onRequest((request, response) => {
 firebase serve --only functions
 
 （中略）
-functions[helloWorld]: http function initialized (http://localhost:5000/voiceflow-mqtt-publisher/us-central1/helloWorld).
+functions[mqtt]: http function initialized (http://localhost:5000/voiceflow-mqtt-publisher/us-central1/mqtt).
 ```
 
-というメッセージが出たら、
-Chromeで、以下のURLにアクセスしてみましょう。
+というメッセージが出たら、Chromeで、文中に表示されたURLにアクセスしてみましょう。
+
+
 http://localhost:5000/プロジェクト名/us-central1/mqtt
+
+
 プロジェクト名のところは先ほど自分で決めた名前に差し替えてください。
+
+
 例）http://localhost:5000/voiceflow-mqtt-publisher/us-central1/mqtt
-✔  functions[mqtt]: http function initialized (http://localhost:5000/voiceflow-mqtt-publisher/us-central1/mqtt).
+
 
 ![Firebaseローカル](images/chapxx-sitopp/s010.png)
 
