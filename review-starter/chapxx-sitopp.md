@@ -142,8 +142,7 @@ npm install mqtt --save
 
 この「functions」ディレクトリ以下にファイル一式が生成されます。
 VSCodeを起動して、index.jsファイルを開き、中身を編集しましょう。「mynameeeeeee/voiceflow/mqtt/infrared」の部分が自分専用となるよう、「mynameeeeeee」の部分を自分の名前などに変更してください。
-もし他人が宣言した名前とかぶっていた場合、エラーは出ません。混線します(^o^;)
-
+もし他人が宣言した名前とかぶっていた場合、エラーは出ません。混線します（^o^;）
 ```index.js
 const functions = require('firebase-functions');
 var mqtt = require('mqtt');
@@ -180,8 +179,8 @@ firebase serve --only functions
 functions[mqtt]: http function initialized (http://localhost:5000/voiceflow-mqtt-publisher/us-central1/mqtt).
 ```
 
-「voiceflow-mqtt-publisher」の部分は先ほど自分で名前をつけたプロジェクト名になっているはずです。
-末尾のURLをコピーし、末尾に「?p=on」をつけて、Chromeからアクセスしてみましょう。
+「voiceflow-mqtt-publisher」の部分は先ほど自分で命名したプロジェクト名になっているはずです。
+末尾のURLをコピーし、末尾に```?p=on```をつけて、Chromeからアクセスしてみましょう。
 
 ```
 例）http://localhost:5000/voiceflow-mqtt-publisher/us-central1/mqtt/?p=on
@@ -189,7 +188,7 @@ functions[mqtt]: http function initialized (http://localhost:5000/voiceflow-mqtt
 
 ![Firebaseローカル](images/chapxx-sitopp/s010.png)
 
-うまくいけば、ブラウザに「Hello From Firebase!」と表示されるはずです。
+うまくいけば、ブラウザに「Hello From Firebase」と表示されるはずです。
 「firebase serve」コマンドを実行したターミナルには、以下のように表示されれるはずです。
 
 ```
@@ -213,7 +212,7 @@ Project Console: https://console.firebase.google.com/project/voiceflow-mqtt-publ
 Hosting URL: https://voiceflow-mqtt-publisher.firebaseapp.com
 ```
 
-「Deploy complete!」 というメッセージが出れば完了です。初回は1〜2分、2回目以降でも数十秒かかります。
+「Deploy complete」 というメッセージが出れば完了です。初回は1〜2分、2回目以降でも数十秒かかります。
 
 （もし「Would you like to proceed with deletion？ Selecting no will continue the rest of the deployments.」というメッセージが出ても、exportsするFunction名を変更したことに対する確認なので問題ありません。「y」と入力して進めてください。）
 
