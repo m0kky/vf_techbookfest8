@@ -2,9 +2,7 @@
 
 VoiceflowのGoogleスプレッドシート連携機能を使うと、普段お使いのExcelと同じ使い勝手で使える簡易なデータベースとして利用できますので、スキル開発の幅が一気に広がります。ぜひ活用してワンランク上のスキルを作ってみましょう。
 
-## 基本的な使い方
-
-### スプレッドシートのデータをランダムに呼び出す
+## スプレッドシートのデータをランダムに呼び出す
 
 最初に、VoiceflowのGoogleスプレッドシート連携の基本的な使い方を学びつつ、シートからランダムにデータを取り出すというのをやってみましょう。サンプルとして、Googleスプレッドシートに登録してあるオススメのレシピとその材料をランダムに教えてくれるスキルを作っていきたいと思います。
 
@@ -50,7 +48,33 @@ Googleスプレッドシートとの連携は「Integrationブロック」を使
 
 ![Integrationブロックの設定③](images/chapxx-kun432/s002-2.png)
 
+次に、GoogleスプレッドシートへアクセスするためにGoogleアカウントとの紐付けを行います。「＋Add User」をクリックします。
 
+![Integrationブロックの設定④](images/chapxx-kun432/s002-2.png)
+
+はじめてアカウント連携を行う場合は以下のようにGooogleへのログインを促す画面が表示されます。「Login with Google」をクリックします。
+
+![Integrationブロックの設定⑤](images/chapxx-kun432/s005.png)
+
+Googleアカウントの選択画面が表示されますので、Googleスプレッドシートを作成したアカウントを選択します。アカウント・パスワードを入力する画面が表示される場合もあります。その場合はお手持ちのGoogleアカウントとパスワードでログインしてください。
+
+![Integrationブロックの設定⑥](images/chapxx-kun432/s006.png)
+
+初回のみ、VoiceflowからGoogleスプレッドシートへのアクセス許可設定を行う必要があります。「許可」をクリックします。
+
+![Integrationブロックの設定⑦](images/chapxx-kun432/s007.png)
+
+以下のように表示されればGoogleアカウントとの紐付けは完了しています。「Using Sheet」をクリックして次に進みます。
+
+![Integrationブロックの設定⑧](images/chapxx-kun432/s008.png)
+
+「Using Sheet」では、Voiceflowからアクセスするスプレッドシートを選択します。「Spreadsheet」でスプレッドシート名、「Sheet」でシート名（下のタブ名）をそれぞれリストから選択します。今回、最初に作成したスプレッドシートの場合だと、「Spreadsheet」に「我が家のレシピデータ」、「Sheet」に「レシピデータ一覧」を選択します。
+
+![Integrationブロックの設定⑨](images/chapxx-kun432/s011.png)
+
+スプレッドシートの選択が完了すると、「With Settings」が表示されます。ここは後で説明しますので、とりあえず左側の「Column」にリストから「Row Number」を選択してください。右側の「Value to Match」は何も入力せずに「Next」をクリックします。
+
+![Integrationブロックの設定⑩](images/chapxx-kun432/s035.png)
 
 ## Googleスプレッドシートを使う場合の注意
 
