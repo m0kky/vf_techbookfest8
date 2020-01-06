@@ -1,4 +1,4 @@
-# Googleスプレッドシート連携徹底活用
+# Googleスプレッドシートと連携してみよう
 
 VoiceflowのGoogleスプレッドシート連携機能を使うと、普段お使いのExcelと同じ使い勝手で使える簡易なデータベースとして利用できますので、スキル開発の幅が一気に広がります。ぜひ活用してワンランク上のスキルを作ってみましょう。
 
@@ -37,7 +37,7 @@ Googleスプレッドシートとの連携は「Integrationブロック」を使
 
 まず、シートのデータをどうしたいのか？を選択します。 選択できるのは以下の4つです。
 
-![Integrationブロックの設定②](images/chapxx-kun432/s002-2.png)
+![Integrationブロックの設定②](images/chapxx-kun432/s003.png)
 
 - Retrieve Data（データの取得）
 - Create Data（データの登録）
@@ -46,11 +46,11 @@ Googleスプレッドシートとの連携は「Integrationブロック」を使
 
 このスキルでは、レシピ名と材料名のデータをGoogleスプレッドシートから取り出しますので、「Retrieve Data」クリックします。
 
-![Integrationブロックの設定③](images/chapxx-kun432/s002-2.png)
+![Integrationブロックの設定③](images/chapxx-kun432/s003-2.png)
 
 次に、GoogleスプレッドシートへアクセスするためにGoogleアカウントとの紐付けを行います。「＋Add User」をクリックします。
 
-![Integrationブロックの設定④](images/chapxx-kun432/s002-2.png)
+![Integrationブロックの設定④](images/chapxx-kun432/s004.png)
 
 はじめてアカウント連携を行う場合は以下のようにGooogleへのログインを促す画面が表示されます。「Login with Google」をクリックします。
 
