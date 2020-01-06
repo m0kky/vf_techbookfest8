@@ -1,4 +1,4 @@
-# Googleスプレッドシート連携徹底活用
+# Googleスプレッドシートと連携してみよう
 
 VoiceflowのGoogleスプレッドシート連携機能を使うと、普段お使いのExcelと同じ使い勝手で使える簡易なデータベースとして利用できますので、スキル開発の幅が一気に広がります。ぜひ活用してワンランク上のスキルを作ってみましょう。
 
@@ -37,7 +37,7 @@ Googleスプレッドシートとの連携は「Integrationブロック」を使
 
 まず、シートのデータをどうしたいのか？を選択します。 選択できるのは以下の4つです。
 
-![Integrationブロックの設定②](images/chapxx-kun432/s002-2.png)
+![Integrationブロックの設定②](images/chapxx-kun432/s003.png)
 
 - Retrieve Data（データの取得）
 - Create Data（データの登録）
@@ -46,11 +46,11 @@ Googleスプレッドシートとの連携は「Integrationブロック」を使
 
 このスキルでは、レシピ名と材料名のデータをGoogleスプレッドシートから取り出しますので、「Retrieve Data」クリックします。
 
-![Integrationブロックの設定③](images/chapxx-kun432/s002-2.png)
+![Integrationブロックの設定③](images/chapxx-kun432/s003-2.png)
 
 次に、GoogleスプレッドシートへアクセスするためにGoogleアカウントとの紐付けを行います。「＋Add User」をクリックします。
 
-![Integrationブロックの設定④](images/chapxx-kun432/s002-2.png)
+![Integrationブロックの設定④](images/chapxx-kun432/s004.png)
 
 はじめてアカウント連携を行う場合は以下のようにGooogleへのログインを促す画面が表示されます。「Login with Google」をクリックします。
 
@@ -99,19 +99,19 @@ Googleアカウントの選択画面が表示されますので、Googleスプ�
 
 私のブログでいくつかGoogleスプレッドシート関連のチュートリアル的な記事を書いていますのでご紹介します。よろしければご覧ください。
 
-- 「Voiceflow Tips #7 Googleスプレッドシート連携で作る豆知識スキル」(https://kun432.hatenablog.com/entry/voiceflow_tips_7_fact_skill_integrated_with_google_sheets)
+- 「Voiceflow Tips #7 Googleスプレッドシート連携で作る豆知識スキル」@<br>{}(https://kun432.hatenablog.com/entry/voiceflow_tips_7_fact_skill_integrated_with_google_sheets)
 
 初歩のAlexaスキル開発のサンプルとしてもよく取り上げられている「豆知識」スキルをGoogleスプレッドシートと連携させて作ります。Googleスプレッドシート側に豆知識の「ネタ」をたくさん登録しておいて、ランダムに呼び出すというものです。
 
-- 「Voiceflow Tips #12 Googleスプレッドシート連携で作るゼロカロリースキル 〜スプレッドシートの検索〜」(https://kun432.hatenablog.com/entry/voiceflow_tips_12_retrieve_from_google_spreadsheet)
-- 「Voiceflow Tips #14 Googleスプレッドシート連携で作るゼロカロリースキル 〜スプレッドシートへの登録〜」(https://kun432.hatenablog.com/entry/voiceflow_tips_14_insert_data_into_google_sheets)
-- 「Voiceflow Tips #18 Googleスプレッドシート連携で作るゼロカロリースキル 〜スプレッドシートの更新〜」(https://kun432.hatenablog.com/entry/voiceflow_tips_18_update_data_with_google_sheets)
-- 「Voiceflow Tips #19 Googleスプレッドシート連携で作るゼロカロリースキル 〜スプレッドシートの削除〜」(https://kun432.hatenablog.com/entry/voiceflow_tips_19_delete_data_with_google_sheets)
+- 「Voiceflow Tips #12 Googleスプレッドシート連携で作るゼロカロリースキル 〜スプレッドシートの検索〜」@<br>{}(https://kun432.hatenablog.com/entry/voiceflow_tips_12_retrieve_from_google_spreadsheet)
+- 「Voiceflow Tips #14 Googleスプレッドシート連携で作るゼロカロリースキル 〜スプレッドシートへの登録〜」@<br>{}(https://kun432.hatenablog.com/entry/voiceflow_tips_14_insert_data_into_google_sheets)
+- 「Voiceflow Tips #18 Googleスプレッドシート連携で作るゼロカロリースキル 〜スプレッドシートの更新〜」@<br>{}(https://kun432.hatenablog.com/entry/voiceflow_tips_18_update_data_with_google_sheets)
+- 「Voiceflow Tips #19 Googleスプレッドシート連携で作るゼロカロリースキル 〜スプレッドシートの削除〜」@<br>{}(https://kun432.hatenablog.com/entry/voiceflow_tips_19_delete_data_with_google_sheets)
 
 2019年のAlexaスキルハッカソン大阪で話題になっていた、がおまるさん（@gaomar）の「ゼロカロリースキル」をGoogleスプレッドシート連携だけで作るというものです。データベースの基本となる、一連のCRUD操作（Create:登録、 Retrieve:参照、Update:更新、Delete:削除）を4回に分けて紹介しています。
 
-- 「Voiceflow TIPS #29 Airtableと組み合わせて、もっとデータベースらしく」(https://kun432.hatenablog.com/entry/voiceflow_tips_29_integration_with_airtable)
+- 「Voiceflow TIPS #29 Airtableと組み合わせて、もっとデータベースらしく」@<br>{}(https://kun432.hatenablog.com/entry/voiceflow_tips_29_integration_with_airtable)
 
 Voiceflowでは物足りない場合、
 
-- 「Voiceflow TIPS #35 Firebase RealtimeDatabaseでデータを管理する」(https://kun432.hatenablog.com/entry/voiceflow_tips_35_integration_with_firebase_realtime_database)
+- 「Voiceflow TIPS #35 Firebase RealtimeDatabaseでデータを管理する」@<br>{}(https://kun432.hatenablog.com/entry/voiceflow_tips_35_integration_with_firebase_realtime_database)
