@@ -91,6 +91,7 @@ Googleアカウントの選択画面が表示されますので、Googleスプ�
 - Firebase (https://firebase.google.com/)
 
 また、これらの使い方について
+
 ## まとめ
 
 いかがでしょうか？今回は取り上げませんでしたが、スプレッドシートへのデータの登録・更新・削除ももちろん可能です。
@@ -99,7 +100,7 @@ Googleアカウントの選択画面が表示されますので、Googleスプ�
 
 私のブログでいくつかGoogleスプレッドシート関連のチュートリアル的な記事を書いていますのでご紹介します。よろしければご覧ください。
 
-- 「Voiceflow Tips #7 Googleスプレッドシート連携で作る豆知識スキル」@<br>{}(https://kun432.hatenablog.com/entry/voiceflow_tips_7_fact_skill_integrated_with_google_sheets)
+- 「Voiceflow Tips #7 Googleスプレッドシート連携で作る豆知識スキル」@<br>{}[https://kun432.hatenablog.com/entry/voiceflow_tips_7_fact_skill_integrated_with_google_sheets](https://kun432.hatenablog.com/entry/voiceflow_tips_7_fact_skill_integrated_with_google_sheets)
 
 初歩のAlexaスキル開発のサンプルとしてもよく取り上げられている「豆知識」スキルをGoogleスプレッドシートと連携させて作ります。Googleスプレッドシート側に豆知識の「ネタ」をたくさん登録しておいて、ランダムに呼び出すというものです。
 
