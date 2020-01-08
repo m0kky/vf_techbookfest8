@@ -2,7 +2,7 @@
 身長と体重を答えると、その数値を元にBMIを測定します。測定結果をAmazon Connectというサービスを経由して、
 ご自身の携帯電話に電話がかかってくるというものを作ってみました。実際に電話がかかってくると感動しますね。
 
-## 仕組み
+## しくみ
 Voiceflowで構築したAlexaに対して身長と体重を答えます。その値を元にAWS Lambda上でBMIの計算を行います。
 その計算結果をAmazon Connectを経由して電話で結果を教えてくれます。
 
@@ -38,15 +38,15 @@ AWS にアクセスし、お持ちの AWS アカウントでログインしま�
 
 ![アジアパシフィック（東京）を選択](images/chapxx-gaomar/g103.png)
 
-アクセスURLに今回使用するための名前を決めます。［vf-techbookfest-{あなたのお名前}］という感じで他の人と被らないような名前にします。
+アクセスURLに今回使用するための名前を決めます。［vf-techbookfest-{あなたのお名前}］という感じで、他の人と被らないような名前にします。
 
 ![リソース名を決める](images/chapxx-gaomar/g104.png)
 
-ステップ２の管理者の作成は後でできるので、「これをスキップ」を選択してから、［次のステップ］ボタンをクリックします。
+ステップ２の管理者の作成は後で、できるので「これをスキップ」を選択してから、［次のステップ］ボタンをクリックします。
 
 ![これをスキップを選択し、次のステップをクリック](images/chapxx-gaomar/g105.png)
 
-ステップ３のテレフォニーオプションもそのまま何もせず［次のステップ］ボタンをクリックします。
+ステップ３のテレフォニーオプションはそのまま何もせず［次のステップ］ボタンをクリックします。
 
 ![次のステップをクリック](images/chapxx-gaomar/g106.png)
 
@@ -98,12 +98,12 @@ Amazon Connect専用の電話番号を手に入れます。
 
 ![ルーティングの電話番号をクリック](images/chapxx-gaomar/g116.png)
 
-取得した電話番号が表示されています。別の番号を増やしたい場合は右側にある［電話番号の追加］ボタン押して追加することもできます。この電話番号は後ほど使うので、メモしておきましょう。
+取得した電話番号が表示されています。別の番号を増やしたい場合は右側にある［電話番号の追加］ボタン押して追加できます。この電話番号はのちほど使うので、メモしておきましょう。
 
 ![電話番号をメモしておく](images/chapxx-gaomar/g117.png)
 
 ### 問い合わせフローを作成しよう
-Amazon Connectで電話がかかってきたときのフローを作成します。GUI画面でポチポチ配置するだけで簡単に作成することができます。
+Amazon Connectで電話がかかってきたときのフローを作成します。GUI画面でポチポチ配置するだけで簡単に作成できます。
 
 #### 問い合わせフローを作成する
 左側メニューのルーティングから「問い合わせフロー」をクリックします。
@@ -118,21 +118,21 @@ Amazon Connectで電話がかかってきたときのフローを作成します
 
 ![Voiceflow-AmazonConnectと入力](images/chapxx-gaomar/s102.png)
 
-設定カテゴリにある「音声の設定」ブロックをドラッグアンドドロップして、ドロップしたブロックをクリックします。
+設定カテゴリにある「音声の設定」ブロックをドラッグ&ドロップして、ドロップしたブロックをクリックします。
 
-![音声の設定をドラッグアンドドロップ](images/chapxx-gaomar/s103.png)
+![音声の設定をドラッグ&ドロップ](images/chapxx-gaomar/s103.png)
 
 言語は「日本語」でお好きな音声を選択してください。
 
 ![TakumiかMizukiを選択](images/chapxx-gaomar/s104.png)
 
-エントリポイントと音声の設定ブロックを繋げます。
+エントリポイントと音声の設定ブロックをつなげます。
 
-![ブロックを繋げる](images/chapxx-gaomar/s105.png)
+![ブロックをつなげる](images/chapxx-gaomar/s105.png)
 
-設定カテゴリにある「問い合わせ属性の設定」をドラッグアンドドロップします。
+設定カテゴリにある「問い合わせ属性の設定」をドラッグ&ドロップします。
 
-![問い合わせ属性の設定をドラッグアンドドロップ](images/chapxx-gaomar/s106.png)
+![問い合わせ属性の設定をドラッグ&ドロップ](images/chapxx-gaomar/s106.png)
 
 属性の設定を行います。「属性を使用する」を選択してください。
 
@@ -140,13 +140,13 @@ Amazon Connectで電話がかかってきたときのフローを作成します
 
 ![属性の設定を行う](images/chapxx-gaomar/s107.png)
 
-ブロックを繋げます。
+ブロックをつなげます。
 
-![ブロックを繋げる](images/chapxx-gaomar/s108.png)
+![ブロックをつなげる](images/chapxx-gaomar/s108.png)
 
-操作カテゴリにある「プロンプトの再生」をドラッグアンドドロップします。
+操作カテゴリにある「プロンプトの再生」をドラッグ&ドロップします。
 
-![プロンプトの再生をドラッグアンドドロップ](images/chapxx-gaomar/s109.png)
+![プロンプトの再生をドラッグ&ドロップ](images/chapxx-gaomar/s109.png)
 
 属性の設定を行います。「テキスト読み上げまたはチャットテキスト」を選択してください。
 
@@ -154,30 +154,30 @@ Amazon Connectで電話がかかってきたときのフローを作成します
 
 ![属性の設定を行う](images/chapxx-gaomar/s110.png)
 
-ブロックを繋げます。
+ブロックをつなげます。
 
-![ブロックを繋げる](images/chapxx-gaomar/s111.png)
+![ブロックをつなげる](images/chapxx-gaomar/s111.png)
 
-ブランチカテゴリにある「ループ」をドラッグアンドドロップします。
+ブランチカテゴリにある「ループ」をドラッグ&ドロップします。
 ループ回数はお好きな数を指定してください。
 
 ![ループを設定する](images/chapxx-gaomar/s112.png)
 
-ブロックを繋げます。
+ブロックをつなげます。
 
-![ブロックを繋げる](images/chapxx-gaomar/s113.png)
+![ブロックをつなげる](images/chapxx-gaomar/s113.png)
 
-ループとプロンプトの再生を繋げます。
+ループとプロンプトの再生をつなげます。
 
-![ブロックを繋げる](images/chapxx-gaomar/s114.png)
+![ブロックをつなげる](images/chapxx-gaomar/s114.png)
 
-終了 / 転送カテゴリにある「切断/ハングアップ」をドラッグアンドドロップします。
+終了 / 転送カテゴリにある「切断/ハングアップ」をドラッグ&ドロップします。
 
-![切断/ハングアップをドラッグアンドドロップ](images/chapxx-gaomar/s115.png)
+![切断/ハングアップをドラッグ&ドロップ](images/chapxx-gaomar/s115.png)
 
-まだ繋いでいない部分を全て「切断/ハングアップ」に繋ぎます。
+まだつないでいない部分をすべて「切断/ハングアップ」につなぎます。
 
-![ブロックを繋げる](images/chapxx-gaomar/s116.png)
+![ブロックをつなげる](images/chapxx-gaomar/s116.png)
 
 右上の①［保存］と②「公開」ボタンを順番にクリックします。
 
@@ -188,7 +188,7 @@ Amazon Connectで電話がかかってきたときのフローを作成します
 
 ![IDをメモする](images/chapxx-gaomar/s118.png)
 
-### Lambda関数を作成しよう！
+### Lambda関数を作成しよう
 Voiceflow側から送られてくる身長と体重データを計算して結果をAmazon Connectに知らせる処理を実装していきます。
 
 #### Lambda関数を作成する
@@ -232,7 +232,7 @@ Voiceflow-AmazonConnect-Roleロールを表示をクリックします。
 ![ポリシー名を入力](images/chapxx-gaomar/s137.png)
 
 #### プログラムを書き込む
-index.jsを開きます。既存ソースはすべて削除して、下記プログラムをコピペしてください。
+index.jsを開きます。既存ソースはすべて削除して、下記プログラムをコピー&ペーストしてください。
 Voiceflowからリクエストが飛んでくるので、bodyから対象値を取得します。
 
 ```javascript
@@ -263,7 +263,7 @@ exports.handler = async (event) => {
 
 ![新規ファイル作成](images/chapxx-gaomar/s150.png)
 
-下記コードをコピペしてください。
+下記コードをコピー&ペーストしてください。
 
 ```javascript
 'use strict';
@@ -319,7 +319,7 @@ VoiceflowからアクセスするためのURLを発行します。
 
 ![トリガーの設定](images/chapxx-gaomar/s154.png)
 
-APIエンドポイントのURLをメモしておきましょう
+APIエンドポイントのURLをメモしておきましょう。
 
 ![APIのURLをメモする](images/chapxx-gaomar/s155.png)
 
@@ -327,53 +327,53 @@ APIエンドポイントのURLをメモしておきましょう
 
 ![保存をクリック](images/chapxx-gaomar/s156.png)
 
-## Voiceflowを設定しよう！
+## Voiceflowを設定しよう
 ここからVoicelflowで設定を行います。Voiceflowにアクセスしてログインしてください。@<br>{}
 
 [https://www.voiceflow.com/](https://www.voiceflow.com/)
 
 ### プロジェクトを作成する
-Voiceflowのプロジェクトを作成していきます。こちらもGUI画面で簡単に作成することができます。
+Voiceflowのプロジェクトを作成していきます。こちらもGUI画面で簡単に作成できます。
 
 #### 新規プロジェクト作成
 ログインしたら［New Project］ボタンをクリックします。
 
 ![New Projectをクリック](images/chapxx-gaomar/s200.png)
 
-プロジェクト名を入力します。今回は `VoiceflowBMI` としました。Englishのチェックは外して、Japanese(JP)にチェックを入れます。最後に［Create Project］ボタンをクリックします。
+プロジェクト名を入力します。今回は `VoiceflowBMI` としました。Englishのチェックは外して、Japanese（JP）にチェックを入れます。最後に［Create Project］ボタンをクリックします。
 
 ![プロジェクトの設定をする](images/chapxx-gaomar/s201.png)
 
-`Speak` ブロックをドラッグアンドドロップして、Alexaに発話してもらう言葉を入力します。まずは利用者の身長を聞きたいので、「BMIを測定します。身長をセンチでお答えください。」と入力します。
+`Speak` ブロックをドラッグ&ドロップして、Alexaに発話してもらう言葉を入力します。まずは利用者の身長を聞きたいので、「BMIを測定します。身長をセンチでお答えください。」と入力します。
 
 ![身長を答えてもらう言葉を登録する](images/chapxx-gaomar/s202.png)
 
-ブロックを線で繋ぎます。
+ブロックを線でつなぎます。
 ![線でつなぐ](images/chapxx-gaomar/s203.png)
 
-身長と体重の値をそれぞれ変数に格納したいので、変数名を登録します。 `height` と `weight` と `res` をそれぞれ登録します。
+身長と体重の値をそれぞれ変数に格納したいので、変数名を登録します。 `height` 、 `weight` 、 `res` をそれぞれ登録します。
 
 ![変数を追加する](images/chapxx-gaomar/s204.png)
 
-Logicカテゴリにある `Capture` ブロックをドラッグアンドドロップします。 `Speak` ブロックと線で繋いで、 Input Typeは数字を手に入れたいので `FourDigitNumber` を選択します。 Capture Input toには 作った変数 `{height}` に格納したいので、格納する変数名を指定します。
+Logicカテゴリにある `Capture` ブロックをドラッグ&ドロップします。 `Speak` ブロックと線でつないで、 Input Typeは数字を手に入れたいので `FourDigitNumber` を選択します。 Capture Input toには 作った変数 `{height}` に格納したいので、格納する変数名を指定します。
 
 ![heightに値を入れる](images/chapxx-gaomar/s205.png)
 
-`Speak` ブロックをドラッグアンドドロップして線で繋ぎます。続いて体重を聞きたいので、「続いて体重をキログラムでお答えください。」と入力します。
+`Speak` ブロックをドラッグ&ドロップして線でつなぎます。続いて体重を聞きたいので、「続いて体重をキログラムでお答えください。」と入力します。
 
 ![体重を答えてもらう言葉を登録する](images/chapxx-gaomar/s206.png)
 
-Logicカテゴリにある `Capture` ブロックをドラッグアンドドロップします。 身長と同様に `FourDigitNumber` を選択します。 Capture Input toには 作った変数 `{weight}` に格納したいので、格納する変数名を指定します。
+Logicカテゴリにある `Capture` ブロックをドラッグ&ドロップします。 身長と同様に `FourDigitNumber` を選択します。 Capture Input toには 作った変数 `{weight}` に格納したいので、格納する変数名を指定します。
 
 ![weightに値を入れる](images/chapxx-gaomar/s207.png)
 
-Advancedカテゴリにある `Integrations` ブロックをドラッグアンドドロップします。 `Capture` と線で繋いで Request URLにAPI Gatewayで発行されたURLを貼り付けます。メソッドは必ず `POST` を選択します。 Paramsタグをクリックして、渡すパラメータを設定します。
+Advancedカテゴリにある `Integrations` ブロックをドラッグ&ドロップします。 `Capture` と線でつないで Request URLにAPI Gatewayで発行されたURLを貼り付けます。メソッドは必ず `POST` を選択します。 Paramsタグをクリックして、渡すパラメータを設定します。
 
 Entry Parameter key部分に身長と体重のパラメータを設定します。 `height` と `weight` をそれぞれKeyとValueに設定します。APIからの結果を格納するので、Transform info VariablesのEnter Object path部分に `response` と入力して、 変数名 `res` を選択します。
 
 ![KeyとValueにパラメータ設定](images/chapxx-gaomar/s208.png)
 
-`Speak` ブロックをドラッグアンドドロップして、上側を線で繋ぎます。変数 `res` の内容を発話してもらうために、変数名 `res` を入力します。
+`Speak` ブロックをドラッグ&ドロップして、上側を線でつなぎます。変数 `res` の内容を発話してもらうために、変数名 `res` を入力します。
 
 ![API成功時はresが発話される](images/chapxx-gaomar/s209.png)
 
@@ -381,8 +381,8 @@ API Gatewayで何らかのエラー発生時の文言を入力します。
 
 ![エラー時の文言を入力](images/chapxx-gaomar/s210.png)
 
-スキルを終了させるためにAdvancedカテゴリの `Exit` ブロックをドラッグアンドドロップします。
-上下のブロックを繋げます。
+スキルを終了させるためにAdvancedカテゴリの `Exit` ブロックをドラッグ&ドロップします。
+上下のブロックをつなげます。
 
 ![終了ブロックを設定](images/chapxx-gaomar/s211.png)
 
@@ -399,5 +399,5 @@ alexa developer console画面が表示されるので、 「voiceflowbmiをひ�
 
 ![BMI測定結果が電話でかかってくる](images/chapxx-gaomar/s214.png)
 
-Voiceflowを使えばAmazon Connectの連携もあっという間に実装することができました。いろんな連携を試して皆さんで一緒に「がおって」みましょう！
+Voiceflowを使えばAmazon Connectの連携もあっという間に実装できました。いろんな連携を試して皆さんで一緒に「がおって」みましょう。
 
