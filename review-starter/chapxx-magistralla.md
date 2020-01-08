@@ -143,8 +143,8 @@ VoiceUIだからといって入力も出力も音声にする必要はありま�
 ### 同じ意味の言葉をまとめる
 スロット
 
-![スロット](images/chapxx-magistralla/スロット1.png)
-![スロット](images/chapxx-magistralla/スロット2.png)
+![スロット](images/chapxx-magistralla/slot1.png)
+![スロット](images/chapxx-magistralla/slot2.png)
 
 
 ### 使われる日付、時間を気にする
@@ -165,8 +165,8 @@ https://forum.voiceflow.com/t/getting-the-users-time-zone-in-your-skill/314
 1. Alexa:[月・水]明日はピアノもありますね。
 1. Alexa:明日も頑張りましょう。
 
-![曜日](images/chapxx-magistralla/ベース.png)
-![曜日](images/chapxx-magistralla/曜日.png)
+![曜日](images/chapxx-magistralla/weekday1.png)
+![曜日](images/chapxx-magistralla/weekday2.png)
 
 ### 音を鳴らす
 クイズ番組の”正解／不正解の音”のように、効果的に音を鳴らすことでユーザーの体験を向上させることができます。効果音というやつです。  
@@ -176,7 +176,7 @@ Voiceflowでは、2つの方法で効果音を鳴らすことができます。
 
 あらかじめ用意されている効果音は、AmazonおよびGoogleがサウンドライブラリとして、それぞれAmazon Alexa用、Googleアシスタント用に用意されています。  
 
-![Alexa Skills Kitサウンドライブラリ](images/chapxx-magistralla/soundlib.png)
+![Alexa Skills Kitサウンドライブラリ](images/chapxx-magistralla/soundlib-a.png)
 
 [Alexa Skills Kitサウンドライブラリ](https://developer.amazon.com/ja-JP/docs/alexa/custom-skills/ask-soundlibrary.html)
 
@@ -199,8 +199,8 @@ Voiceflowでは、2つの方法で効果音を鳴らすことができます。
 1. Alexa:[月・水]明日はピアノもありますね。
 1. Alexa:明日も頑張りましょう。
 
-![サウンド](images/chapxx-magistralla/サウンド1.png)
-![サウンド](images/chapxx-magistralla/サウンド2.png)
+![サウンド](images/chapxx-magistralla/soundlib1.png)
+![サウンド](images/chapxx-magistralla/soundlib2.png)
 
 ### Alexaのセリフに抑揚や強弱をつける
 
