@@ -6,6 +6,8 @@ VoiceflowのGoogleスプレッドシート連携機能を使うと、普段お�
 
 最初に、VoiceflowのGoogleスプレッドシート連携の基本的な使い方を学びつつ、シートからランダムにデータを取り出すというのをやってみましょう。サンプルとして、Googleスプレッドシートに登録してあるオススメのレシピとその材料をランダムに教えてくれるスキルを作っていきたいと思います。
 
+### スプレッドシートの作成と、スキルの基本部分の作成
+
 最初に、お持ちのGoogleアカウントでGoogleスプレッドシートにログインし、以下のようなスプレッドシートを作成してください。
 
 ![Googleスプレッドシート上のレシピデータ](images/chapxx-kun432/s009.png)
@@ -18,14 +20,16 @@ VoiceflowのGoogleスプレッドシート連携機能を使うと、普段お�
 
 次に、Voiceflow側で以下のようなプロジェクトを作成して、ブロックを配置してください。
 
-![プロジェクト](images/chapxx-kun432/s009.png)
+![プロジェクト](images/chapxx-kun432/s000.png)
 
 - プロジェクト名は「我が家のレシピ」とします。言語は「Japanese(ja-JP)」のみを選択してください。
 - プロジェクトが作成されたら、Speakブロックを1つ配置し、HomeブロックのStartと線でつなげます。
 - Speakブロックの中は以下を入力してください。最後の```<audio src=・・・```のところは、Alexa Skills Kitサウンドライブラリを使って音楽を流すようにしています。
-```
-我が家のレシピスキルにようこそ。このスキルではおすすめのレシピをランダムに教えるよ。今日のおすすめは、<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_intro_01"/>
-```
+  ```
+  我が家のレシピスキルにようこそ。このスキルではおすすめのレシピをランダムに教えるよ。今日のおすすめは、<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_intro_01"/>
+  ```
+
+### Googleスプレッドシートとの連携を行う「Integrationブロック」
 
 Googleスプレッドシートとの連携は「Integrationブロック」を使います。左のBlocksメニューにあるAdvancedから、Integrationブロックをドラッグ・アンド・ドロップでSpeakブロックの右側に配置して、線でつないでください。
 
@@ -72,10 +76,41 @@ Googleアカウントの選択画面が表示されますので、Googleスプ�
 
 ![Integrationブロックの設定⑨](images/chapxx-kun432/s011.png)
 
-スプレッドシートの選択が完了すると、「With Settings」が表示されます。ここは後で説明しますので、とりあえず左側の「Column」にリストから「Row Number」を選択してください。右側の「Value to Match」は何も入力せずに「Next」をクリックします。
+スプレッドシートの選択が完了すると、「With Settings」が表示されます。ここは、あとで説明しますので、とりあえず左側の「Column」にリストから「Row Number」を選択してください。右側の「Value to Match」は何も入力せずに「Next」をクリックします。
 
 ![Integrationブロックの設定⑩](images/chapxx-kun432/s035.png)
 
+「Mapping Output」のところも、あとで設定しますのでそのまま「Next」をクリックします。
+
+![Integrationブロックの設定⑪](images/chapxx-kun432/s036.png)
+
+「Test Integration」では、実際にGoogleスプレッドシートへの接続テストが行えます。「Test Integration」をクリックしてください。
+
+![Integrationブロックの設定⑫](images/chapxx-kun432/s037.png)
+
+「Test Integration」の下に、スプレッドシート内に記載されているレシピ名と材料名が表示されていれば成功です。何度か「Test Integration」をクリックして、結果がランダムに変わることを確認してください。
+
+![Integrationブロックの設定⑬](images/chapxx-kun432/s014.png)
+
+### 変数を使ってスプレッドシートのデータをスキル内で使用する
+
+Googleスプレッドシートとの連携はできましたが、まだスキルからは呼び出せません。スプレッドシートから取得したデータをスキルで使用するには、「変数」を使う必要があります。最初に変数を作成しましょう。
+
+変数の作成は「Variablesメニュー」から行います。画面の一番左、縦に3つ並んでいるアイコンの中から、一番下のアイコンをクリックしてください。
+
+![Variablesメニューへの切り替え](images/chapxx-kun432/s016.png)
+
+今まで表示されていた「Blocksメニュー」から表示が切り替わりました。これが「Variablesメニュー」です。「Create Variable」と書いてあるすぐ下の入力フォームに変数名を入力してENTERキーを押すと変数が作成されます。まず```varName```と入力してENTERキーを押してください。
+
+![変数名の入力](images/chapxx-kun432/s038.png)
+
+入力欄のすぐ下に表示されている```{sessions}```等の最後に```varName```が表示されていれば、変数の作成成功です。同様に、```varContent```という変数も作成してください。
+
+![変数varNameの作成完了](images/chapxx-kun432/s039.png)
+
+以下のように2つの変数が作成されていればOKです。一番左の3つのアイコンの、一番上のアイコンをクリックして「Blocksメニュー」に戻りましょう。
+
+![変数の作成完了とBloksメニューへの切り替え](images/chapxx-kun432/s041.png)
 
 ## Googleスプレッドシートを使う場合の注意
 
@@ -90,8 +125,6 @@ Googleアカウントの選択画面が表示されますので、Googleスプ�
 
 - Airtable (@<href>{https://airtable.com/})
 - Firebase (@<href>{https://firebase.google.com/})
-
-また、これらの使い方について
 
 ## まとめ
 
@@ -124,3 +157,4 @@ Voiceflowでは物足りない場合、
 
 - 「Voiceflow TIPS #35 Firebase RealtimeDatabaseでデータを管理する」@<br>{}
 (@<href>{https://kun432.hatenablog.com/entry/voiceflow\_tips\_35\_integration\_with\_firebase\_realtime\_database})
+
