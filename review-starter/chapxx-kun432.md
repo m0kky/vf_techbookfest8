@@ -8,7 +8,7 @@ VoiceflowのGoogleスプレッドシート連携機能を使うと、普段お�
 
 最初に、お持ちのGoogleアカウントでGoogleスプレッドシートにログインし、以下のようなスプレッドシートを作成してください。
 
-|![Googleスプレッドシート上のレシピデータ](images/chapxx-kun432/s009.png)|:-:|
+![Googleスプレッドシート上のレシピデータ](images/chapxx-kun432/s009.png)
 
 - スプレッドシート名は「我が家のレシピデータ」とします。
 - シート名（下のタブ）は「レシピ一覧」とします。
@@ -116,8 +116,10 @@ Googleアカウントの選択画面が表示されますので、Googleスプ�
 
 2019年のAlexaスキルハッカソン大阪で話題になっていた、がおまるさん（@gaomar）の「ゼロカロリースキル」をGoogleスプレッドシート連携だけで作るというものです。データベースの基本となる、一連のCRUD操作（Create:登録、 Retrieve:参照、Update:更新、Delete:削除）を4回に分けて紹介しています。
 
-- 「Voiceflow TIPS #29 Airtableと組み合わせて、もっとデータベースらしく」@<br>{}(@<href>{https://kun432.hatenablog.com/entry/voiceflow_tips_29_integration_with_airtable})
+- 「Voiceflow TIPS #29 Airtableと組み合わせて、もっとデータベースらしく」@<br>{}
+(@<href>{https://kun432.hatenablog.com/entry/voiceflow_tips_29_integration_with_airtable})
 
 Voiceflowでは物足りない場合、
 
-- 「Voiceflow TIPS #35 Firebase RealtimeDatabaseでデータを管理する」@<br>{}(@<href>{https://kun432.hatenablog.com/entry/voiceflow_tips_35_integration_with_firebase_realtime_database})
+- 「Voiceflow TIPS #35 Firebase RealtimeDatabaseでデータを管理する」@<br>{}
+(@<href>{https://kun432.hatenablog.com/entry/voiceflow_tips_35_integration_with_firebase_realtime_database})
