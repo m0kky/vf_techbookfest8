@@ -8,7 +8,7 @@ VoiceflowのGoogleスプレッドシート連携機能を使うと、普段お�
 
 最初に、お持ちのGoogleアカウントでGoogleスプレッドシートにログインし、以下のようなスプレッドシートを作成してください。
 
-![Googleスプレッドシート上のレシピデータ](images/chapxx-kun432/s009.png)
+|![Googleスプレッドシート上のレシピデータ](images/chapxx-kun432/s009.png)|:-:|
 
 - スプレッドシート名は「我が家のレシピデータ」とします。
 - シート名（下のタブ）は「レシピ一覧」とします。
@@ -101,23 +101,23 @@ Googleアカウントの選択画面が表示されますので、Googleスプ�
 私のブログでいくつかGoogleスプレッドシート関連のチュートリアル的な記事を書いていますのでご紹介します。よろしければご覧ください。
 
 「Voiceflow Tips #7 Googleスプレッドシート連携で作る豆知識スキル」@<br>{}
-(@<href>|https://kun432.hatenablog.com/entry/voiceflow_tips_7_fact_skill_integrated_with_google_sheets|)
+(@<href>{https://kun432.hatenablog.com/entry/voiceflow_tips_7_fact_skill_integrated_with_google_sheets})
 
 初歩のAlexaスキル開発のサンプルとしてもよく取り上げられている「豆知識」スキルをGoogleスプレッドシートと連携させて作ります。Googleスプレッドシート側に豆知識の「ネタ」をたくさん登録しておいて、ランダムに呼び出すというものです。
 
 - 「Voiceflow Tips #12 Googleスプレッドシート連携で作るゼロカロリースキル 〜スプレッドシートの検索〜」@<br>{}
-(@<href>|https://kun432.hatenablog.com/entry/voiceflow_tips_12_retrieve_from_google_spreadsheet|)
+(@<href>{https://kun432.hatenablog.com/entry/voiceflow_tips_12_retrieve_from_google_spreadsheet})
 - 「Voiceflow Tips #14 Googleスプレッドシート連携で作るゼロカロリースキル 〜スプレッドシートへの登録〜」@<br>{}
-(@<href>|https://kun432.hatenablog.com/entry/voiceflow_tips_14_insert_data_into_google_sheets|)
+(@<href>{https://kun432.hatenablog.com/entry/voiceflow_tips_14_insert_data_into_google_sheets})
 - 「Voiceflow Tips #18 Googleスプレッドシート連携で作るゼロカロリースキル 〜スプレッドシートの更新〜」@<br>{}
-(@<href>|https://kun432.hatenablog.com/entry/voiceflow_tips_18_update_data_with_google_sheets|)
+(@<href>{https://kun432.hatenablog.com/entry/voiceflow_tips_18_update_data_with_google_sheets})
 - 「Voiceflow Tips #19 Googleスプレッドシート連携で作るゼロカロリースキル 〜スプレッドシートの削除〜」@<br>{}
-(@<href>|https://kun432.hatenablog.com/entry/voiceflow_tips_19_delete_data_with_google_sheets|)
+(@<href>{https://kun432.hatenablog.com/entry/voiceflow_tips_19_delete_data_with_google_sheets})
 
 2019年のAlexaスキルハッカソン大阪で話題になっていた、がおまるさん（@gaomar）の「ゼロカロリースキル」をGoogleスプレッドシート連携だけで作るというものです。データベースの基本となる、一連のCRUD操作（Create:登録、 Retrieve:参照、Update:更新、Delete:削除）を4回に分けて紹介しています。
 
-- 「Voiceflow TIPS #29 Airtableと組み合わせて、もっとデータベースらしく」@<br>{}(@<href>|https://kun432.hatenablog.com/entry/voiceflow_tips_29_integration_with_airtable|)
+- 「Voiceflow TIPS #29 Airtableと組み合わせて、もっとデータベースらしく」@<br>{}(@<href>{https://kun432.hatenablog.com/entry/voiceflow_tips_29_integration_with_airtable})
 
 Voiceflowでは物足りない場合、
 
-- 「Voiceflow TIPS #35 Firebase RealtimeDatabaseでデータを管理する」@<br>{}(@<href>|https://kun432.hatenablog.com/entry/voiceflow_tips_35_integration_with_firebase_realtime_database|)
+- 「Voiceflow TIPS #35 Firebase RealtimeDatabaseでデータを管理する」@<br>{}(@<href>{https://kun432.hatenablog.com/entry/voiceflow_tips_35_integration_with_firebase_realtime_database})
