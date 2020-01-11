@@ -39,7 +39,7 @@ aaa
 
 ## Blueprintsという選択肢も！
 
-![Blueprintsホーム画面](./images/chapxx-fukumura-kaigo/blueprints1.png)
+![Blueprintsホーム画面](images/chapxx-fukumura-kaigo/blueprints1.png)
 
 
 
