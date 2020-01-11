@@ -3,13 +3,13 @@
 Nature Remo Miniなどのスマートハブは便利ですが、買うと結構高いので、家にあったM5Stackを使って自作してみます。M5Stack用の赤外線送受信ユニット（308円）だけは買い足しました。
 IoTに使えるいろんなテクを寄せ集めていますので、何かのヒントになると幸いです。
 
-### この章でやること
+### 本章でやること
 
 * M5Stackで赤外線リモコン作成
-* AdafruitのMQTTブローカーの設定
+* AdafruitのMQTTブローカの設定
 * IFTTTでMQTTの簡易パブリッシャーを作る
 * VoiceflowでActions On Googleを作成
-* 全部を繋げて動作確認
+* 全部をつなげて動作確認
 * * Google HomeからActions On Googleを呼び出し、MQTTでM5Stackへメッセージ送信し、M5STackは赤外線で家電を操作
 
 
@@ -26,7 +26,7 @@ IoTに使えるいろんなテクを寄せ集めていますので、何かの�
 * * VSCode
 * * Arduino IDE 1.8.9
 * * Google Home mini
-* * Android/iPhone の「Googleアシスタント」アプリ
+* * Android/iPhone の「Googleアシスタント」アプリケーション
 
 注1　MacとM5Stackをつなぐ時、M5Stackに付属のUSB Type-Cケーブルを使わないと認識しないことが多いので、なくさないよう大切に保管しておきましょう。
 
@@ -65,14 +65,11 @@ const uint16_t kRecvPin = 14;
 const uint16_t kRecvPin = 22;
 ```
 
-参考）https://www.switch-science.com/catalog/5699/
-回路図に、GroveのI
-
 ツール＞ボード＞「M5Stack-Core-ESP32」を選択しておきます。
 
 ツール＞シリアルポート＞「devほにゃららUSBほにゃらら」を選択します。
 
-「→」をクリックで書き込みします。
+「→」をクリックして、M5Stackに書き込みします。
 
 ```
 Leaving...
@@ -84,10 +81,10 @@ Hard resetting via RTS pin...
 
 「IRrecvDumpV2 is now running and waiting for IR input on Pin 22」というメッセージが出ていたら、ちゃんとシリアル出力できています。
 
-では、エアコンなどのリモコンを構えて、赤外線ユニットの20〜30センチ以内で、リモコンの操作をしてみましょう。
+では、エアコンなどのリモコンを構えて、赤外線ユニットの20〜30センチ以内でリモコンを操作してみましょう。
 
-オンとオフの二回、操作したところです。
-ここに画像：s021.png
+オンとオフの2回、操作したところです。
+ここに画像：s021.png。
 
 
 シリアルモニタにコードが出力されたら、全文コピーして、メモ帳などに保存しておきます。
