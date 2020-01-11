@@ -13,13 +13,17 @@
 
 ## 意識しよう
 ### エンゲージメントとは
-業界によって様々な解釈があるようですが、ざっくり言うと親近感・愛着・思い入れといった「繋がり」のことです。
+エンゲージメントとは、ざっくり言うと親近感・愛着・思い入れといった「繋がり」のことです。
 
 エンゲージメントを高めるには、”スキルを使う人はどんな人か”、”スキルを使ったら何が嬉しいのか”を考えてたうえでスキルを作る必要があります。
 ユーザーを深く知る（具体的に定義する）ために、「ペルソナ」というツールを使います。
 
+//embed[latex]{
+\clearpage
+//}
+
 ### ペルソナとは
-サービスにとって最も典型的なユーザー像のことです。  
+ペルソナとは、サービスにとって最も典型的なユーザー像のことです。  
 ユーザー像を具体的にして、ユーザーにフィットさせることで、より満足度の高いサービスを提供できるようになります。  
 あまり深く考える必要はありません。  
 専門的なことを知らずにスキル開発できるのがVoiceflowの強みですので、「ある人専用のスキルを作るために、ある人がどんな人かイメージを固める」という捉え方で良いです。
@@ -46,20 +50,24 @@
 
 ![長女と次女のペルソナ](images/chapxx-magistralla/persona1.png)
 
+//embed[latex]{
+\clearpage
+//}
+
 あっさりめですが、それぞれのペルソナに沿った時間割のスキルを考えていくと
 
 - 長女は、もうすぐ小学四年生であることから、自分で翌日の準備ができることが想像できるので「準備ができた後に、確認をしてあげるスキル」
-- 次女は、まだ小学一年生であることから、一人で翌日の準備をすることが難しいので「一緒に準備を進めてあげるスキル」
+- 次女は、まだ入学前であることから、一人で翌日の準備をすることに不慣れなので「一緒に準備を進めてあげるスキル」
 
 が喜ばれそうです。
 
-このように、たったこれだけを整理するだけで、同じ小学生を対象にしたスキルであっても求められるものに違い出ることがわかります。
+このように、ユーザーについて整理をすると、同じテーマのスキルであっても求められるものに違い出ることがわかります。
 
 ### UIの検討
 次にそのスキルのUIについて検討をします。  
-VoiceUIで作るつもりでいましたが、このタイミングで本当にその必要があるかも考えて下さい。  
-また、VoiceUIだからといって入力も出力も音声にする必要はありません。既存のUIと組み合わせることも可能なので、ユーザーの体験向上に一番効果の高いものを選択しましょう。  
-ユーザーの利用シーンをイメージして下さい。スキルが下記の表のどのタイプなのか考えみましょう。
+VoiceUIありきで考え始めましたが、このタイミングで本当にその必要があるかを考えて下さい。  
+その際に入力も出力も音声で検討する必要はありません。既存のUIと組み合わせることも可能なので、ユーザーの体験向上に一番効果の高いものを選択しましょう。  
+ユーザーの利用シーンをイメージして下さい。スキルがどのタイプなのか考えみましょう。
 
 ![UIの組み合わせ](images/chapxx-magistralla/type1.png)
 
@@ -69,6 +77,10 @@ VoiceUIで作るつもりでいましたが、このタイミングで本当に�
 - ランドセルの中の教科書を出し入れするため両手が使えない
 
 したがって、入出力ともに音声のタイプAが適していると考えました。
+
+//embed[latex]{
+\clearpage
+//}
 
 ### 会話フローと内容
 ペルソナを設定したことで、それぞれの状況や課題が明確になり、長女と次女で会話や内容を変える必要があることが分かりました。  
@@ -86,6 +98,10 @@ VoiceUIで作るつもりでいましたが、このタイミングで本当に�
 
 ![次女用の会話フロー](images/chapxx-magistralla/suzu01.png)
 
+//embed[latex]{
+\clearpage
+//}
+
 ### Voiceflowでスキル作成
 テーマも会話フローも同じですが、会話内容はそれぞれに特化した内容になっており、エンゲージメントが
 この会話フローがスキルの設計書になります。この設計書に沿ってVoiceflowでスキルを作ってみましょう。
@@ -97,69 +113,107 @@ VoiceUIで作るつもりでいましたが、このタイミングで本当に�
 
 ![会話フローをVoiceflowで実装](images/chapxx-magistralla/base.png)
 
+//embed[latex]{
+\clearpage
+//}
+
 ## よりエンゲージメントをあげるために
 たったこれだけでも、既にその子専用のスキルになっていますが、もっとエンゲージメントをあげてみましょう。  
 
 ### シノニム
 同義語を登録します。  
-通常の会話では「YES」と「はい」などを同義語として無意識に扱っていると思います。しかし、作ったスキルは、ユーザーが発した言葉が期待したものと同義かどうかを自動判別してくれません。
-スキルを使う中で、同義のものを異なるものと判断されると、改めて言い直すなどストレスを感じてしまいます。  
+人間同士の会話では、無意識に「はい」と「YES」を同義語として認識しますが、アシスタントは、同義語かどうかを判別してくれません。同義のものを異なるものと判断されると、あらためて言い直すなどユーザーはストレスを感じてしまいます。  
 そこで、ユーザーが言いそうな同義語（言い間違えも含めて）を登録し、スムーズな会話となるようにします。
 
 例題では、準備ができたかを回答している「できました」に同義語を登録していきます。
 
 ![発話とブロック](images/chapxx-magistralla/suzu03.png)
 
-![シノニム](images/chapxx-magistralla/slot1.png)
-![シノニム](images/chapxx-magistralla/slot2.png)
+![シノニム](images/chapxx-magistralla/synonym.png)
+
+これで「準備はできましたか？」の問いに対して、「できました」「できた」「はい」「うん」と答えることができるようになりました。
+
+//embed[latex]{
+\clearpage
+//}
 
 ### 日時の情報
-スキルが使われる日付から曜日を求めたり、時間を求めることができます。  
+スキルが使われた日付を求めたり曜日を求めることができます。  
 上記ができると、次のような使い方もできるようになり、ユーザーの予定に合わせた会話が可能になります。
-- 曜日や時間帯毎にメッセージを変える
+
+- 曜日や時間帯に合わせてメッセージを変える
 - 誕生日など特別な日にメッセージを変える
 
 例題では、習いごとの前日は、ピアノを応援するメッセージを追加で言うようにします。  
 「code」ブロックと「if」ブロックを使います。  
 「code」ブロックの使い方は、Voiceflow公式のフォーラムに丁寧に乗っていますので参考にしてください。  
+
 https://forum.voiceflow.com/t/getting-the-users-time-zone-in-your-skill/314
 
 ![発話とブロック](images/chapxx-magistralla/suzu04.png)
 
-![曜日](images/chapxx-magistralla/weekday2.png)
+![曜日](images/chapxx-magistralla/weekday.png)
+
+これで、ピアノの前日に「明日はピアノですね」と伝えることができるようになりました。
+
+//embed[latex]{
+\clearpage
+//}
 
 ### SSML
 ベンダー毎にサポートされているタグが異なったり、独自のタグがある
+
 - alexa
+  - https://developer.amazon.com/ja-JP/docs/alexa/custom-skills/speech-synthesis-markup-language-ssml-reference.html
 - google
+  - https://cloud.google.com/text-to-speech/docs/ssml?hl=ja
+
+//embed[latex]{
+\clearpage
+//}
 
 #### サウンドライブラリ
-クイズ番組の”正解／不正解の音”のように、効果的に音を鳴らすことでユーザーの体験を向上させることができます。いわゆる効果音というものです。  
+効果音を鳴らすことができます。
+クイズ番組の”正解／不正解の音”のように、効果的に音を鳴らすことでユーザーの体験を向上させることができます。  
 Voiceflowでは、2つの方法で効果音を鳴らすことができます。  
 ひとつは、自身で音声ファイルをアップロードし鳴らす方法、もうひとつは、ベンダーが用意している音声ファイルを鳴らす方法です。  
 ベンダーが用意している音声ファイルとは、それぞれのベンダーがサウンドライブラリとしてスキル用に公開しているもので自由に使うことができます。
 
-例題では、ベンダーが用意している音声ファイルを使って効果音を鳴らします。
+- Alexa Skills Kitサウンドライブラリ
+  - https://developer.amazon.com/ja-JP/docs/alexa/custom-skills/ask-soundlibrary.html
+- Google Assistant Sound Library
+  - https://developers.google.com/assistant/tools/sound-library
+
+例題では、「準備はできましたか？」の問いに対して「できました」と回答した場合、ベンダーが用意している音声ファイルを使って効果音を鳴らします。  
+「speak」ブロックに`audio`を入力します。Alexaの場合、サウンドライブラリでタグのコピーが可能ですので、コピペします。
+
+```
+<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_positive_response_01"/>
+```
 
 ![発話とブロック](images/chapxx-magistralla/suzu05.png)
 
-![サウンド](images/chapxx-magistralla/soundlib1.png)
-![サウンド](images/chapxx-magistralla/soundlib2.png)
+![サウンド](images/chapxx-magistralla/soundlib.png)
 
-##### Alexa Skills Kitサウンドライブラリ
-https://developer.amazon.com/ja-JP/docs/alexa/custom-skills/ask-soundlibrary.html
+これで、正解をサウンドで伝えることができるようになりました。
 
-![Alexa Skills Kitサウンドライブラリ](images/chapxx-magistralla/soundlib-a.png)
-##### Google Assistant Sound Library
-https://developers.google.com/assistant/tools/sound-library
-![Google Assistant Sound Library](images/chapxx-magistralla/soundlib-g.png)
-
+//embed[latex]{
+\clearpage
+//}
 
 #### Speechcons
+
+- Alexa
+  - https://developer.amazon.com/ja-JP/docs/alexa/custom-skills/speechcon-reference-interjections-japanese.html
+
 
 例題では、最初のあいさつ「こんにちは」をSpeechconを使って発話させます。
 
 ![発話とブロック](images/chapxx-magistralla/suzu06.png)
+
+//embed[latex]{
+\clearpage
+//}
 
 ## おわりに
 他にもVoiceflowの機能を使うことで更にエンゲージメントを進めることが可能です。
