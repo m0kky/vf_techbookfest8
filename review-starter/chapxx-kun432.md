@@ -163,7 +163,11 @@ Speakブロックの設定は以下のように設定します。
 
 便利なGoogleスプレッドシート連携も
 
+//embed[latex]{
+\clearpage
+//}
 
+わはは
 
 
 
