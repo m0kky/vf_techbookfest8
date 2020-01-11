@@ -38,7 +38,8 @@ aaa
 * リスト項目3
 
 ## Blueprintsという選択肢も！
-
+Voiceflowdと同様にノンコーディングでAlexaスキルを開発する方法として、Blueprintsというものがあります。
+[https://blueprints.amazon.co.jp/](https://blueprints.amazon.co.jp/)にアクセスしてください。
 ![Blueprintsホーム画面](images/chapxx-fukumura-kaigo/blueprints1.png)
 
 
