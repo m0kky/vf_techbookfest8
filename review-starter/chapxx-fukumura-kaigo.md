@@ -49,19 +49,37 @@ Blueprintsは、あらかじめひな形となるテンプレートがあり、�
 * カスタムQ&A
 * トリビア
 
+### グリーティング系
 
-## VoiceflowとBlueprintsの比較
-前述したとおり、Blueprintsはあらかじめ用意されたテンプレートに沿ったスキルしか作成できません。
-言うまでもなく、自分の思い通りのスキルを作りたい場合は、Voiceflow一択です。
+![Blueprintsありがとう画面](images/chapxx-fukumura-kaigo/blueprints_arigato.png)
+
+### ランダムメッセージ系
+
+![Blueprintsお母さんありがとう画面](images/chapxx-fukumura-kaigo/blueprints_mother.png)
+
+### フラッシュカード
+
+![Blueprintsフラッシュカード画面](images/chapxx-fukumura-kaigo/blueprints_flashcard.png)
+
+### パーソナルトレーナー
+
+![Blueprintsパーソナルトレーナー画面](images/chapxx-fukumura-kaigo/blueprints_trainner.png)
+
+### ルーレット
+
+![Blueprintsルーレット画面](images/chapxx-fukumura-kaigo/blueprints_roulette.png)
+
+### カスタムQ&A
+
+![BlueprintsカスタムQ&A画面](images/chapxx-fukumura-kaigo/blueprints_qa.png)
+
+### トリビア
+
+![Blueprintsトリビア画面](images/chapxx-fukumura-kaigo/blueprints_trivia.png)
 
 
-変数を使えるかどうか
-
-
-
-## 非エンジニアでもVoiceflowでスキルを作ろう
-
-
-
-
-VUIは今後ますます身近なものになっていきます。そのVUIをノンコーディングで作れるVoiceflowで
+## 非エンジニアでもスキルを作ろう！
+これまで見たように、ノンコーディングでもスキルの開発は可能です。
+Blueprintsはあらかじめ用意されたテンプレートに沿ったスキルしか作成できない代わりに、非常に簡単にスキルを作成でき、VoiceflowはBlueprintsよりも、複雑になりますが、自由にスキルを作成できます。
+どちらか片方ではなく、VoiceflowとBlueprintsを適材適所で使用すればよいと思います。
+是非、スキル開発にチャレンジしてください！
