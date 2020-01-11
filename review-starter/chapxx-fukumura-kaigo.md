@@ -39,7 +39,9 @@ aaa
 
 ## Blueprintsという選択肢も！
 
-![Blueprintsホーム画面](images/chapxx-fukumura-kaigo/Blueprints1.png)
+![Blueprintsホーム画面](./images/chapxx-fukumura-kaigo/blueprints1.png)
+
+
 
 ## Blueprintsで出来ること出来ないこと
 
