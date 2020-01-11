@@ -34,7 +34,7 @@
 > - ユーザー視点の精度を高めることができる
 > - 時間、コストの削減ができる
 
-_ferretより。URL: https://ferret-plus.com/8116_
+ferretより。URL: https://ferret-plus.com/8116
 
 ## サンプルスキルの開発
 それでは、エンゲージメントを考えながらスキル開発をしていきましょう。  
@@ -51,6 +51,10 @@ _ferretより。URL: https://ferret-plus.com/8116_
 ここでは、同じテーマであっても求められるものに違いが出ることが分かるように、二人の小学生のペルソナを書いてみます。
 
 ![長女と次女のペルソナ](images/chapxx-magistralla/persona1.png)
+
+//embed[latex]{
+\clearpage
+//}
 
 あっさりめですが、それぞれのペルソナに沿った時間割のスキルを考えていくと
 
@@ -178,7 +182,7 @@ Voiceflowでは、2つの方法で効果音を鳴らすことができます。
   - https://developers.google.com/assistant/tools/sound-library
 
 例題では、「準備はできましたか？」の問いに対して「できました」と回答した場合、ベンダーが用意している音声ファイルを使って効果音を鳴らします。  
-「speak」ブロックに`audio`を入力します。Alexaの場合、サウンドライブラリでタグのコピーが可能ですので、コピペします。
+「speak」ブロックに`audio`タグを入力します。Alexaスキルの場合、サウンドライブラリでタグのコピーが可能ですので、コピペします。
 
 ```
 <audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_positive_response_01"/>
@@ -186,7 +190,7 @@ Voiceflowでは、2つの方法で効果音を鳴らすことができます。
 
 ![発話とブロック](images/chapxx-magistralla/suzu05.png)
 
-![サウンド](images/chapxx-magistralla/soundlib.png)
+![サウンドライブラリ](images/chapxx-magistralla/soundlib.png)
 
 これで、正解をサウンドで伝えることができるようになりました。
 
@@ -200,9 +204,18 @@ Voiceflowでは、2つの方法で効果音を鳴らすことができます。
   - https://developer.amazon.com/ja-JP/docs/alexa/custom-skills/speechcon-reference-interjections-japanese.html
 
 
-例題では、最初のあいさつ「こんにちは」をSpeechconを使って発話させます。
+例題では、最初のあいさつ「こんにちは」をSpeechconを使って発話させます。  
+「speak」ブロックに`say-as`タグ、属性`interpret-as="interjection"`を入力します。
+
+```
+<say-as interpret-as="interjection">こんにちは</say-as>
+```
 
 ![発話とブロック](images/chapxx-magistralla/suzu06.png)
+
+![Speechcon](images/chapxx-magistralla/speechcon.png)
+
+これで、「こんにちは」が表情豊かになりました。
 
 //embed[latex]{
 \clearpage
@@ -212,8 +225,8 @@ Voiceflowでは、2つの方法で効果音を鳴らすことができます。
 他にもVoiceflowの機能を使うことで更にエンゲージメントを進めることが可能です。
 
 - 会話フローにさらに分岐を追加する
-- Blocksメニューのuserカテゴリ「user info」を使う
-- Googleスプレッドシートから時間割情報を取得する
+- BlocksメニューのUserカテゴリ「user info」にてユーザー固有の情報を使う
+- BlocksメニューのAdvancedカテゴリ「Integrations」にて外部と連携する
 - 時間割が完了したら親にメールやSMS等で通知する
 
 本格的にパーソナライズする場合、もっと様々なことを考える必要があります。
