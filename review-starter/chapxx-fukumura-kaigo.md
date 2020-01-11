@@ -50,33 +50,39 @@ Blueprintsは、あらかじめひな形となるテンプレートがあり、�
 * トリビア
 
 ### グリーティング系
-
+第三者へのメッセージスキルです。
+第三者へのメッセージをテキストで入力したり、音声を録音、Echo Showなどのディスプレイへの画像を設定することができます。
 ![Blueprintsありがとう画面](images/chapxx-fukumura-kaigo/blueprints_arigato.png)
 
 ### ランダムメッセージ系
-
+グリーティング系と似ているのですが、あらかじめ複数のメッセージを登録しておき、それがランダムで選択されます。
 ![Blueprintsお母さんありがとう画面](images/chapxx-fukumura-kaigo/blueprints_mother.png)
 
 ### フラッシュカード
-
+学習用のスキルです。
+質問、回答、ヒントを入力します。
+テストをすることも可能です。
 ![Blueprintsフラッシュカード画面](images/chapxx-fukumura-kaigo/blueprints_flashcard.png)
 
 ### パーソナルトレーナー
-
+トレーニング用のスキルです。
+運動内容や秒数、応援メッセージを入力します。
 ![Blueprintsパーソナルトレーナー画面](images/chapxx-fukumura-kaigo/blueprints_trainner.png)
 
 ### ルーレット
-
+抽選用のスキルです。
+選択肢のリストを入力し、何かを決めるときに使えます。
 ![Blueprintsルーレット画面](images/chapxx-fukumura-kaigo/blueprints_roulette.png)
 
 ### カスタムQ&A
-
+Q&A形式のスキルです。
+忘れやすいような内容を入力しておいて、忘れたときに教えてもらうように使えます。
+唯一、本スキルだけは、スキル名を言う必要はありません。
 ![BlueprintsカスタムQ&A画面](images/chapxx-fukumura-kaigo/blueprints_qa.png)
 
 ### トリビア
-
+1～4人で、クイズができるスキルです。
 ![Blueprintsトリビア画面](images/chapxx-fukumura-kaigo/blueprints_trivia.png)
-
 
 ## 非エンジニアでもスキルを作ろう！
 これまで見たように、ノンコーディングでもスキルの開発は可能です。
