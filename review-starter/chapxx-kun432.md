@@ -185,7 +185,7 @@ Speakブロックの設定は以下のように設定します。
 
 ## 条件を指定してスプレッドシートのデータを取得する。
 
-では次に条件を指定しての検索をやってみましょう。ユーザになんのどのレシピを知りたいか？を聞いて、その発話を受け取ってスプレッドシートを検索してみたいと思います@<br>{}。
+では次に条件を指定しての検索をやってみましょう。ユーザになんのどのレシピを知りたいか？を聞いて、その発話を受け取ってスプレッドシートを検索してみたいと思います。@<br>{}
 
 ユーザの発話の受け取りが必要になりますので、少しフローを変更します。まず、変数を作りましょう。Variablesメニューに切り替えて、```varUserRecipe```という変数を作成してください。ここにユーザの発話したレシピ名が入ります。
 
@@ -208,7 +208,7 @@ Interactionブロックでインテント/サンプル発話/スロットを作�
 ![](images/chapxx-kun432/s073.png)
 
 - 「+Add Slots」をクリック
-- 「slot_one」という名前のスロットが追加されるので、```slot_recipe_name```に変更します。
+- 「slot\_one」という名前のスロットが追加されるので、```slot_recipe_name```に変更します。
 - 下の「Select Slot Type」から、今回はレシピ名＝食べ物の名前になるので「Food」を選択します。
 
 次にIntentsタブです。ここでインテントとサンプル発話を追加します。
@@ -216,7 +216,7 @@ Interactionブロックでインテント/サンプル発話/スロットを作�
 ![](images/chapxx-kun432/s074.png)
 
 - 「+Add intent」をクリック
-- 「intent_one」という名前のインテントが追加されるので、```intent_ask_recipe```に変更します。
+- 「intent\_one」という名前のインテントが追加されるので、```intent_ask_recipe```に変更します。
 - 下の「Enter user reply」に以下のサンプル発話を追加します。
 
 ```
@@ -234,11 +234,15 @@ Interactionブロックでインテント/サンプル発話/スロットを作�
 ![](images/chapxx-kun432/s075.png)
 
 - 「+Add Choice」をクリック
-- 「Select Intent」に「intent_ask_recipe」を選択します。
+- 「Select Intent」に```intent_ask_recipe```を選択します。
 - 「+Add Variable Map」をクリック
 - 左側の「Slot」は```[slot_recipe_name]```、右側の「Select Variable」は```{varUserRecipe}```をそれぞれ選択します。
 
-上のSpeakブロックは、Interactionブロックで設定したインテントに当てはまらない発話を受け取った場合に、もう一度聞き直すために使います。以下のように入力します。
+上のSpeakブロックは、Interactionブロックで設定したインテントに当てはまらない発話を受け取った場合に、もう一度聞き直すために使います。
+
+![](images/chapxx-kun432/s081.png)
+
+以下のように入力します。
 
 ```
 ごめんなさい、うまく聞き取れませんでした。例えば「ハンバーグのレシピが知りたい」という風に言ってみてください。
@@ -246,11 +250,13 @@ Interactionブロックでインテント/サンプル発話/スロットを作�
 
 これで発話を受け取る準備ができました。では、その発話をもとにスプレッドシートを検索するようにしてみましょう。Integrationブロックをクリックして、「With Settings」をクリックします。
 
+![](images/chapxx-kun432/s081.png)
+
 ランダムの場合は、左側は「Row Number」を選択して、右側の「Value to Match」は空にしていました。これを以下のように、左側は「recipe\_name」に、右側は```{varUserRecipe}```を入力します。これで「recipe\_name」カラムに変数```varUserRecipe```で発話したものを指定して検索ができるということです。逆にランダムの場合は「Row Number」を指定して「Next」をクリックします。
 
-「Mapping Output」はそのまま「Next」をクリックします。
+![](images/chapxx-kun432/s081.png)
 
-「Test Integration」をクリックします。
+「Mapping Output」はそのまま「Next」をクリックして、「Test Integration」に進み、「Test Integration」をクリックします。
 
 ランダムの場合とは変わった画面が出てきました。検索条件を変数で指定するとこのように変数の値を変えながらテストができます。試しに「カレーライス」と入力して「Run」をクリックしてみてください。
 
