@@ -378,6 +378,7 @@ WEBサイトやアプリから情報を引っ張ってくる必要があるス�
 アメリカのAlexaスキルマーケットで、現在非常に注目を集めている、「St.Noire」というボードゲームxAlexaで遊ぶミステリーゲームがあります。@<br>{}
 
 
+
 * St.Noireのボードゲーム
 
 https://www.amazon.com/St-Noire-Hosted-Cinematic-Exclusive/dp/B07P693BG1
@@ -386,6 +387,8 @@ https://www.amazon.com/St-Noire-Hosted-Cinematic-Exclusive/dp/B07P693BG1
 * St.NoireのAlexaスキル
 
 https://www.amazon.com/X2Games-St-Noire/dp/B07TM17G96
+
+![St.Noire](images/chapxx-vui-rie/stnoire.png)
 
 
 
@@ -545,7 +548,9 @@ Voiceflowでは、男性の声はTakumi、女性の声はMizukiをベースに�
 
 声優さんにどのような物語かというあらすじを頭に入れてもらうことと、その登場人物の性格や癖などは、別途お伝えする必要があります。@<br>{}
 
-台本の例も掲載しておきますね。
+台本のフォーマットも掲載しておきますね。
+
+![St.Noire](images/chapxx-vui-rie/daihon.png)
 
 
 
