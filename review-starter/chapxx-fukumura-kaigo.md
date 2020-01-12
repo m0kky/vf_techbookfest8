@@ -58,12 +58,21 @@ Blueprintsは、あらかじめひな形となるテンプレートがあり、�
 ### Blueprints(カスタムQ&A)
 Blueprintsホーム画面（[https://blueprints.amazon.co.jp/](https://blueprints.amazon.co.jp/)）で「カスタムQ&A」を選択し、「作成する」ボタンを押下します。
 
-![Blueprints新規作成画面](images/chapxx-fukumura-kaigo/blueprints_qa1.png)
+![BlueprintsカスタムQ&A新規作成](images/chapxx-fukumura-kaigo/blueprints_qa1.png)
 
-ああ
-あ
+初期表示として、デフォルトの質問と内容が表示されます。
+
+![BlueprintsカスタムQ&Aデフォルト](images/chapxx-fukumura-kaigo/blueprints_qa2.png)
+
+今回はデフォルトの内容は不要なので一旦削除します。
+
+![BlueprintsカスタムQ&Aクリア](images/chapxx-fukumura-kaigo/blueprints_qa3.png)
+
+ここから、「Q&Aを追加する」ボタンを押下して、緊急連絡先を教えてもらう際の、質問内容と回答を入力していきます。
 
 
+
+![BlueprintsカスタムQ&A入力](images/chapxx-fukumura-kaigo/blueprints_qa4.png)
 
 
 ### Voiceflow
