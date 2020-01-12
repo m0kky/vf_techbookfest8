@@ -137,96 +137,12 @@ Hard resetting via RTS pin...
 （他のメーカーについては、ググるといろいろ親切に解説してくださっているページがありますので、後ほど参考リンクを記載します。）
 
 * Arduino IDEの「ツール」→「ライブラリをインクルード」→「ライブラリを管理」→「IRsend」と入力し、表示されたライブラリをインストールします。
-* 「ファイル」→「新規ファイル」でスケッチエディタを開きます。
-* 以下をコピーしてArduino IDEのスケッチエディタに貼り付けてください。
+* 以下のURLに、私が書いたDaikinの赤外線リモコンを送信するコードが置いてありますので、アクセスしてください。
 
-
-Daikinの赤外線リモコンをトレースして、送信するコード
 https://github.com/sitopp/voiceflow_mqtt_M5StickC_IRremo-con/blob/master/M5StickC/IRsendDemo_DAIKIN.ino
-
 ※もしGithubで404が出た場合はGithubにログインしてください。（アカウントがない場合はまずは作ってからログインを。）
 
+* Arduino IDEの「ファイル」→「新規ファイル」でスケッチエディタを開きます。下敷き表示されたコードは削除してください。
+* IRsendDemo_DAIKIN.inoのコードをスケッチエディタに貼り付けてください。
+
 コードがここに
-
-
-* スケッチエディタ上で、赤外線のパターンを書き換えましょう。
-「uint8_t daikin_code[35]={}」の中身を、先ほど採取した赤外線のパターンの「uint8_t state[35] ={}」の中身で上書きをします。
-
-例）
-
-![](images/chapxx-sitopp/s024)
-↓上書きする
-![](images/chapxx-sitopp/s025)
-
-
-
-* スケッチエディタの左上にある「→」アイコンをクリックして、M5StickCに書き込みします。
-* ファイルの保存場所を聞かれるので、適当に指定します。
-* 書き込みにかかる時間、数十秒を待ちます。
-* スケッチエディタの下半分にインストールログがどどっと出力され、「Hard resetting via RTS pin...」メッセージが出たらインストール完了です。
-* USBケーブルを抜いて、M5StickCをエアコンの50cn以内に持って行きます。M5ボタンを押すと、エアコンがつきました。
-
-
-![](images/chapxx-sitopp/s023)
-
-
-**他のメーカーの場合**
-
-ありがたい事に、IRremoteESP8266ライブラリの作者のGithubにサンプルコードがあります。
-
-https://github.com/crankyoldgit/IRremoteESP8266
-
-しかしこれだけでは良くわからないかもしれません。
-
-2019年に、M5StickCで赤外線リモコンを作って技術ブログを書いた人が何人もいらっしゃったので、そちらを参考にすると、国内の主要メーカーのフォーマットはわかると思います。
-
-参考にさせていただいた神ブログをいくつかご紹介します。
-
-* NEC
-
-M5StickCでスマホから操作できる家電リモコンを作る
-https://elchika.com/article/218f5072-28a6-461c-a801-43390305f4cc/
-
-
-* 各種テレビメーカー　音量アップ＆ダウン
-
-M5StickC を赤外線リモコンにする
-https://kuratsuki.net/2019/07/
-
-
-
-
-
-## 2. AdafruitのMQTTブローカの設定
-
-* Adafruit（エイダフルート）https://io.adafruit.com/ にアクセスし、アカウントを作成します。
-* 「Actions」 → 「Create a New Dashboard」で、ダッシュボードを作成します。
-
-Name：voiceflowIRDev
-Description：開発用
-
-* 「Feeds」 → 「View All」 → 「Actions」 → 「Create a new feed」でFeedsを作成します。
-
-Name：daikin_onoff
-Description: Daikin 赤外線リモコン なりすまし用
-
-* 「Feeds」 → 「View All」→ 「daikin_onoff」 → 「Feed Info」
-「MQTT by Key」のところにMQTTのTopicが自動生成されていますので、メモ帳にコピーしておきます。
-
-![](images/chapxx-sitopp/s027.jpg)
-
-
-* MQTTブローカーのサーバー情報を調べておきます。
-
-https://io.adafruit.com/api/docs/mqtt.html#mqtt-connection-details
-
-Host	io.adafruit.com
-Secure (SSL) Port	8883
-Insecure Port	1883
-**MQTT over Websocket	443
-Username	Your Adafruit IO Username
-Password	Your Adafruit IO Key
-
-なおUsername/passwordは、「https://io.adafruit.com/」のユーザーアカウントではありません。
-ダッシュボードの右肩にある「AIO Key」をクリックすると閲覧できますので、メモ帳などに控えておきましょう。
-
