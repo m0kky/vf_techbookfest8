@@ -246,7 +246,7 @@ Capture block - Voiceflow Docs（英語）
 
 これで発話を受け取る準備ができました。では、その発話をもとにスプレッドシートを検索するようにしてみましょう。Integrationブロックをクリックして、「With Settings」をクリックします。
 
-ランダムの場合は、左側は「Row Number」を選択して、右側の「Value to Match」は空にしていました。これを以下のように、左側は「recipe_name」に、右側は```｛varUserRecipe｝```を入力します。これで「recipe_name」カラムに変数```varUserRecipe```で発話したものを指定して検索ができるということです。逆にランダムの場合は「Row Number」を指定して「Next」をクリックします。
+ランダムの場合は、左側は「Row Number」を選択して、右側の「Value to Match」は空にしていました。これを以下のように、左側は「recipe\_name」に、右側は```｛varUserRecipe｝```を入力します。これで「recipe\_name」カラムに変数```varUserRecipe```で発話したものを指定して検索ができるということです。逆にランダムの場合は「Row Number」を指定して「Next」をクリックします。
 
 「Mapping Output」はそのまま「Next」をクリックします。
 
