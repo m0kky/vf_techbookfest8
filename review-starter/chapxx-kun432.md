@@ -200,13 +200,13 @@ Speakブロックの設定は以下のように設定します。
 Interactionブロックでインテント/サンプル発話/スロットを作っていきます。Interactionブロックをクリックして、設定のSlotタブで以下のように設定してください。
 
 - 「+Add Slots」をクリック
-- ```slot_one```という名前のスロットが追加されるので、```slot\_recipe\_name```に変更します。
+- ```slot_one```という名前のスロットが追加されるので、```slot_recipe_name```に変更します。
 - 下の「Select Slot Type」から、今回はレシピ名＝食べ物の名前になるので「Food」を選択します。
 
 次にIntentsタブです。ここでインテントとサンプル発話を追加します。
 
 - 「+Add Slots」をクリック
-- ```intent_one```という名前のインテントが追加されるので、```intent\_ask\_recipe```に変更します。
+- ```intent_one```という名前のインテントが追加されるので、```intent_ask_recipe```に変更します。
 - 下の「Enter user reply」に以下のサンプル発話を追加します。
 
 ```
