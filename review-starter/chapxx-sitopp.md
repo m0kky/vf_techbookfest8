@@ -165,9 +165,9 @@ IRsend irsend(kIrLed);
 「uint8_t daikin_code[35]={}」の中身を、先ほど採取した赤外線のパターンの「uint8_t state[35] ={}」の中身で上書きをします。
 
 例）
-![](images/chapxx-sitopp/s024)
+![From](images/chapxx-sitopp/s024.png)
 ↓上書きする
-![](images/chapxx-sitopp/s025)
+![To](images/chapxx-sitopp/s025.png)
 
 
 
