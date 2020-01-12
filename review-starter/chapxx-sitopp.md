@@ -111,31 +111,6 @@ Hard resetting via RTS pin...
 
 
 
-例）Daikinのエアコン（古すぎて型番不明）
-
-```
-21:39:17.721 -> Timestamp : 000130.976
-21:39:17.721 -> Library   : v2.7.1
-21:39:17.721 -> 
-21:39:17.721 -> Protocol  : DAIKIN
-21:39:17.721 -> Code      : 0x11DA2700C50000D711DA270042000054（以下略）
-21:39:17.721 -> Mesg Desc.: Power: Off, Mode: 4 (Heat), Temp: （以下略）
-21:39:17.792 -> uint16_t rawData[583] = {492, 396, （略）466};  // DAIKIN
-21:39:18.076 -> uint8_t state[35] = {0x11, 0xDA, 0x27, 0x00,（略）0x76};
-21:39:18.076 -> 
-21:39:18.076 -> 
-21:39:34.883 -> Timestamp : 000148.122
-21:39:34.883 -> Library   : v2.7.1
-21:39:34.883 -> 
-21:39:34.883 -> Protocol  : DAIKIN
-21:39:34.883 -> Code      : 0x11DA2700C50000D711DA270042000054（以下略）
-21:39:34.883 -> Mesg Desc.: Power: On, Mode: 4 (Heat), Temp:  （以下略）
-21:39:34.945 -> uint16_t rawData[583] = {510, 374,（略）494};  // DAIKIN
-21:39:35.211 -> uint8_t state[35] = {0x11, 0xDA, 0x27, 0x00,（略）0x77};
-21:39:35.248 -> 
-
-```
-
 
 ### 赤外線の命令の切り出し
 
@@ -145,53 +120,20 @@ Hard resetting via RTS pin...
 
 * Arduino IDEの「ツール」→「ライブラリをインクルード」→「ライブラリを管理」→「IRsend」と入力し、表示されたライブラリをインストールします。
 * 「ファイル」→「新規ファイル」でスケッチエディタを開きます。
-* 以下のURLにアクセスすると、私の書いたコードがありますので、コピーしてArduino IDEのスケッチエディタに貼り付けてください。
-* もしGithubで404が出た場合はGithubにログインしてください。（アカウントがない場合はまずは作ってからログインを。）
+* 以下をコピーしてArduino IDEのスケッチエディタに貼り付けてください。
 
+
+Daikinの赤外線リモコンをトレースして、送信するコード
 https://github.com/sitopp/voiceflow_mqtt_M5StickC_IRremo-con/blob/master/M5StickC/IRsendDemo_DAIKIN.ino
 
+※もしGithubで404が出た場合はGithubにログインしてください。（アカウントがない場合はまずは作ってからログインを。）
 
 
-```IRsendDemo_DAIKIN.ino
-#include <M5StickC.h>
-#include <IRremoteESP8266.h>
-#include <IRsend.h>
+* スケッチエディタ上で、赤外線のパターンを書き換えましょう。
+「uint8_t daikin_code[35]={}」の中身を、先ほど採取した赤外線のパターンの「uint8_t state[35] ={}」の中身で上書きをします。
 
-const uint16_t kIrLed = 32;  
-IRsend irsend(kIrLed);  
+例）
 
-void setup() {
-    irsend.begin();
-}
-
-void loop() {
-  M5.update();
-
-  // M5ボタン(BtnA)が押されたとき、エアコンつける
-  if (M5.BtnA.wasPressed()) {
-    uint8_t daikin_code[35] = {
-        0x11, 0xDA, 0x27, 0x00, 0xC5, 0x00, 0x00, 0xD7,
-        0x11, 0xDA, 0x27, 0x00, 0x42, 0x00, 0x00, 0x54,
-        0x11, 0xDA, 0x27, 0x00, 0x00, 0x48, 0x38, 0x00,
-        0x7F, 0x00, 0x00, 0x06, 0x60, 0x00, 0x00, 0xC1, 
-        0x00, 0x00, 0x38}; 
-
-    irsend.sendDaikin(daikin_code);
-    delay(100);
-  }
-
-  // 右ボタン(BtnB)が押されたとき、エアコン消す
-  if (M5.BtnB.wasPressed()) {
-    uint8_t daikin_code[35] = {
-        0x11, 0xDA, 0x27, 0x00, 0xC5, 0x00, 0x00, 0xD7,
-        0x11, 0xDA, 0x27, 0x00, 0x42, 0x00, 0x00, 0x54, 
-        0x11, 0xDA, 0x27, 0x00, 0x00, 0x49, 0x38, 0x00, 
-        0x7F, 0x00, 0x00, 0x06, 0x60, 0x00, 0x00, 0xC1, 
-        0x00, 0x00, 0x39}; 
-
-    irsend.sendDaikin(daikin_code); //メーカー毎にクラスが異なる
-    delay(100);
-  }
-
-}
-```
+![](images/chapxx-sitopp/s024)
+↓上書きする
+![](images/chapxx-sitopp/s025)
