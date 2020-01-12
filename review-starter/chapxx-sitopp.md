@@ -18,7 +18,7 @@ IoTのプロトタイピングにも使えるいろんなテクを寄せ集め�
 * 全部つなげて動作確認
 
 
-//image[images/chapxx-sitopp/s001][アーキテクチャ][scale=0.5]
+![アーキテクチャ](images/chapxx-sitopp/s001.jpg)
 
 ### 開発環境
 
