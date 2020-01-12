@@ -146,20 +146,10 @@ M5StickC/IRsendDemo_DAIKIN.ino
 
 ※もしGithubで404が出た場合はGithubにログインしてください。（アカウントがない場合はまずは作ってからログインを。）
 
+
 * Arduino IDEの「ファイル」→「新規ファイル」でスケッチエディタを開きます。下敷き表示されたコードは削除してください。
-* IRsendDemo_DAIKIN.inoのコードをスケッチエディタに貼り付けてください。
+* IRsendDemo_DAIKIN.inoの全文をスケッチエディタに貼り付けてください。
 
-
-```IRsendDemo_DAIKIN.ino
-#include <M5StickC.h>
-#include <IRremoteESP8266.h>
-#include <IRsend.h>
-
-const uint16_t kIrLed = 32;  
-IRsend irsend(kIrLed);  
-
-（以下略）
-```
 
 * スケッチエディタ上で、赤外線のパターンを書き換えましょう。
 「uint8_t daikin_code[35]={}」の中身を、先ほど採取した赤外線のパターンの「uint8_t state[35] ={}」の中身で上書きをします。
@@ -199,11 +189,10 @@ M5StickCでスマホから操作できる家電リモコンを作る
 https://elchika.com/article/218f5072-28a6-461c-a801-43390305f4cc/
 
 
-* 各種テレビメーカー　音量アップ＆ダウン
+* 各種テレビメーカー　
 
 M5StickC を赤外線リモコンにする
 https://kuratsuki.net/2019/07/
-
 
 
 
@@ -224,7 +213,7 @@ Description: Daikin 赤外線リモコン なりすまし用
 * 「Feeds」 → 「View All」→ 「daikin_onoff」 → 「Feed Info」
 「MQTT by Key」のところにMQTTのTopicが自動生成されていますので、メモ帳にコピーしておきます。
 
-![](images/chapxx-sitopp/s027.jpg)
+![MQTTのTopics](images/chapxx-sitopp/s027.jpg)
 
 
 * MQTTブローカーのサーバー情報を調べておきます。
@@ -240,4 +229,52 @@ Password	Your Adafruit IO Key
 
 なおUsername/passwordは、「https://io.adafruit.com/」のユーザーアカウントではありません。
 ダッシュボードの右肩にある「AIO Key」をクリックすると閲覧できますので、メモ帳などに控えておきましょう。
+
+
+
+
+### 3. IFTTTでMQTTの簡易パブリッシャーを作る
+
+webhooksで発行されたURLにアクセスすると、AdafruitのMQTTブローカーにTopicをパブリッシュするという仕組みを作ります。
+
+* IFTTT（イフト）にログインします。 https://ifttt.com/
+* 右上の人型アイコンをクリック → プルダウンメニューが表示されたら、「Create」 をクリック
+* 「Create your own」画面で「This」をクリック
+* 「Search services」という入力欄に「webhooks」と入力 → 表示された「Webhooks」のパネルをクリック
+* 初めての人は、「Connect Webhooks」という画面が表示されるので、Connectをクリックする。 
+* 「Receive a web request」のパネルをクリック→ Event Nameの設定画面で、文字を入力する
+
+例）
+Event Name：Daikin_OnOff
+
+* 「Create trigger」→ 「That」をクリック →「Search services」という入力欄に「Adafruit」と入力
+* 表示された「Adafruit」のパネルをクリック
+* 初めての人は、「Connect Adafruit」という画面が表示されるので、Connectをクリックする。 ポップアップ画面で下スクロールし、
+「Authorize IFTTT」の下にある「AUTHORIZE」をクリックする。
+* 「Send data to Adafruit IO」のパネルをクリック
+* 「Feed name」が選択肢になっていて、先ほどAdafruitで登録したFeed「daikin_onoff」が表示されているはずなので、選ぶ。
+* 「Data to save」の右下にある「Add ingredient」をクリックし、EventNameをクリックする。
+*  再度「Add ingredient」をクリックし、Value1、Value2、Value3もクリックする。「Data to save」は「{{EventName}} {{Value1}} {{Value2}} {{Value3}}」となる。
+* 「Create action」→「Finish」
+
+完成後、右上の「settings」をクリックするとIFTTTレシピの詳細が見れます。
+
+![IFTTTのレシピ詳細](images/chapxx-sitopp/s026.jpg)
+
+### WebhooksのURLを調べる
+
+* ChromeでIFTTTの「My Services」にアクセス https://ifttt.com/my_services 
+* 「webhooks」 → 「Documentation」
+* 「Make a POST or GET web request to:」の下にあるURLをコピーして、メモ帳などに控えておく。
+* 「With an optional JSON body of:」の下にあるJsonをコピーして、メモ帳などに控えておく。
+
+例）
+URL：https://maker.ifttt.com/trigger//with/key/xxxxxxxxxxxxx_xxxxxxxxxxxxxx
+JSON：{ "value1" : "", "value2" : "", "value3" : "" }
+
+![webhooksのURL](images/chapxx-sitopp/s028.jpg)
+
+
+## 4. VoiceflowでActions On Googleを作成
+
 
