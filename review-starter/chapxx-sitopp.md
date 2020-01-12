@@ -11,11 +11,13 @@ IoTのプロトタイピングにも使えるいろんなテクを寄せ集め�
 
 ### やること
 
-* M5StickCで自宅エアコンの赤外線リモコンを作成 
-* AdafruitのMQTTブローカの設定 
-* IFTTTでMQTTの簡易パブリッシャーを作る 
-* VoiceflowでActions On Googleを作成 
-* 全部つなげて動作確認
+* 1. M5StickCで自宅エアコンの赤外線リモコンを作成 
+* 2. AdafruitのMQTTブローカの設定 
+* 3. IFTTTでMQTTの簡易パブリッシャーを作る 
+* 4. VoiceflowでActions On Googleを作成 
+* 5. M5StickCリモコンをMQTT対応にする
+* 6. 全部をつなげて動作確認
+
 
 
 ![アーキテクチャ](images/chapxx-sitopp/s001.jpg)
@@ -69,7 +71,8 @@ Mac上でArduino IDEを起動し、M5StickCをMacにUSB Type-Cケーブルで接
 
 * Arduino IDEの「ツール」→「ライブラリを管理」→「IRremoteESP8266」と入力し、表示されたライブラリをインストールします。
 * 「ファイル」→「スケッチ例」→「IRremoteESP8266」→「IRrecvDumpV2」を開きます。
-* 「ファイル」→「新規ファイル」でスケッチエディタを開き、上で開いた「IRrecvDumpV2」を全文コピーして貼り付け、以下の一行だけ書き換えます。
+* 「ファイル」→「新規ファイル」でスケッチエディタを開きます。下敷き表示されたコードは削除してください。
+* 上で開いた「IRrecvDumpV2」を全文コピーして貼り付け、以下の一行だけ書き換えます。
 
 ```
 const uint16_t kRecvPin = 14;
@@ -138,13 +141,13 @@ Hard resetting via RTS pin...
 
 * Arduino IDEの「ツール」→「ライブラリをインクルード」→「ライブラリを管理」→「IRsend」と入力し、表示されたライブラリをインストールします。
 * 以下のURLに、私が書いたDaikinの赤外線リモコンを送信するコードが置いてありますので、アクセスしてください。
+※404エラーが出た場合はGithubにログインしてからもう一度開いてください。（アカウントがない場合はまずは作ってからログインを。）
 
 URL：
 https://github.com/sitopp/voiceflow_mqtt_M5StickC_IRremo-con/
 ファイル：
 M5StickC/IRsendDemo_DAIKIN.ino
 
-※もしGithubで404が出た場合はGithubにログインしてください。（アカウントがない場合はまずは作ってからログインを。）
 
 
 * Arduino IDEの「ファイル」→「新規ファイル」でスケッチエディタを開きます。下敷き表示されたコードは削除してください。
@@ -277,4 +280,6 @@ JSON：{ "value1" : "", "value2" : "", "value3" : "" }
 
 ## 4. VoiceflowでActions On Googleを作成
 
+
+## 5. M5StickCリモコンをMQTT対応にする
 
