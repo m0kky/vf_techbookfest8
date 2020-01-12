@@ -57,7 +57,9 @@ Blueprintsは、あらかじめひな形となるテンプレートがあり、�
 
 ### Blueprints(カスタムQ&A)
 Blueprintsホーム画面（[https://blueprints.amazon.co.jp/](https://blueprints.amazon.co.jp/)）で「カスタムQ&A」を選択し、「作成する」ボタンを押下します。
+
 ![Blueprints新規作成画面](images/chapxx-fukumura-kaigo/blueprints_qa1.png)
+
 ああ
 あ
 
