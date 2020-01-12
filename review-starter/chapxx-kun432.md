@@ -339,38 +339,14 @@ Advanced expression (IF and SET blocks) - Voiceflow Docs（英語）@<br>{}
 - Googleスプレッドシートに大量のデータが存在する（行数や列数が多い、セル内の文字数が多い、等）場合、レスポンスが遅くなったり、データが取得できなくなったりする場合があります。行・列・セル内データ等の組み合わせにもよるので一概には言えませんが、多くても1000行未満に抑えることをオススメします。
 - Googleスプレッドシートで検索する場合、検索対象の列は1つしか指定できません。一般的なデータベースで行うような複雑な検索条件は実行できませんのでご注意ください。
 
-上記のような制限に合致したり、Googleスプレッドシートで機能的に物足りなくなったら、AirtableやFirebaseなどの本格的なデータベースを利用することをオススメします。Googleスプレッドシートよりも少し難易度が上がりますが、是非トライしてみてください。
+上記のような制限に合致したり、Googleスプレッドシートで機能的に物足りなくなったら、AirtableやFirebaseなどの本格的なデータベースを利用することをオススメします。
 
 - Airtable (@<href>{https://airtable.com/})
 - Firebase (@<href>{https://firebase.google.com/})
 
 ## 最後に
 
-いかがでしょうか？Googleスプレッドシートを使ってデータを読み出すと、一気にデータベースな雰囲気が出てきますね。今回は紙面の都合上、データの参照のみ紹介しましたが、もちろんスプレッドシートへ登録・更新・削除も可能です。
+いかがでしょうか？Googleスプレッドシートを使ってデータを読み出すと、一気にデータベースな雰囲気が出てきますね。今回は紙面の都合上、データの参照のみ紹介しましたが、もちろんスプレッドシートへ登録・更新・削除も可能です。 詳しくは以下のサイトにまとめています。またGoogleスプレッドシート連携以外にも多数VoiceflowのTipsなどを紹介していますので、ぜひご覧ください。
 
-私のブログでいくつかGoogleスプレッドシート関連のチュートリアル的な記事を書いていますのでご紹介します。よろしければご覧ください。
-
-「Voiceflow Tips #7 Googleスプレッドシート連携で作る豆知識スキル」@<br>{}
-(@<href>{https://kun432.hatenablog.com/entry/voiceflow\_tips\_7\_fact\_skill\_integrated\_with\_google\_sheets})
-
-初歩のAlexaスキル開発のサンプルとしてもよく取り上げられている「豆知識」スキルをGoogleスプレッドシートと連携させて作ります。今回のランダムなGoogleスプレッドシート側に豆知識の「ネタ」をたくさん登録しておいて、ランダムに呼び出すというものです。
-
-- 「Voiceflow Tips #12 Googleスプレッドシート連携で作るゼロカロリースキル 〜スプレッドシートの検索〜」@<br>{}
-(@<href>{https://kun432.hatenablog.com/entry/voiceflow\_tips\_12\_retrieve\_from\_google\_spreadsheet})
-- 「Voiceflow Tips #14 Googleスプレッドシート連携で作るゼロカロリースキル 〜スプレッドシートへの登録〜」@<br>{}
-(@<href>{https://kun432.hatenablog.com/entry/voiceflow\_tips\_14\_insert_data\_into\_google\_sheets})
-- 「Voiceflow Tips #18 Googleスプレッドシート連携で作るゼロカロリースキル 〜スプレッドシートの更新〜」@<br>{}
-(@<href>{https://kun432.hatenablog.com/entry/voiceflow\_tips\_18\_update\_data\_with\_google\_sheets})
-- 「Voiceflow Tips #19 Googleスプレッドシート連携で作るゼロカロリースキル 〜スプレッドシートの削除〜」@<br>{}
-(@<href>{https://kun432.hatenablog.com/entry/voiceflow\_tips\_19\_delete\_data\_with\_google\_sheets})
-
-2019年のAlexaスキルハッカソン大阪で話題になっていた、がおまるさん（@gaomar）の「ゼロカロリースキル」をGoogleスプレッドシート連携だけで作るというものです。データベースの基本となる、一連のCRUD操作（Create:登録、 Retrieve:参照、Update:更新、Delete:削除）を4回に分けて紹介しています。
-
-- 「Voiceflow TIPS #29 Airtableと組み合わせて、もっとデータベースらしく」@<br>{}
-(@<href>{https://kun432.hatenablog.com/entry/voiceflow\_tips\_29\_integration\_with\_airtable})
-
-Voiceflowでは物足りない場合、
-
-- 「Voiceflow TIPS #35 Firebase RealtimeDatabaseでデータを管理する」@<br>{}
-(@<href>{https://kun432.hatenablog.com/entry/voiceflow\_tips\_35\_integration\_with\_firebase\_realtime\_database})
-
+Voiceflow夏休みAdvent Calendar@<br>{}
+@<href>{https://qiita.com/kun432/items/666ae13f097004ea7935}
