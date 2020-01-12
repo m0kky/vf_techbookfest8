@@ -145,8 +145,8 @@ Hard resetting via RTS pin...
 URL：https://github.com/sitopp/voiceflow_mqtt_M5StickC_IRremo-con/
 
 ファイルパス：M5StickC/IRsendDemo_DAIKIN.ino
-
-```IRsendDemo_DAIKIN.ino
+<!-- 
+```
 #include <M5StickC.h>
 #include <IRremoteESP8266.h>
 #include <IRsend.h>
@@ -158,7 +158,7 @@ void setup() {
     irsend.begin();
 }
 （以下略）
-```
+``` -->
 
 
 * Arduino IDEの「ファイル」→「新規ファイル」でスケッチエディタを開きます。下敷き表示されたコードは削除してください。
@@ -169,9 +169,9 @@ void setup() {
 Daikinの場合、
 「uint8_t daikin_code[35]={}」の中身を、先ほど採取した赤外線のパターンの「uint8_t state[35] ={}」の中身で上書きをします。
 
-![From](images/chapxx-sitopp/s024.png)
+![From](images/chapxx-sitopp/s024)
 ↓上書きする
-![To](images/chapxx-sitopp/s025.png)
+![To](images/chapxx-sitopp/s025)
 
 
 * スケッチエディタの左上にある「→」アイコンをクリックして、M5StickCに書き込みします。
