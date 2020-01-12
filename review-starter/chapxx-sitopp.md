@@ -294,9 +294,24 @@ JSON：{ "value1" : "", "value2" : "", "value3" : "" }
 * voiceflowにログインします。https://www.voiceflow.com/
 * create Project」クリック → 「Enter your Project name」に、Actions名を入力する。
 
-例）名前を「しょういんじ」にした場合、Google Homeに「OK Google しょういんじ を呼んで」と話しかけると起動できます。
+例）Actions名を「しょういんじ」にした場合、Google Homeに「OK Google しょういんじを呼んで」と話しかけると起動できるようになります。
 
-* Select Regions画面で「Japanese」にチェックを入れ、English(US)のチェックを外す→「create Project」をクリック
+* Select Regions画面で「Japanese」にチェックを入れ、「English(US)」のチェックを外す→「create Project」をクリック
+
+canvasが開いたら、淡々と作っていきます。
+
+* Interactionブロックをcanvasにドラッグ。クリックして設定画面を開き、「Intents」→「Add Intent」
+* 「Intent_one」の字をクリックして編集できる状態にし、「daikin_aircon_on」と上書き入力
+* 「Enter user reply」に「暖房つけて」などと入力
+* 同様に「daikin_aircon_off」のIntentも作成する
+
+入力例）
+
+Intent名 ： daikin_aircon_on
+user reply : 暖房つけて、暖房つけて、暖房をつけて
+
+Intent名 ： daikin_aircon_off
+user reply : 暖房けして、暖房を消して、エアコン消して
 
 
 
