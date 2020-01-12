@@ -185,7 +185,7 @@ Speakブロックの設定は以下のように設定します。
 
 ## 条件を指定してスプレッドシートのデータを取得する。
 
-では次に条件を指定しての検索をやってみましょう。ユーザになんのどのレシピを知りたいか？を聞いて、その発話を受け取ってスプレッドシートを検索してみたいと思います。
+では次に条件を指定しての検索をやってみましょう。ユーザになんのどのレシピを知りたいか？を聞いて、その発話を受け取ってスプレッドシートを検索してみたいと思います@<br>{}。
 
 ユーザの発話の受け取りが必要になりますので、少しフローを変更します。まず、変数を作りましょう。Variablesメニューに切り替えて、```varUserRecipe```という変数を作成してください。ここにユーザの発話したレシピ名が入ります。
 
@@ -223,18 +223,18 @@ Interactionブロックでインテント/サンプル発話/スロットを作�
 
 
 //note[インテント/サンプル発話/スロットとInteractionブロックについて]{
-インテント/サンプル発話/スロットとInteractionブロックでの設定については、私が作成したハンズオン資料にもまとめていますのでそちらもご覧ください。
+インテント/サンプル発話/スロットとInteractionブロックでの設定については、私が作成したハンズオン資料にもまとめていますのでそちらもご覧ください。@<br>{}
 
-Voiceflowハンズオン Vol.1
+Voiceflowハンズオン Vol.1@<br>{}
 @<href>{https://vf-handson-01.netlify.com/#0}
 //}
 
 //note[Captureブロックについて]{
-ユーザの発話を受け取って変数に入れるもう1つの方法として「Captureブロック」があります。Captureブロックはスロットだけを受け取るためのブロックで、とてもシンプルに使える反面、サンプル発話と組み合わせて使えない・カスタムスロットのシノニムが効かない不具合（2020/1/12時点）など、使い方が限定されます。ユースケースにあわせて選択していただければと思いますが、個人的にはサンプル発話やシノニムが使える、より柔軟なInteractionブロックをオススメします。
+ユーザの発話を受け取って変数に入れるもう1つの方法として「Captureブロック」があります。Captureブロックはスロットだけを受け取るためのブロックで、とてもシンプルに使える反面、サンプル発話と組み合わせて使えない・カスタムスロットのシノニムが効かない不具合（2020/1/12時点）など、使い方が限定されます。ユースケースにあわせて選択していただければと思いますが、個人的にはサンプル発話やシノニムが使える、より柔軟なInteractionブロックをオススメします。@<br>{}
 
-Captureブロックについては公式のドキュメントもご覧ください
+Captureブロックについては公式のドキュメントもご覧ください@<br>{}
 
-Capture block - Voiceflow Docs（英語）
+Capture block - Voiceflow Docs（英語）@<br>{}
 @<href>{https://docs.voiceflow.com/voiceflow-documentation/untitled/capture-block}
 //}
 
@@ -246,7 +246,7 @@ Capture block - Voiceflow Docs（英語）
 
 これで発話を受け取る準備ができました。では、その発話をもとにスプレッドシートを検索するようにしてみましょう。Integrationブロックをクリックして、「With Settings」をクリックします。
 
-ランダムの場合は、左側は「Row Number」を選択して、右側の「Value to Match」は空にしていました。これを以下のように、左側は「recipe\_name」に、右側は```｛varUserRecipe｝```を入力します。これで「recipe\_name」カラムに変数```varUserRecipe```で発話したものを指定して検索ができるということです。逆にランダムの場合は「Row Number」を指定して「Next」をクリックします。
+ランダムの場合は、左側は「Row Number」を選択して、右側の「Value to Match」は空にしていました。これを以下のように、左側は「recipe_name」に、右側は```{varUserRecipe}```を入力します。これで「recipe_name」カラムに変数```varUserRecipe```で発話したものを指定して検索ができるということです。逆にランダムの場合は「Row Number」を指定して「Next」をクリックします。
 
 「Mapping Output」はそのまま「Next」をクリックします。
 
@@ -276,7 +276,7 @@ Ifブロックは条件を指定してその結果によって処理の流れを
 //note[undefinedの判定について]{
 もちろんストレートにundefindを判定することもできます。VoiceflowのIfブロックにはAdvanced Expressionという記述があり、これを使うとプログラム的な書き方で判定することが可能です。プログラムに慣れた人はこちらのほうがわかりやすいかもしれません。よろしければご覧ください。
 
-Advanced expression (IF and SET blocks) - Voiceflow Docs（英語）
+Advanced expression (IF and SET blocks) - Voiceflow Docs（英語）@<br>{}
 @<href>{https://docs.voiceflow.com/voiceflow-documentation/logic-in-voiceflow/advanced-expression-if-and-set-blocks}
 
 ※一番最後にある「For more details you can look here. 〜」のリンクもご覧ください。
