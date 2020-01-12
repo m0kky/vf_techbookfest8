@@ -3,22 +3,20 @@
 ## 概要
 
 本章は、**M5StickCや電子工作に興味ある人に、「音声で操作するインタフェース」が「実はお手軽に追加できる」事を知ってもらいたくて書きました。**
-もちろんVUIクラスタの人にも**軽率に電子工作沼にハマっていただきたい**ですので、初めての人でも半田付けなどしなくても使えるケース付きの小型マイコンを使っております。
+VUIクラスタの人にも**軽率に電子工作沼にハマっていただきたい**ので、半田付けなどしなくても使えるケース付きの格安小型マイコンを使っております。
 
-また、音声部分の開発にVoiceflowを使っていますので、アップロード先を変えればAmazon Echoにも対応できます。
+音声部分の開発にVoiceflowを使っており、アップロード先を変えればAmazon Echoにも対応できます。
+
 IoTのプロトタイピングにも使えるいろんなテクを寄せ集めていますので、何かのヒントになると幸いです。
 
-
 ### やること
-★の数は難易度の目安です。@<fn>{nanido}
 
-* M5StickCで自宅エアコンの赤外線リモコンを作成 (★★★)
-* AdafruitのMQTTブローカの設定 (★)
-* IFTTTでMQTTの簡易パブリッシャーを作る (★)
-* VoiceflowでActions On Googleを作成 (★)
-* 全部つなげて動作確認！ (★★)
+* M5StickCで自宅エアコンの赤外線リモコンを作成 
+* AdafruitのMQTTブローカの設定 
+* IFTTTでMQTTの簡易パブリッシャーを作る 
+* VoiceflowでActions On Googleを作成 
+* 全部つなげて動作確認！ 
 
-//footnote[nanido][しょっぱなに★3つがきてますが、先に難しいところから片付けていきましょう。健康診断でも最初に血を取りますよね。]
 
 ![アーキテクチャ](images/chapxx-sitopp/s001.png)
 
@@ -30,8 +28,7 @@ IoTのプロトタイピングにも使えるいろんなテクを寄せ集め�
 * Arduino IDE 1.8.9
 * Google Home mini
 
-自分はMacを使いましたが、WIndowsにも共通のツールがあります。適宜読み替えて進めてください。
-
+自分はMacを使いましたが、Windowsにも共通のツールがあります。適宜読み替えて進めてください。
 
 ### 使用した部品
 
@@ -56,19 +53,26 @@ IoTのプロトタイピングにも使えるいろんなテクを寄せ集め�
 
 あらかじめ、MacにArduino IDEをインストールして、M5StickCを使えるようにしておきます。
 
+参考）
 
-* 参考：M5StickC クイックスタート - Arduino Win 
+* 公式「M5StickCクイックスタート-Arduino Win」
 https://docs.m5stack.com/#/ja/quick_start/m5stickc/m5stickc_quick_start_with_arduino_Windows
 
-* 参考：「くらつきねっと」さんの「M5StickC で開発を行うための Arduino IDE のセットアップ」
+* 「くらつきねっと」さんの「M5StickC で開発を行うための Arduino IDE のセットアップ」
 https://kuratsuki.net/2019/07/
 
 
+### M5StickCで、赤外線リモコンの命令を読み込む
 
-### 赤外線リモコンの命令を拾う
+Mac上でArduino IDEを起動し、M5StickCをMacにUSB Type-Cケーブルで接続します。
 
-* MacのArduino IDEを起動します
-* M5StickCをMacにUSB Type-Cケーブルで接続します。
+* 「ツール」→「ボード」→「M5StickC」を選択します。
+* 「ツール」→「シリアルポート」→表示された複数の選択肢野中から、「usbserial」の文字が入っているものを選択します。@<fn>{sitopp_m5stick_lost}
+//footnote[sitopp_m5stick_lost][usbserialのポートが出てこない場合、M5StickCに付属のUSBケーブルを使うと解決します。]
+
+![Arduino IDEのツールメニュー、M5StickCがシリアルポート接続できた状態](images/chapxx-sitopp/s003.jpg)
+
+
 * Arduino IDEの「ツール」→「ライブラリを管理」→「IRremoteESP8266」と入力し、表示されたライブラリをインストールします。
 * 「ファイル」→「スケッチ例」→「IRremoteESP8266」→「IRrecvDumpV2」を開きます。
 * 「ファイル」→「新規ファイル」でスケッチエディタを開き、上で開いた「IRrecvDumpV2」を全文コピーして貼り付け、以下の一行だけ書き換えます。
@@ -79,8 +83,6 @@ const uint16_t kRecvPin = 14;
 const uint16_t kRecvPin = 22;
 ```
 
-* ツール→ボード→「M5StickC-Core-ESP32」を選択しておきます。
-* ツール→シリアルポート→「〜usbserial〜」のものを選択します。
 * 「→」をクリックして、M5StickCに書き込みします。
 
 以下のメッセージが出たら、インストールは完了です。
