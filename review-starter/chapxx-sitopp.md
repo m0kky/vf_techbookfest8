@@ -131,9 +131,7 @@ Hard resetting via RTS pin...
 
 * このログを全文コピーして、メモ帳などに保存しておきます。
 
-<!-- ここからカット -->
-<!-- 
-### 赤外線の命令の切り出し
+### 赤外線リモコンの命令パターンの抽出
 
 赤外線リモコンの命令はメーカー間で統一されておらず、にフォーマットが違います。
 この本ではDaikinのエアコンのやり方について説明します。
@@ -143,10 +141,25 @@ Hard resetting via RTS pin...
 * 以下のURLに、私が書いたDaikinの赤外線リモコンを送信するコードが置いてありますので、アクセスしてください。
 ※404エラーが出た場合はGithubにログインしてからもう一度開いてください。（アカウントがない場合はまずは作ってからログインを。） 
 
-URL：
-https://github.com/sitopp/voiceflow_mqtt_M5StickC_IRremo-con/
-ファイル：
-M5StickC/IRsendDemo_DAIKIN.ino
+
+URL：https://github.com/sitopp/voiceflow_mqtt_M5StickC_IRremo-con/
+
+ファイルパス：M5StickC/IRsendDemo_DAIKIN.ino
+
+```IRsendDemo_DAIKIN.ino
+#include <M5StickC.h>
+#include <IRremoteESP8266.h>
+#include <IRsend.h>
+
+const uint16_t kIrLed = 32;  
+IRsend irsend(kIrLed);  
+
+void setup() {
+    irsend.begin();
+}
+（以下略）
+```
+
 
 * Arduino IDEの「ファイル」→「新規ファイル」でスケッチエディタを開きます。下敷き表示されたコードは削除してください。
 * IRsendDemo_DAIKIN.inoの全文をスケッチエディタに貼り付けてください。
@@ -169,6 +182,7 @@ Daikinの場合、
 
 ![M5StickCでエアコンを操作しているところ](images/chapxx-sitopp/s023.jpg)
 
+<!-- 
 
 
 
