@@ -49,43 +49,24 @@ Blueprintsは、あらかじめひな形となるテンプレートがあり、�
 * カスタムQ&A
 * トリビア
 
-### グリーティング系
-第三者へのメッセージスキルです。
-第三者へのメッセージをテキストで入力したり、音声を録音、Echo Showなどのディスプレイへの画像を設定することができます。
-![Blueprintsありがとう画面](images/chapxx-fukumura-kaigo/blueprints_arigato.png)
+この中でも「カスタムQ&A」は特殊な特徴をもっています。
+通常、スキルは「アレクサ、（スキル名）をひらいて」と発話することにより起動しますが、カスタムQ&Aはその必要がなく、「アレクサ、（質問内容）」と発話することで、アレクサは回答を返してくれます。
 
-### ランダムメッセージ系
-グリーティング系と似ているのですが、あらかじめ複数のメッセージを登録しておき、それがランダムで選択されます。
-![Blueprintsお母さんありがとう画面](images/chapxx-fukumura-kaigo/blueprints_mother.png)
+## BlueprintsとVoiceflowでスキルを作ってみる
+前述した、「緊急連絡先を教えてもらう」を例として、BlueprintsとVoiceflowでスキルを作り比べてみます。
 
-### フラッシュカード
-学習用のスキルです。
-質問、回答、ヒントを入力します。
-テストをすることも可能です。
-![Blueprintsフラッシュカード画面](images/chapxx-fukumura-kaigo/blueprints_flashcard.png)
+### Blueprints(カスタムQ&A)
+Blueprintsホーム画面（[https://blueprints.amazon.co.jp/](https://blueprints.amazon.co.jp/)）で「カスタムQ&A」を選択します。
 
-### パーソナルトレーナー
-トレーニング用のスキルです。
-運動内容や秒数、応援メッセージを入力します。
-![Blueprintsパーソナルトレーナー画面](images/chapxx-fukumura-kaigo/blueprints_trainner.png)
 
-### ルーレット
-抽選用のスキルです。
-選択肢のリストを入力し、何かを決めるときに使えます。
-![Blueprintsルーレット画面](images/chapxx-fukumura-kaigo/blueprints_roulette.png)
 
-### カスタムQ&A
-Q&A形式のスキルです。
-忘れやすいような内容を入力しておいて、忘れたときに教えてもらうように使えます。
-唯一、本スキルだけは、スキル名を言う必要はありません。
-![BlueprintsカスタムQ&A画面](images/chapxx-fukumura-kaigo/blueprints_qa.png)
+### Voiceflow
 
-### トリビア
-1～4人で、クイズができるスキルです。
-![Blueprintsトリビア画面](images/chapxx-fukumura-kaigo/blueprints_trivia.png)
+
 
 ## 非エンジニアでもスキルを作ろう！
 これまで見たように、ノンコーディングでもスキルの開発は可能です。
-Blueprintsはあらかじめ用意されたテンプレートに沿ったスキルしか作成できない代わりに、非常に簡単にスキルを作成でき、VoiceflowはBlueprintsよりも、複雑になりますが、自由にスキルを作成できます。
-どちらか片方ではなく、VoiceflowとBlueprintsを適材適所で使用すればよいと思います。
+Blueprintsはあらかじめ用意されたテンプレートに沿ったスキルしか作成できない代わりに、非常に簡単にスキルを作成できます。
+それに比べて、VoiceflowはBlueprintsよりも、複雑になりますが、自由にスキルを作成できます。
+どちらか一方ではなく、VoiceflowとBlueprintsを適材適所で使用すればよいと思います。
 是非、スキル開発にチャレンジしてください！
