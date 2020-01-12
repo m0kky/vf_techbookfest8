@@ -79,7 +79,8 @@ const uint16_t kRecvPin = 33;
 ```
 
 * スケッチエディタの左上にある「→」アイコンをクリックして、M5StickCに書き込みします。
-* 数十秒待ちます。
+* 保存場所を聞かれるので、適当に指定します。
+* 書き込みにかかる時間、数十秒を待ちます。
 * スケッチエディタの下半分にインストールログがどどっと出力されます。以下のメッセージが出たらインストール完了です。
 
 ```
@@ -98,14 +99,20 @@ Hard resetting via RTS pin...
 
 * M5StickCに置き換えたい家電のリモコンを持ってきてください。
 * 赤外線ユニットの20〜30センチ以内でリモコンを操作してください。
+* シリアルモニタにコードが出力されます。
 
-例）エアコンのリモコンを構えて、オンとオフの二回を押す。
 ![リモコン](images/chapxx-sitopp/s021.jpg)
 
 
-* シリアルモニタにコードが出力されますので、全文コピーして、メモ帳などに保存しておきます。
+* シリアルモニタに出力された赤外線の命令を全文コピーして、メモ帳などに保存しておきます。
+
+* 例えば、
+ * エアコンのリモコンを構えて、オンとオフの二回を押す。
+ * テレビのリモコンを構えて、オンとオフの二回を押す。
+
 
 例）Daikinのエアコン（古すぎて型番不明）
+
 ```
 21:39:17.721 -> Timestamp : 000130.976
 21:39:17.721 -> Library   : v2.7.1
@@ -129,6 +136,7 @@ Hard resetting via RTS pin...
 
 ```
 例）sonyのBRAVIA
+
 ```
 22:22:27.895 -> Timestamp : 002721.132
 22:22:27.895 -> Library   : v2.7.1
@@ -153,26 +161,113 @@ Hard resetting via RTS pin...
 ```
 
 
-
 ### 赤外線の命令の切り出し
 
-この本ではDaikinのエアコンと、Sonyのテレビのやり方について説明します。
 赤外線リモコンの命令は統一されておらず、メーカごとにフォーマットが違います。
-他のメーカーについては、ググるといろいろ親切に解説してくださっているページがありますので、参照して見てください。
+この本ではDaikinのエアコンと、Sonyのテレビのやり方について説明します。
+他のメーカーについては、ググるといろいろ親切に解説してくださっているページがありますので、参照してください。
 
-Daikin 
 
 
-Arduino IDEの「ファイル」→「スケッチ例」→「IRremoteESP8266」→「IRsendDemo」を開きます。
+* Arduino IDEの「ツール」→「ライブラリをインクルード」→「ライブラリを管理」→「IRsend」と入力し、表示されたライブラリをインストールします。
 
-「ファイル」→「新規ファイル」でスケッチエディタを開き、上で開いた「IRsendDemo」を全文コピーして貼り付け、以下を書き換えます。
 
+![](images/chapxx-sitopp/s022.jpg)
+
+
+* Arduino IDEの「ファイル」→「新規ファイル」でスケッチエディタを開きます。
+* 以下のURLにアクセスすると、私の書いたコードがありますので、コピーしてArduino IDEのスケッチエディタに貼り付けてください。
+* もしGithubで404が出た場合はGithubにログインしてください。（アカウントがない場合はまずは作ってからログインを。）
+
+https://github.com/sitopp/voiceflow_mqtt_M5StickC_IRremo-con/blob/master/M5StickC/IRsendDemo_DAIKIN.ino
+
+
+```IRsendDemo_DAIKIN.ino
+#include <M5StickC.h>
+#include <IRremoteESP8266.h>
+#include <IRsend.h>
+
+const uint16_t kIrLed = 32;  
+IRsend irsend(kIrLed);  
+
+void setup() {
+    irsend.begin();
+}
+
+void loop() {
+  M5.update();
+
+  // M5ボタン(BtnA)が押されたとき、エアコンつける
+  if (M5.BtnA.wasPressed()) {
+    uint8_t daikin_code[35] = {
+        0x11, 0xDA, 0x27, 0x00, 0xC5, 0x00, 0x00, 0xD7,
+        0x11, 0xDA, 0x27, 0x00, 0x42, 0x00, 0x00, 0x54,
+        0x11, 0xDA, 0x27, 0x00, 0x00, 0x48, 0x38, 0x00,
+        0x7F, 0x00, 0x00, 0x06, 0x60, 0x00, 0x00, 0xC1, 0x00, 0x00, 0x38}; //機種毎に異なる
+
+    irsend.sendDaikin(daikin_code);
+    delay(100);
+  }
+
+  // 右ボタン(BtnB)が押されたとき、エアコン消す
+  if (M5.BtnB.wasPressed()) {
+    uint8_t daikin_code[35] = {
+        0x11, 0xDA, 0x27, 0x00, 0xC5, 0x00, 0x00, 0xD7,
+        0x11, 0xDA, 0x27, 0x00, 0x42, 0x00, 0x00, 0x54, 
+        0x11, 0xDA, 0x27, 0x00, 0x00, 0x49, 0x38, 0x00, 
+        0x7F, 0x00, 0x00, 0x06, 0x60, 0x00, 0x00, 0xC1, 0x00, 0x00, 0x39}; //機種毎に異なる
+
+    irsend.sendDaikin(daikin_code); //メーカー毎にクラスが異なる
+    delay(100);
+  }
+
+}
 ```
-const uint16_t kIrLed = 4;
-↓
-const uint16_t kIrLed = 21;
 
-```
+* 赤外線リモコンのパターンを書き換えます。Daikinの場合は、「uint8_t daikin_code[35]={}」の中身を、先ほど採取した赤外線のパターンの「uint8_t state[35] ={}」の中身で上書きしてください。
+
+
+![](images/chapxx-sitopp/s024)
+↓上書きする
+![](images/chapxx-sitopp/s025)
+
+
+
+* スケッチエディタの左上にある「→」アイコンをクリックして、M5StickCに書き込みします。
+* ファイルの保存場所を聞かれるので、適当に指定します。
+* 書き込みにかかる時間、数十秒を待ちます。
+* スケッチエディタの下半分にインストールログがどどっと出力され、「Hard resetting via RTS pin...」メッセージが出たらインストール完了です。
+* USBケーブルを抜いて、M5StickCをエアコンの50cn以内に持って行きます。M5ボタンを押すと、エアコンがつきました。
+
+
+![](images/chapxx-sitopp/s023)
+
+
+**他のメーカーの場合**
+
+ありがたい事に、IRremoteESP8266ライブラリの作者のGithubにサンプルコードがあります。
+
+https://github.com/crankyoldgit/IRremoteESP8266
+
+しかしこれだけでは良くわからないかもしれません。
+
+2019年に、M5StickCで赤外線リモコンを作って技術ブログを書いた人が何人もいらっしゃったので、そちらを参考にすると、国内の主要メーカーのフォーマットはわかると思います。
+
+参考にさせていただいた神ブログをいくつかご紹介します。
+
+* NEC
+
+M5StickCでスマホから操作できる家電リモコンを作る
+https://elchika.com/article/218f5072-28a6-461c-a801-43390305f4cc/
+
+
+* 各種テレビメーカー　音量アップ＆ダウン
+
+M5StickC を赤外線リモコンにする
+https://kuratsuki.net/2019/07/
+
+
+
 
 
 ### MQTTのサブスクライバ
