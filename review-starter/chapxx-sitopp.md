@@ -300,18 +300,38 @@ JSON：{ "value1" : "", "value2" : "", "value3" : "" }
 
 canvasが開いたら、淡々と作っていきます。
 
-* Interactionブロックをcanvasにドラッグ。クリックして設定画面を開き、「Intents」→「Add Intent」
-* 「Intent_one」の字をクリックして編集できる状態にし、「daikin_aircon_on」と上書き入力
-* 「Enter user reply」に「暖房つけて」などと入力
-* 同様に「daikin_aircon_off」のIntentも作成する
+* ヘッダ部分の「Alexa Google」の切り替えスイッチを、Googleの方にする。すると「Upload to Alexa」のボタンが「Upload to Google」に変化する。
 
-入力例）
+![AlexaとGoogle切り替えスイッチ](images/chapxx-sitopp/s030)
 
-Intent名 ： daikin_aircon_on
-user reply : 暖房つけて、暖房つけて、暖房をつけて
+* 「Advanced」→「Interaction」ブロックをcanvasにドラッグ。
+* クリックして設定画面を開き「Intents」→「+Add Intent」をクリック
+* 「Intent_one」の字の上をクリックして編集できる状態にし、「aircon_on」と上書き入力
+* 「Enter user reply」入力欄に「暖房つけて」と入力してエンター
+* 「Enter user reply」入力欄に「エアコンつけて」と入力してエンター
+* 「Enter user reply」入力欄に「暖房をつけて」と入力してエンター
+* この要領で「aircon_off」Intentも作成
 
-Intent名 ： daikin_aircon_off
+```
+Intent名 ： aircon_on
+user reply : 暖房つけて、エアコンつけて、暖房をつけて
+
+Intent名 ： aircon_off
 user reply : 暖房けして、暖房を消して、エアコン消して
+```
+* 同じInteractionブロックをクリックして設定画面を開き、「Choices」をクリック 
+* 「+Add Choice」→「1」の選択肢に「aircon_on」を指定
+* 「+Add Choice」→「2」の選択肢に「aircon_off」を指定
+
+脚注：ChoicesはAlexaとGoogleで異なるため、アップロード先をAlexaにする場合はそれ用に追加して作る必要があります。お忘れなきよう。
+
+* 一番左のペインの上から3番目のアイコン「Variables」をクリック
+* Create Variable(Project)の入力欄に「aircon」と入力してエンター
+* するとそのすぐ下のVariablesのリストの末尾に「{aircon}」が追加される
+
+* 「Logic」→「Set」ブロックをCanvasにドラッグ
+* setブロックをクリックし、設定画面を開いたら、以下のように指定
+set {aircon} to: 「on」
 
 
 
