@@ -26,7 +26,7 @@ VoiceflowのGoogleスプレッドシート連携機能を使うと、普段お�
 - Speakブロックには以下のように設定してください。
 
 //emlist[][]{
-我が家のレシピスキルにようこそ。このスキルではおすすめのレシピをランダムに教えるよ。今日のおすすめは、<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_intro_01"/>
+我が家のレシピスキルにようこそ。このスキルではおすすめのレシピをランダムに教えるよ。今日のおすすめは、<audio src="soundbank://soundlibrary/ui/gameshow/amzn\_ui\_sfx\_gameshow\_intro\_01"/>
 //}
 
 ちなみに、最後の```<audio src=〜```の部分は、「Alexa Skills Kitサウンドライブラリ」を使って効果音を再生するようにしています。
