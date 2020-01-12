@@ -145,7 +145,7 @@ Hard resetting via RTS pin...
 URL：https://github.com/sitopp/voiceflow_mqtt_M5StickC_IRremo-con/
 
 ファイルパス：M5StickC/IRsendDemo_DAIKIN.ino
-<!-- 
+
 ```
 #include <M5StickC.h>
 #include <IRremoteESP8266.h>
@@ -158,7 +158,7 @@ void setup() {
     irsend.begin();
 }
 （以下略）
-``` -->
+``` 
 
 
 * Arduino IDEの「ファイル」→「新規ファイル」でスケッチエディタを開きます。下敷き表示されたコードは削除してください。
@@ -290,6 +290,14 @@ JSON：{ "value1" : "", "value2" : "", "value3" : "" }
 
 
 ## 4. VoiceflowでActions On Googleを作成
+
+* voiceflowにログインします。https://www.voiceflow.com/
+* create Project」クリック → 「Enter your Project name」に、Actions名を入力する。
+
+例）名前を「しょういんじ」にした場合、Google Homeに「OK Google しょういんじ を呼んで」と話しかけると起動できます。
+
+* Select Regions画面で「Japanese」にチェックを入れ、English(US)のチェックを外す→「create Project」をクリック
+
 
 
 ## 5. M5StickCリモコンをMQTT対応にする
