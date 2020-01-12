@@ -84,7 +84,7 @@ const uint16_t kRecvPin = 33;
 
 ```
 Writing at 0x00008000... (100 %)
-Wrote 3072 bytes (128 compressed) at 0x00008000 in 0.0 seconds (effective 3177.2 kbit/s)...
+Wrote 3072 bytes (128 compressed) at 0x00008000 in 0.0 seconds 
 Hash of data verified.
 
 Leaving...
@@ -95,19 +95,40 @@ Hard resetting via RTS pin...
 * 「自動スクロール」にチェックが入っている事を確認しましょう。
 * 「IRrecvDumpV2 is now running and waiting for IR input on Pin 33」というメッセージが出るはずです。
 
-
 * M5StickCに置き換えたい家電のリモコンを持ってきてください。
 * 赤外線ユニットの20〜30センチ以内でリモコンを操作してください。
 * シリアルモニタにコードが出力されます。
 
 ![リモコン](images/chapxx-sitopp/s021.jpg)
 
+例）Daikinのエアコン（古すぎて型番不明）
+オフとオンを一回づつ押したところ
 
-* シリアルモニタに出力された赤外線の命令を全文コピーして、メモ帳などに保存しておきます。
+```
+21:39:17.721 -> Timestamp : 000130.976
+21:39:17.721 -> Library   : v2.7.1
+21:39:17.721 -> 
+21:39:17.721 -> Protocol  : DAIKIN
+21:39:17.721 -> Code      : 0x11DA2700C50000D711DA270042000054（以下略）
+21:39:17.721 -> Mesg Desc.: Power: Off, Mode: 4 (Heat), Temp: （以下略）
+21:39:17.792 -> uint16_t rawData[583] = {492, 396, （略）466};  // DAIKIN
+21:39:18.076 -> uint8_t state[35] = {0x11, 0xDA, 0x27, 0x00,（略）0x76};
+21:39:18.076 -> 
+21:39:18.076 -> 
+21:39:34.883 -> Timestamp : 000148.122
+21:39:34.883 -> Library   : v2.7.1
+21:39:34.883 -> 
+21:39:34.883 -> Protocol  : DAIKIN
+21:39:34.883 -> Code      : 0x11DA2700C50000D711DA270042000054（以下略）
+21:39:34.883 -> Mesg Desc.: Power: On, Mode: 4 (Heat), Temp:  （以下略）
+21:39:34.945 -> uint16_t rawData[583] = {510, 374,（略）494};  // DAIKIN
+21:39:35.211 -> uint8_t state[35] = {0x11, 0xDA, 0x27, 0x00,（略）0x77};
+21:39:35.248 -> 
 
-* 例えば、
- * エアコンのリモコンを構えて、オンとオフの二回を押す。
- * テレビのリモコンを構えて、オンとオフの二回を押す。
+```
+
+* このログを全文コピーして、メモ帳などに保存しておきます。
+
 
 
 
