@@ -33,7 +33,7 @@ VUIはITリテラシーの低い人でも
 
 
 ## Blueprintsという選択肢も！
-Voiceflowdと同様にノンコーディングでAlexaスキルを開発する方法として、Blueprintsというものがあります。
+Voiceflowと同様にノンコーディングでAlexaスキルを作成する方法として、Blueprintsというものがあります。
 
 [https://blueprints.amazon.co.jp/](https://blueprints.amazon.co.jp/)にアクセスしてください。
 ![Blueprintsホーム画面](images/chapxx-fukumura-kaigo/blueprints_home.png)
@@ -53,7 +53,7 @@ Blueprintsは、あらかじめひな形となるテンプレートがあり、�
 通常、スキルは「アレクサ、（スキル名）をひらいて」と発話することにより起動しますが、カスタムQ&Aはその必要がなく、「アレクサ、（質問内容）」と発話することで、アレクサは回答を返してくれます。
 
 ## BlueprintsとVoiceflowでスキルを作ってみる
-前述した、「緊急連絡先を教えてもらう」を例として、BlueprintsとVoiceflowでスキルを作り比べてみます。
+では実際に、前述した「緊急連絡先を教えてもらう」を例として、BlueprintsとVoiceflowでスキルを作り比べてみましょう。
 
 ### Blueprints(カスタムQ&A)
 Blueprintsホーム画面（[https://blueprints.amazon.co.jp/](https://blueprints.amazon.co.jp/)　で「カスタムQ&A」を選択し、「作成する」ボタンを押下します。
@@ -87,13 +87,33 @@ AlexaアプリかEchoデバイスで、「アレクサ、緊急連絡先は？�
 （BlueprintsはVoiceflowや通常のスキル開発などとは違って、テストのためのコンソール画面は存在しません。）
 
 ### Voiceflow
+次に、同じ内容をVoiceflowでもつくってみましょう。
 
+Voiceflowのホーム画面で「Create Project」を押下してください。
 
+BlueprintsのカスタムQ&Aと違って、スキル名を入力する必要がありますので、ここでは「私の緊急連絡先」というスキル名にします。
+
+![Voiceflow新規作成](images/chapxx-fukumura-kaigo/voiceflow1.png)
+
+複数の質問＆回答を行うスキルの作り方としては、以下が考えられますが、今回は緊急連絡先を知りたいという例ですので、すぐ回答してくれることを優先させるために、後者にしました。
+* 複数の質問＆回答を行うスキルを作成し、スキル内で発話内容により分岐させる
+* ひとつの質問＆回答を行うスキルを複数作成する
+
+Speakブロックを追加し、回答を入力します。
+
+![Voiceflow Speakブロックを追加](images/chapxx-fukumura-kaigo/voiceflow2.png)
+
+スキルを終了させるためのEXITブロックを追加して、これだけで完了です。
+
+![Voiceflow Speakブロックを追加](images/chapxx-fukumura-kaigo/voiceflow3.png)
+
+「Upload to Alexa」ボタンを押下して、スキルを完成させましょう。
+テストコンソールや、Alexaアプリ、Echoデバイスで「アレクサ、私の緊急連絡先をひらいて」と言ってみてください。回答を返してくれるはずです。
 
 ## 非エンジニアでもスキルを作ろう！
-これまで見たように、ノンコーディングでもスキルの開発は可能です。
+このように、ノンコーディングでもスキルの作成は可能です。
 
 Blueprintsはあらかじめ用意されたテンプレートに沿ったスキルしか作成できない代わりに、非常に簡単にスキルを作成できます。
 それに比べて、VoiceflowはBlueprintsよりも、複雑になりますが、自由にスキルを作成できます。
 
-どちらか一方ではなく、VoiceflowとBlueprintsを適材適所で使用すれば良いので、是非、スキル開発にチャレンジしてください！
+どちらか一方ではなく、VoiceflowとBlueprintsを適材適所で使用すれば良いので、是非、スキル作成にチャレンジしてください！
