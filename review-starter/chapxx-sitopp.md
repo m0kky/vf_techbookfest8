@@ -1,20 +1,24 @@
-# M5StickCで赤外線リモコンを作り、AlexaやGoogle Homeから家電を操作する。
+# スマートリモコンをM5Stackで自作し、Google Homeから家電を操作する
 
 本章では、Google HomeからActions On Googleを呼び出し、ActionsからMQTTでM5Stackへメッセージを渡し、M5Stackから赤外線で家電を操作する方法を説明します。
 
-![アーキテクチャ](images/chapxx-sitopp/s000.png)
+![アーキテクチャ](images/chapxx-sitopp/s001.png)
 
 
 M5Stackを赤外線リモコン化するところでC++のコードを書きますが、それ以外はノンコーディングで出来ます。
 またお手軽路線を守るため、VoiceflowやMQTTやWebhooksなどのサーバーサイドは、全て無料のものを使いました。
+
+
 IoTに使えるいろんなテクを寄せ集めていますので、何かのヒントになると幸いです。
 
-<!-- Actions On Googleを作る部分でVoiceflowを使っていますので、アップロード先を変えればAlexaでも使えるところが良いですね。
+なお、Actionsの作成時にVoiceflowを使っていますので、アップロード先を変えればAmazon Echoでも使えます。
 
 
-Nature Remo Miniなどのスマートハブは便利ですが、買うと結構高いので、家にあったM5Stackを使って自作してみます。M5Stack用の赤外線送受信ユニット（308円）だけは買い足しました。
+### なんでこのテーマ？
 
-最初、格安で人気のM5StickCを使って検証してみたのですが、赤外線の送信部分の出力が弱く、50cmくらいまで近づけないと反応しなかったので、M5Stackに変更しました。こちらなら1.5mほど飛びますので、一応使える物になると思います。 -->
+Nature Remo Miniなどのスマートハブを買ったら出来てしまう事なのですが、1個しか無いと赤外線が届かない部屋もあるし、買うと結構高いので、家にあったM5Stackを使って自作してみました。M5Stack用の赤外線送受信ユニット（308円）は買い足しました。
+
+当初、安くて可愛くて高性能のM5StickCを使って検証してみたのですが、赤外線の送信部分の出力が弱く、50cmくらいまで近づけないと反応しなかったので、M5Stackに変更しました。こちらなら1.5mほど飛びますので、一応使える物になると思います。 
 
 
 ### 本章でやること
@@ -28,21 +32,23 @@ Nature Remo Miniなどのスマートハブは便利ですが、買うと結構�
 <!-- * おまけ、VoiveflowからM5StickCを走らせる -->
 
 
-### 使用した部品
-
-<!-- * * M5StickC ¥1980 -->
-* M5STACK-BASIC ¥3,575　
-* M5用、赤外線送受信ユニット ¥308
-
-注1　MacとM5Stackをつなぐ時、M5Stackに付属のUSB Type-Cケーブルを使わないと認識しないことが多いので、なくさないよう大切に保管しておきましょう。
-
-
 ### 開発環境
 
 * MacBook Air（OS: 10.13.6 High Sierra）
 * VSCode
 * Arduino IDE 1.8.9
 * Google Home mini
+
+### 使用した部品
+
+<!-- * * M5StickC ¥1980 -->
+* M5STACK-BASIC ¥3,575　@<fn>{M5StackCable}
+* M5用、赤外線送受信ユニット ¥308
+
+//footnote[M5StackCable][M5Stackに付属のUSB Type-Cケーブルを使わずにMacに接続すると、シリアルポート接続できないことが多いので、なくさないよう大切に保管しておきましょう。 ]
+
+![使用した部品](images/chapxx-sitopp/s002.jpg)
+
 
 
 ## 手順
