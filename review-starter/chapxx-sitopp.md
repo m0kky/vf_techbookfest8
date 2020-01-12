@@ -182,7 +182,6 @@ Daikinの場合、
 
 ![M5StickCでエアコンを操作しているところ](images/chapxx-sitopp/s023.jpg)
 
-<!-- 
 
 
 
@@ -274,7 +273,7 @@ Event Name：Daikin_OnOff
 
 完成後、右上の「settings」をクリックするとIFTTTレシピの詳細が見れます。
 
-![IFTTTのレシピ詳細](images/chapxx-sitopp/s026.jpg)
+![IFTTTのレシピ詳細](images/chapxx-sitopp/s026)
 
 ### WebhooksのURLを調べる
 
@@ -287,7 +286,7 @@ Event Name：Daikin_OnOff
 URL：https://maker.ifttt.com/trigger//with/key/xxxxxxxxxxxxx_xxxxxxxxxxxxxx
 JSON：{ "value1" : "", "value2" : "", "value3" : "" }
 
-![webhooksのURL](images/chapxx-sitopp/s028.jpg)
+![webhooksのURL](images/chapxx-sitopp/s028)
 
 
 ## 4. VoiceflowでActions On Googleを作成
@@ -295,4 +294,3 @@ JSON：{ "value1" : "", "value2" : "", "value3" : "" }
 
 ## 5. M5StickCリモコンをMQTT対応にする
 
--->
