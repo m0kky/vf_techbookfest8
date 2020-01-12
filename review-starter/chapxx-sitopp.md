@@ -15,11 +15,10 @@ IoTのプロトタイピングにも使えるいろんなテクを寄せ集め�
 * AdafruitのMQTTブローカの設定 
 * IFTTTでMQTTの簡易パブリッシャーを作る 
 * VoiceflowでActions On Googleを作成 
-* 全部つなげて動作確認！ 
+* 全部つなげて動作確認
 
 
-![アーキテクチャ](images/chapxx-sitopp/s001.png)[scale=0.5]
-
+//image[images/chapxx-sitopp/s001][アーキテクチャ][scale=0.5]
 
 ### 開発環境
 
