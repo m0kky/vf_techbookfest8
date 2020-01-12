@@ -44,10 +44,8 @@ IoTのプロトタイピングにも使えるいろんなテクを寄せ集め�
 //}
 
 
-## 手順
 
-### M5StickCで赤外線リモコン作成
-
+## M5StickCで赤外線リモコン作成
 
 あらかじめ、MacにArduino IDEをインストールして、M5StickCを使えるようにしておきます。
 
@@ -60,12 +58,12 @@ https://docs.m5stack.com/#/ja/quick_start/m5stickc/m5stickc_quick_start_with_ard
 https://kuratsuki.net/2019/07/
 
 
-@<b>{M5StickCで、赤外線リモコンの命令を読み込む}
+### M5StickCで、赤外線リモコンの命令を読み込む
 
 Mac上でArduino IDEを起動し、M5StickCをMacにUSB Type-Cケーブルで接続します。
 
 * 「ツール」→「ボード」→「M5StickC」を選択します。
-* 「ツール」→「シリアルポート」→表示された複数の選択肢野中から、「usbserial」の文字が入っているものを選択します。
+* 「ツール」→「シリアルポート」→表示された複数の選択肢の中から、「/dev/cu.usbserial-」の文字が入っているものを選択します。
 
 ![Arduino IDEのツールメニュー、M5StickCがシリアルポート接続できた状態](images/chapxx-sitopp/s003.jpg)
 
@@ -77,23 +75,27 @@ Mac上でArduino IDEを起動し、M5StickCをMacにUSB Type-Cケーブルで接
 ```
 const uint16_t kRecvPin = 14;
 ↓
-const uint16_t kRecvPin = 22;
+const uint16_t kRecvPin = 33;
 ```
 
-* 「→」をクリックして、M5StickCに書き込みします。
-
-以下のメッセージが出たら、インストールは完了です。
+* スケッチエディタの左上にある「→」アイコンをクリックして、M5StickCに書き込みします。
+* 数十秒待ちます。
+* スケッチエディタの下半分にインストールログがどどっと出力されます。以下のメッセージが出たらインストール完了です。
 
 ```
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (128 compressed) at 0x00008000 in 0.0 seconds (effective 3177.2 kbit/s)...
+Hash of data verified.
+
 Leaving...
 Hard resetting via RTS pin...
 ```
 
+* 「ツール」→「シリアルモニタ」をクリックして、窓を開きます。
+* 「自動スクロール」にチェックが入っている事を確認しましょう。
+* 「IRrecvDumpV2 is now running and waiting for IR input on Pin 33」というメッセージが出るはずです。
 
-* 「ツール」→シリアルモニタを開きます。ここでシリアル出力したメッセージが閲覧できるようになります。
-「IRrecvDumpV2 is now running and waiting for IR input on Pin 22」というメッセージが出ていたら、ちゃんとシリアル出力できています。
-
-では、エアコンなどのリモコンを構えて、赤外線ユニットの20〜30センチ以内でリモコンを操作してみましょう。
+ではここで、エアコンなどのリモコンを構えて、赤外線ユニットの20〜30センチ以内でリモコンを操作してみましょう。
 
 オンとオフの2回、操作したところです。
 ここに画像：s021.png。
