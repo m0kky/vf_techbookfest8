@@ -68,6 +68,7 @@ Mac上でArduino IDEを起動し、M5StickCをMacにUSB Type-Cケーブルで接
 
 * 「ツール」→「ボード」→「M5StickC」を選択します。
 * 「ツール」→「シリアルポート」→表示された複数の選択肢野中から、「usbserial」の文字が入っているものを選択します。@<fn>{sitopp_m5stick_lost}
+
 //footnote[sitopp_m5stick_lost][usbserialのポートが出てこない場合、M5StickCに付属のUSBケーブルを使うと解決します。]
 
 ![Arduino IDEのツールメニュー、M5StickCがシリアルポート接続できた状態](images/chapxx-sitopp/s003.jpg)
