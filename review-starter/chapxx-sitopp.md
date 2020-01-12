@@ -46,9 +46,8 @@ IoTのプロトタイピングにも使えるいろんなテクを寄せ集め�
 
 ## 手順
 
-## 1. M5StickCで赤外線リモコン作成
+### M5StickCで赤外線リモコン作成
 
-### 準備
 
 あらかじめ、MacにArduino IDEをインストールして、M5StickCを使えるようにしておきます。
 
@@ -61,7 +60,7 @@ https://docs.m5stack.com/#/ja/quick_start/m5stickc/m5stickc_quick_start_with_ard
 https://kuratsuki.net/2019/07/
 
 
-### M5StickCで、赤外線リモコンの命令を読み込む
+@<b>{M5StickCで、赤外線リモコンの命令を読み込む}
 
 Mac上でArduino IDEを起動し、M5StickCをMacにUSB Type-Cケーブルで接続します。
 
