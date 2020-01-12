@@ -95,19 +95,72 @@ Hard resetting via RTS pin...
 * 「自動スクロール」にチェックが入っている事を確認しましょう。
 * 「IRrecvDumpV2 is now running and waiting for IR input on Pin 33」というメッセージが出るはずです。
 
-ではここで、エアコンなどのリモコンを構えて、赤外線ユニットの20〜30センチ以内でリモコンを操作してみましょう。
 
-オンとオフの2回、操作したところです。
-ここに画像：s021.png。
+* M5StickCに置き換えたい家電のリモコンを持ってきてください。
+* 赤外線ユニットの20〜30センチ以内でリモコンを操作してください。
+
+例）エアコンのリモコンを構えて、オンとオフの二回を押す。
+![リモコン](images/chapxx-sitopp/s021.jpg)
 
 
-シリアルモニタにコードが出力されたら、全文コピーして、メモ帳などに保存しておきます。
+* シリアルモニタにコードが出力されますので、全文コピーして、メモ帳などに保存しておきます。
+
+例）Daikinのエアコン（古すぎて型番不明）
+```
+21:39:17.721 -> Timestamp : 000130.976
+21:39:17.721 -> Library   : v2.7.1
+21:39:17.721 -> 
+21:39:17.721 -> Protocol  : DAIKIN
+21:39:17.721 -> Code      : 0x11DA2700C50000D711DA27004200005411DA270000483600BF000006600000C1000076 (280 Bits)
+21:39:17.721 -> Mesg Desc.: Power: Off, Mode: 4 (Heat), Temp: 27C, Fan: 11 (Quiet), Powerful: Off, Quiet: Off, Sensor: Off, Mould: Off, Comfort: Off, Swing(H): Off, Swing(V): On, Clock: 00:00, Day: 0 (UNKNOWN), On Timer: Off, Off Timer: Off, Weekly Timer: On
+21:39:17.792 -> uint16_t rawData[583] = {492, 396,  468, 396,（略）466};  // DAIKIN
+21:39:18.076 -> uint8_t state[35] = {0x11, 0xDA, 0x27, 0x00,（略）0x76};
+21:39:18.076 -> 
+21:39:18.076 -> 
+21:39:34.883 -> Timestamp : 000148.122
+21:39:34.883 -> Library   : v2.7.1
+21:39:34.883 -> 
+21:39:34.883 -> Protocol  : DAIKIN
+21:39:34.883 -> Code      : 0x11DA2700C50000D711DA27004200005411DA270000493600BF000006600000C1000077 (280 Bits)
+21:39:34.883 -> Mesg Desc.: Power: On, Mode: 4 (Heat), Temp: 27C, Fan: 11 (Quiet), Powerful: Off, Quiet: Off, Sensor: Off, Mould: Off, Comfort: Off, Swing(H): Off, Swing(V): On, Clock: 00:00, Day: 0 (UNKNOWN), On Timer: Off, Off Timer: Off, Weekly Timer: On
+21:39:34.945 -> uint16_t rawData[583] = {510, 374,  496, 372,（略）494};  // DAIKIN
+21:39:35.211 -> uint8_t state[35] = {0x11, 0xDA, 0x27, 0x00,（略）0x77};
+21:39:35.248 -> 
+
+```
+例）sonyのBRAVIA
+```
+22:22:27.895 -> Timestamp : 002721.132
+22:22:27.895 -> Library   : v2.7.1
+22:22:27.895 -> 
+22:22:27.895 -> Protocol  : SONY
+22:22:27.895 -> Code      : 0xA90 (12 Bits)
+22:22:27.895 -> uint16_t rawData[259] = {2442, 560,  1230, 558, （略）634};  // SONY A90
+22:22:28.042 -> uint32_t address = 0x1;
+22:22:28.042 -> uint32_t command = 0x15;
+22:22:28.042 -> uint64_t data = 0xA90;
+22:22:28.042 -> 
+22:22:28.042 -> 
+22:23:32.395 -> Timestamp : 002785.641
+22:23:32.430 -> Library   : v2.7.1
+22:23:32.430 -> 
+22:23:32.430 -> Protocol  : SONY
+22:23:32.430 -> Code      : 0xA90 (12 Bits)
+22:23:32.430 -> uint16_t rawData[311] = {2468, 536,  1254, 534, （略）636};  // SONY A90
+22:23:32.578 -> uint32_t address = 0x1;
+22:23:32.578 -> uint32_t command = 0x15;
+22:23:32.578 -> uint64_t data = 0xA90;
+```
 
 
-### 赤外線命令の切り出し
 
-メーカごとにやり方が違うので、少し面倒です。
-この本ではDaikinのエアコンでのやり方について説明します。
+### 赤外線の命令の切り出し
+
+この本ではDaikinのエアコンと、Sonyのテレビのやり方について説明します。
+赤外線リモコンの命令は統一されておらず、メーカごとにフォーマットが違います。
+他のメーカーについては、ググるといろいろ親切に解説してくださっているページがありますので、参照して見てください。
+
+Daikin 
 
 
 Arduino IDEの「ファイル」→「スケッチ例」→「IRremoteESP8266」→「IRsendDemo」を開きます。
