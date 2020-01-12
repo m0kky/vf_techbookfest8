@@ -200,13 +200,13 @@ Speakブロックの設定は以下のように設定します。
 Interactionブロックでインテント/サンプル発話/スロットを作っていきます。Interactionブロックをクリックして、設定のSlotタブで以下のように設定してください。
 
 - 「+Add Slots」をクリック
-- ```slot_one```という名前のスロットが追加されるので、```slot_recipe_name```に変更します。
+- ```slot_one```という名前のスロットが追加されるので、```slot\_recipe\_name```に変更します。
 - 下の「Select Slot Type」から、今回はレシピ名＝食べ物の名前になるので「Food」を選択します。
 
 次にIntentsタブです。ここでインテントとサンプル発話を追加します。
 
 - 「+Add Slots」をクリック
-- ```intent_one```という名前のインテントが追加されるので、```intent_ask_recipe```に変更にします。
+- ```intent_one```という名前のインテントが追加されるので、```intent\_ask\_recipe```に変更します。
 - 下の「Enter user reply」に以下のサンプル発話を追加します。
 
 ```
@@ -246,7 +246,7 @@ Capture block - Voiceflow Docs（英語）
 
 これで発話を受け取る準備ができました。では、その発話をもとにスプレッドシートを検索するようにしてみましょう。Integrationブロックをクリックして、「With Settings」をクリックします。
 
-ランダムの場合は、左側は「Row Number」を選択して、右側の「Value to Match」は空にしていました。これを以下のように、左側は「recipe_name」に、右側は```{```を入力すると変数が選択できるようになるので、```{varUserRecipe}```を選択します。これで「recipe_name」カラムに変数```varUserRecipe```で発話したものを指定して検索ができるということです。逆にランダムの場合は「Row Number」を指定して「Next」をクリックします。
+ランダムの場合は、左側は「Row Number」を選択して、右側の「Value to Match」は空にしていました。これを以下のように、左側は「recipe\_name」に、右側は```{```を入力すると変数が選択できるようになるので、```{varUserRecipe}```を選択します。これで「recipe\_name」カラムに変数```varUserRecipe```で発話したものを指定して検索ができるということです。逆にランダムの場合は「Row Number」を指定して「Next」をクリックします。
 
 「Mapping Output」はそのまま「Next」をクリックします。
 
@@ -282,6 +282,8 @@ Advanced expression (IF and SET blocks) - Voiceflow Docs（英語）
 ※一番最後にある「For more details you can look here. 〜」のリンクもご覧ください。
 」
 //}
+
+では、それぞれの結果をSpeakブロックでAlexaに話させましょう。
 
 ## まとめ
 
