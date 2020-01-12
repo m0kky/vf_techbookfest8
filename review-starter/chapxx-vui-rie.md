@@ -388,7 +388,6 @@ https://www.amazon.com/St-Noire-Hosted-Cinematic-Exclusive/dp/B07P693BG1
 
 https://www.amazon.com/X2Games-St-Noire/dp/B07TM17G96
 
-![St.Noire](images/chapxx-vui-rie/stnoire.png)
 
 
 
@@ -550,7 +549,7 @@ Voiceflowでは、男性の声はTakumi、女性の声はMizukiをベースに�
 
 台本のフォーマットも掲載しておきますね。
 
-![St.Noire](images/chapxx-vui-rie/daihon.png)
+![台本フォーマット](images/chapxx-vui-rie/daihon.png)
 
 
 
