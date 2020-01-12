@@ -189,8 +189,11 @@ Speakブロックの設定は以下のように設定します。
 
 ユーザの発話の受け取りが必要になりますので、少しフローを変更します。まず、変数を作りましょう。Variablesメニューに切り替えて、```varUserRecipe```という変数を作成してください。ここにユーザの発話したレシピ名が入ります。
 
+![](images/chapxx-kun432/s070.png)
 
 最初のSpeakブロックの中身を修正します。
+
+![](images/chapxx-kun432/s071.png)
 
 ```
 我が家のレシピスキルにようこそ。このスキルでは、レシピの名前を言うと材料名を聞くことができるよ。例えば「ハンバーグのレシピが知りたい」と言ってみてね。
@@ -198,16 +201,22 @@ Speakブロックの設定は以下のように設定します。
 
 最初のSpeakブロックとIntegrationブロックの間に、InteractionブロックとSpeakブロックを追加して、以下のようにつなげてください。
 
+![](images/chapxx-kun432/s072.png)
+
 Interactionブロックでインテント/サンプル発話/スロットを作っていきます。Interactionブロックをクリックして、設定のSlotタブで以下のように設定してください。
 
+![](images/chapxx-kun432/s073.png)
+
 - 「+Add Slots」をクリック
-- ```slot_one```という名前のスロットが追加されるので、```slot_recipe_name```に変更します。
+- 「slot_one」という名前のスロットが追加されるので、```slot_recipe_name```に変更します。
 - 下の「Select Slot Type」から、今回はレシピ名＝食べ物の名前になるので「Food」を選択します。
 
 次にIntentsタブです。ここでインテントとサンプル発話を追加します。
 
-- 「+Add Slots」をクリック
-- ```intent_one```という名前のインテントが追加されるので、```intent_ask_recipe```に変更します。
+![](images/chapxx-kun432/s074.png)
+
+- 「+Add intent」をクリック
+- 「intent_one」という名前のインテントが追加されるので、```intent_ask_recipe```に変更します。
 - 下の「Enter user reply」に以下のサンプル発話を追加します。
 
 ```
@@ -222,22 +231,12 @@ Interactionブロックでインテント/サンプル発話/スロットを作�
 
 最後にChoicesタブです。ここでインテントと会話のフローを紐付けます。
 
+![](images/chapxx-kun432/s075.png)
 
-//note[インテント/サンプル発話/スロットとInteractionブロックについて]{
-インテント/サンプル発話/スロットとInteractionブロックでの設定については、私が作成したハンズオン資料にもまとめていますのでそちらもご覧ください。@<br>{}
-
-Voiceflowハンズオン Vol.1@<br>{}
-@<href>{https://vf-handson-01.netlify.com/#0}
-//}
-
-//note[Captureブロックについて]{
-ユーザの発話を受け取って変数に入れるもう1つの方法として「Captureブロック」があります。Captureブロックはスロットだけを受け取るためのブロックで、とてもシンプルに使える反面、サンプル発話と組み合わせて使えない・カスタムスロットのシノニムが効かない不具合（2020/1/12時点）など、使い方が限定されます。ユースケースにあわせて選択していただければと思いますが、個人的にはサンプル発話やシノニムが使える、より柔軟なInteractionブロックをオススメします。@<br>{}
-
-Captureブロックについては公式のドキュメントもご覧ください@<br>{}
-
-Capture block - Voiceflow Docs（英語）@<br>{}
-@<href>{https://docs.voiceflow.com/voiceflow-documentation/untitled/capture-block}
-//}
+- 「+Add Choice」をクリック
+- 「Select Intent」に「intent_ask_recipe」を選択します。
+- 「+Add Variable Map」をクリック
+- 左側の「Slot」は```[slot_recipe_name]```、右側の「Select Variable」は```{varUserRecipe}```をそれぞれ選択します。
 
 上のSpeakブロックは、Interactionブロックで設定したインテントに当てはまらない発話を受け取った場合に、もう一度聞き直すために使います。以下のように入力します。
 
