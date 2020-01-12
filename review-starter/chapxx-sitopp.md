@@ -43,3 +43,68 @@ IoTのプロトタイピングにも使えるいろんなテクを寄せ集め�
 \clearpage
 //}
 
+
+## M5StickCで赤外線リモコン作成
+
+あらかじめ、MacにArduino IDEをインストールして、M5StickCを使えるようにしておきます。
+
+参考）
+
+* 公式「M5StickCクイックスタート-Arduino Win」
+https://docs.m5stack.com/#/ja/quick_start/m5stickc/m5stickc_quick_start_with_arduino_Windows
+
+* 「くらつきねっと」さんの「M5StickC で開発を行うための Arduino IDE のセットアップ」
+https://kuratsuki.net/2019/07/
+
+
+### M5StickCで、赤外線リモコンの命令を読み込む
+
+Mac上でArduino IDEを起動し、M5StickCをMacにUSB Type-Cケーブルで接続します。
+
+* 「ツール」→「ボード」→「M5StickC」を選択します。
+* 「ツール」→「シリアルポート」→表示された複数の選択肢の中から、「/dev/cu.usbserial-」の文字が入っているものを選択します。
+
+![Arduino IDEのツールメニュー、M5StickCがシリアルポート接続できた状態](images/chapxx-sitopp/s003.jpg)
+
+
+* Arduino IDEの「ツール」→「ライブラリを管理」→「IRremoteESP8266」と入力し、表示されたライブラリをインストールします。
+* 「ファイル」→「スケッチ例」→「IRremoteESP8266」→「IRrecvDumpV2」を開きます。
+* 「ファイル」→「新規ファイル」でスケッチエディタを開き、上で開いた「IRrecvDumpV2」を全文コピーして貼り付け、以下の一行だけ書き換えます。
+
+```
+const uint16_t kRecvPin = 14;
+↓
+const uint16_t kRecvPin = 33;
+```
+
+* スケッチエディタの左上にある「→」アイコンをクリックして、M5StickCに書き込みします。
+* 保存場所を聞かれるので、適当に指定します。
+* 書き込みにかかる時間、数十秒を待ちます。
+* スケッチエディタの下半分にインストールログがどどっと出力されます。以下のメッセージが出たらインストール完了です。
+
+```
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (128 compressed) at 0x00008000 in 0.0 seconds (effective 3177.2 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+```
+
+* 「ツール」→「シリアルモニタ」をクリックして、窓を開きます。
+* 「自動スクロール」にチェックが入っている事を確認しましょう。
+* 「IRrecvDumpV2 is now running and waiting for IR input on Pin 33」というメッセージが出るはずです。
+
+
+* M5StickCに置き換えたい家電のリモコンを持ってきてください。
+* 赤外線ユニットの20〜30センチ以内でリモコンを操作してください。
+* シリアルモニタにコードが出力されます。
+
+![リモコン](images/chapxx-sitopp/s021.jpg)
+
+
+* シリアルモニタに出力された赤外線の命令を全文コピーして、メモ帳などに保存しておきます。
+
+* 例えば、
+ * エアコンのリモコンを構えて、オンとオフの二回を押す。
+ * テレビのリモコンを構えて、オンとオフの二回を押す。
