@@ -56,21 +56,27 @@ Blueprintsは、あらかじめひな形となるテンプレートがあり、�
 前述した、「緊急連絡先を教えてもらう」を例として、BlueprintsとVoiceflowでスキルを作り比べてみます。
 
 ### Blueprints(カスタムQ&A)
-Blueprintsホーム画面（[https://blueprints.amazon.co.jp/](https://blueprints.amazon.co.jp/)）で「カスタムQ&A」を選択し、「作成する」ボタンを押下します。
+Blueprintsホーム画面（[https://blueprints.amazon.co.jp/](https://blueprints.amazon.co.jp/)　で「カスタムQ&A」を選択し、「作成する」ボタンを押下します。
 
 ![BlueprintsカスタムQ&A新規作成](images/chapxx-fukumura-kaigo/blueprints_qa1.png)
 
 初期表示として、デフォルトの質問と内容が表示されます。
 
+（デフォルトの質問は、おやつの内容やお父さんの好きな場所など、いかにも日常生活で使いそうな内容ですね！）
+
 ![BlueprintsカスタムQ&Aデフォルト](images/chapxx-fukumura-kaigo/blueprints_qa2.png)
 
 今回はデフォルトの内容は不要なので一旦削除します。
+
+（削除しなくても問題ありません。）
 
 ![BlueprintsカスタムQ&Aクリア](images/chapxx-fukumura-kaigo/blueprints_qa3.png)
 
 ここから、「Q&Aを追加する」ボタンを押下して、緊急連絡先を教えてもらう際の、質問内容と回答を入力していきます。
 
+「緊急連絡先は？」「困ったときの連絡先を教えて」など、想定できる質問内容をいくつか入力してみてください。必ずこのフレーズを言うというのであれば、ひとつでもかまいませんが、できるだけ柔軟にしたほうがストレスなく使えるようになります。
 
+次に回答内容を入力します。
 
 ![BlueprintsカスタムQ&A入力](images/chapxx-fukumura-kaigo/blueprints_qa4.png)
 
@@ -81,7 +87,8 @@ Blueprintsホーム画面（[https://blueprints.amazon.co.jp/](https://blueprint
 
 ## 非エンジニアでもスキルを作ろう！
 これまで見たように、ノンコーディングでもスキルの開発は可能です。
+
 Blueprintsはあらかじめ用意されたテンプレートに沿ったスキルしか作成できない代わりに、非常に簡単にスキルを作成できます。
 それに比べて、VoiceflowはBlueprintsよりも、複雑になりますが、自由にスキルを作成できます。
-どちらか一方ではなく、VoiceflowとBlueprintsを適材適所で使用すればよいと思います。
-是非、スキル開発にチャレンジしてください！
+
+どちらか一方ではなく、VoiceflowとBlueprintsを適材適所で使用すれば良いので、是非、スキル開発にチャレンジしてください！
