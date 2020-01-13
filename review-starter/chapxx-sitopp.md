@@ -448,7 +448,7 @@ https://learn.voiceflow.com/en/articles/@<br>{}
 * 「Build your Action」→「Add Action(s)」→「Add Action」→「CREATE Action」のポップアップを開く
 * （ここから先はVoice公式の説明と同じです。）
 
-<!-- 
+
 Jsonが発行されたら、voiceflowに戻り、「Drop Json File here or Browse」の所にjsonファイルをドラッグ＆ドロップして「Upload」をクリックします。
 
 
@@ -488,7 +488,7 @@ Google Assistant voice：Male 1
 
 ![しょういんじのテスト](images/chapxx-sitopp/s036)
 
--->
+
 
 もしエラーが出たら、以下を試してみてください。
 
