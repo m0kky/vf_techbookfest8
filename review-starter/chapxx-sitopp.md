@@ -448,19 +448,44 @@ Speaking as Alexa
 
 ### Googleにアップロード
 
-いよいよです。
+アップする前にもう一度ロケールを確認します。
 
-* 「Upload to Google」のボタンをクリック
+* 「canvas Test Publish」の三つのうち、「Publish」をクリック
+* 「Google beta」をクリック→Languagesパネルで、「Japanese(ja）」をクリックし、Next
+* 「Canvas」に戻り「Upload to Google」のボタンをクリック
 * インジケーターが周り、10数秒ほどでアップロード完了し、「Action Upload Successfull」と表示される
 * 「You may test on the Google Actions Simulator. 」の部分をクリックすると、別窓でシミュレーターが開く。
 * もし失敗したら、ネットワークの接続ミスか、「Googleのデベロッパーアカウントとの連携」を見直してください。
 
-* 「Talk to my test app」の所に「暖房つけて」と入力してエンター
-* 「We're sorry, but something went wrong. Please try again.」と出るはず。
-* DialogFlowのコンソールを開く https://dialogflow.cloud.google.com/
-* さっき作ったプロジェクトが開くはずですが、もし違うプロジェクトが開いたら、左上の三本線のメニューアイコンをクリックして、プロジェクトを選び直します
+![IFTTTのWebhoooksの発火履歴](images/chapxx-sitopp/s035)
 
-![IFTTTのWebhoooksの発火履歴](images/chapxx-sitopp/s034)
+
+* シミュレーターはいったんスルーして、「Develop」タブを開き、「Japanese」→「Display name」にアクション名を入力。自分の場合、M-1のぺこぱが面白かったので、以下のようにしましたー。右上の「Save」をクリック。
+
+```
+Display name：しょういんじ
+Google Assistant voice：Male 1
+```
+* 「Don't forget to update sample invocations in the directory information page」というガイダンスが出るのですがいったんスルー。
+* 「Modify Languages」をクリック、「English」のチェックを外して、「Japanese」だけにチェックが入ってる状態にして、「Save」をクリック。Deleting Languagesの警告がでますが、OKをクリック。
+
+* 「Overview Develop Test Deploy Analytics」のうち「Test」をクリック、
+
+* 画面左下の入力欄に「しょういんじにつないで」と出ているので、カーソルをあわせてエンター押下
+* 「はい。しょういんじのテストバージョンです」と応答があったら、「暖房つけて」と入力してエンター押下
+* 「暖房をつけます。送信しました。」と応答があり、アクションは終了します。
+
+![しょういんじのテスト](images/chapxx-sitopp/s036)
+
+
+もし日本語は認識しません、、系のエラーが出たら、以下を試してみてください。
+
+* DialogFlowのコンソールを開く https://dialogflow.cloud.google.com/
+* 左上の三本線のメニューアイコンをクリックして、先ほど作ったプロジェクトを選び、歯車をクリックします。
+* 「General Language MLSettings〜」とタブが並んでいるので「Languages」をクリック
+* 「Select Additional Language」をクリックし、「Japanese - ja」を選択
+* 「SAVE」をクリック
+
 
 
 ## 5. M5StickCリモコンをMQTT対応にする
