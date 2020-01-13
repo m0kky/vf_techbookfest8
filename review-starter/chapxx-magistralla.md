@@ -170,16 +170,17 @@ SSMLとは、Speech Synthesis Markup Language（合成音声マークアップ�
 - Google Assistant Sound Library
   - https://developers.google.com/assistant/tools/sound-library
 
-//embed[latex]{
-\clearpage
-//}
-
+@<br>{}
 例題では、「準備はできましたか？」の問いに対して「できました」と回答した場合、ベンダーが用意している音声ファイルを使って効果音を鳴らします。  
 「speak」ブロックに`audio`タグを入力します。Alexaスキルの場合、サウンドライブラリでタグのコピーが可能ですので、コピペします。
 
 ```
 <audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_positive_response_01"/>
 ```
+
+//embed[latex]{
+\clearpage
+//}
 
 ![発話とブロック](images/chapxx-magistralla/suzu05.png)
 
