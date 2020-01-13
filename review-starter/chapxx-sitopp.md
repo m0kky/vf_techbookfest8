@@ -270,7 +270,7 @@ Event Name：M5StickCIRRemoCon
 
 ![IFTTTのレシピ詳細](images/chapxx-sitopp/s026)
 
-### WebhooksのURLを調べる
+#### WebhooksのURLを調べる
 
 * ChromeでIFTTTの「My Services」にアクセス https://ifttt.com/my_services 
 * 「webhooks」 → 「Documentation」
@@ -389,14 +389,14 @@ VALUE t7d=ClVt （任意の文字列を入力してください。）
 
 ### Voiceflow内でブロックの単体テスト
 
-* 入力欄の右の下の方にある「Test Request」をクリック。
-* ポップアップが開いたら「Raw」タブを開く。
-* 「Congratulations! You're fired the M5StickCIRRemoCon event"」と表示されればOK。もしエラーなら、POSTのURLが間違っているので見直す。
+- 入力欄の右の下の方にある「Test Request」をクリック。
+- ポップアップが開いたら「Raw」タブを開く。
+- 「Congratulations! You're fired the M5StickCIRRemoCon event"」と表示されればOK。もしエラーなら、POSTのURLが間違っているので見直す。
 
-* IFTTT側の発火履歴も確認してみる。IFTTTのMyAppletsにアクセス https://ifttt.com/my_applets 
-* 先ほど作ったレシピ「If Maker Event "M5StickCIRRemoCon", then Send data to onoff feed」が一番上に出てくるのでクリック→「Settings」
-* 「View activity」ボタンをクリックすると以下の画面が開く。Voiceflowで「Test Request」した時間と、「Applet ran」の時間があってればOK。
-* もし履歴が無かったら、Voiceflow側で指定したURLの中のEvent部分と、IFTTT側で指定したEvent Nameが違うので、見直す。正しくは「M5StickCIRRemoCon」。
+- IFTTT側の発火履歴も確認してみる。IFTTTのMyAppletsにアクセス https://ifttt.com/my_applets 
+- 先ほど作ったレシピ「If Maker Event "M5StickCIRRemoCon", then Send data to onoff feed」が一番上に出てくるのでクリック→「Settings」
+- 「View activity」ボタンをクリックすると以下の画面が開く。Voiceflowで「Test Request」した時間と、「Applet ran」の時間があってればOK。
+- もし履歴が無かったら、Voiceflow側で指定したURLの中のEvent部分と、IFTTT側で指定したEvent Nameが違うので、見直す。正しくは「M5StickCIRRemoCon」。
 
 ![IFTTTのWebhoooksの発火履歴](images/chapxx-sitopp/s031)
 
@@ -548,10 +548,10 @@ URL：https://github.com/sitopp/vf_techbookfest8_sampleCode
 ```
 10 #define WLAN_SSID       ""  //WiFiのSSID
 11 #define WLAN_PASS       ""  //WiFiのパスワード
-
+(略)
 17 #define AIO_USERNAME    ""  //AdafruitのUsername
 18 #define AIO_KEY         ""  //AdafruitのActive Key
-
+(略)
 79    uint8_t daikin_code[35] = {
 80      0x11, 0xDA, 0x27, 0x00, 0xC5, 0x00, 0x00, 0xD7,
 81      0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000,
@@ -559,7 +559,7 @@ URL：https://github.com/sitopp/vf_techbookfest8_sampleCode
 83      0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0x00, 0x00, 0x39};  
 84      //ダミー。自分のリモコンの信号に書き換えること        
 85      irsend.sendDaikin(daikin_code); //メーカー毎にクラスが異なる
-
+(略)
 91    uint8_t daikin_code[35] = {
 92      0x11, 0xDA, 0x27, 0x00, 0xC5, 0x00, 0x00, 0xD7,
 93      0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000,
