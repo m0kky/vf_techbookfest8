@@ -65,6 +65,10 @@ Googleアカウントの選択画面が表示されますので、Googleスプ�
 
 ![](images/chapxx-kun432/s006-3.png)
 
+//embed[latex]{
+\clearpage
+//}
+
 以下のように表示されればGoogleアカウントとの紐付けは完了しています。「Using Sheet」をクリックして次に進みます。
 
 ![](images/chapxx-kun432/s008.png)
@@ -119,7 +123,7 @@ Googleスプレッドシートとの連携ができましたが、まだスキ�
 
 「+Add Mapping」をクリックすると、「Column」と「Variable」をそれぞれ選択できるようになります。「Column」でスプレッドシートから取得したデータのカラム名を、「Variable」でそれを紐付ける変数名を指定します。これでスプレッドシートのデータと変数が紐付けられるというわけです。
 
-![](images/chapxx-kun432/s050.png)
+![](images/chapxx-kun432/s053.png)
 
 では、まず「レシピ名」から紐付けを行っていきましょう。「Column」をクリックして```recipe_name```を選択します。
 
