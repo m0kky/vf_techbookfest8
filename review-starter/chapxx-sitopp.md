@@ -403,12 +403,8 @@ VALUE t7d=ClVt （任意の文字列を入力してください。）
 
 
 * 「▶︎Basic」→「Speak」ブロックをCanvasにドラッグし、Integrationsブロックの右側から線を出して繋ぐ
-* Speakブロックをクリックし、設定画面を開く。
+* Speakブロックをクリックし、設定画面を開いて、「Speaking as Alexa」の後ろに「送信しました。」と記入
 
-```
-Speaking as Alexa
-送信しました。
-```
 これで「暖房をつける」というフローが完成しました。
 「暖房を消す」のフローは後で作成することにして、テストをしてみます。
 
@@ -416,7 +412,7 @@ Speaking as Alexa
 
 * ヘッダの一列下にある「Canvas Test Publish」のうち「Test」をクリック
 * 画面右下に「Start Test」ボタンが出たらクリック
-* 「USER SAYS」入力欄に「暖房つけて」と記入し、エンター押下。すると応答が返ってきます。
+* 「USER SAYS」入力欄に「暖房つけて」と記入し、エンターを押下すると、応答が返ってきます。
 
 ```
 暖房をつけます。
@@ -435,55 +431,51 @@ Speaking as Alexa
 
 * Canvasに戻り、右上の「Upload to Google」ボタンを押下
 * 「Please provide Dialogflow Credentials Setup instructions can be found here」の「here」をクリック
-* 別タブが開いてガイダンスが表示されるので、英語だけど、頑張って読みながら、この通り進めていく。
+* 別タブが開いてガイダンスが表示されるので、この通り進めていく。
 * Project Nameは「voiceflow-IRRemocon」などとしておきましょう。
 
-![https://learn.voiceflow.com/en/articles/2705386-uploading-your-project-to-google-assistant](images/chapxx-sitopp/s032)
+```Voiceflow公式ガイダンス：https://learn.voiceflow.com/en/articles/2705386-uploading-your-project-to-google-assistant```
+
+![](images/chapxx-sitopp/s032)
 
 なお、2020年1月12日現在では、「Login with the same account, go back to the Google Actions Console window and hit the Add your first action again.」の次の部分のGoogle側の画面手順が変わっているので、以下のように進めてください。
 
 * https://console.actions.google.com/ で該当のプロジェクトを選び、「Overview」をクリック
-* 「Build your Action」→「Add Action(s)」→「Add Action」→「CREATE Action」のポップアップが開く
-* （ここからVoice公式の説明に戻ります。）
+* 「Build your Action」→「Add Action(s)」→「Add Action」→「CREATE Action」のポップアップを開く
+* （ここから先はVoice公式の説明と同じです。）
 
 
+Jsonが発行されたら、voiceflowに戻り、「Drop Json File here or Browse」の所にjsonファイルをドラッグ＆ドロップして「Upload」をクリックします。
 
-
-* Jsonが発行されたら、voiceflowに戻り、「Drop Json File here or Browse」の所にjsonファイルをドラッグ＆ドロップ→「Upload」をクリック
-* 接続できたら以下のメッセージが出る
-
-
-![IFTTTのWebhoooksの発火履歴](images/chapxx-sitopp/s033)
 
 
 ### Googleにアップロード
 
-アップする前にもう一度ロケールを確認します。
+アップする前に言語設定を確認します。
 
-* 「canvas Test Publish」の三つのうち、「Publish」をクリック
-* 「Google beta」をクリック→Languagesパネルで、「Japanese(ja）」をクリックし、Next
+* VoiceflowのCanvasを開いている状態で、画面左上の「canvas Test Publish」の三つのうち「Publish」をクリック
+* 「Google beta」をクリック→Languagesパネルで、「Japanese(ja）」→「Next」
 * 「Canvas」に戻り「Upload to Google」のボタンをクリック
 * インジケーターが周り、10数秒ほどでアップロード完了し、「Action Upload Successfull」と表示される
 * 「You may test on the Google Actions Simulator. 」の部分をクリックすると、別窓でシミュレーターが開く。
-* もし失敗したら、ネットワークの接続ミスか、「Googleのデベロッパーアカウントとの連携」を見直してください。
-
-![IFTTTのWebhoooksの発火履歴](images/chapxx-sitopp/s035)
 
 
-* シミュレーターはいったんスルーして、「Develop」タブを開き、「Japanese」→「Display name」にアクション名を入力。自分の場合、M-1のぺこぱが面白かったので、以下のようにしました。
+![シミュレーターを開いたところ](images/chapxx-sitopp/s035)
+
+もしアップロードに失敗したら、前の項目「Googleのデベロッパーアカウントとの連携」を見直してください。
 
 
+さてシミュレーターが開きましたが、いったんスルーしてActionsの呼び名を設定します。一般公開しないのでなんでも良いです。年末のM-1のぺこぱが面白かったので、「しょういんじ」にしてみます。
+
+* 「Develop」タブを開き、「Japanese」→「Display name」の設定欄で、Actionsの呼び名を入力
 ```
 Display name：しょういんじ
 Google Assistant voice：Male 1
 ```
-
 * 右上の「Save」をクリック。
 * 「Don't forget to update sample invocations in the directory information page」というガイダンスが出るのですがいったんスルー。
 * 「Modify Languages」をクリック、「English」のチェックを外して、「Japanese」だけにチェックが入ってる状態にして、「Save」をクリック。Deleting Languagesの警告がでますが、OKをクリック。
-
 * 「Overview Develop Test Deploy Analytics」のうち「Test」をクリック、
-
 * 画面左下の入力欄に「しょういんじにつないで」と出ているので、カーソルをあわせてエンター押下。
 * 「はい。しょういんじのテストバージョンです」と応答があったら、「暖房つけて」と入力してエンター押下。
 * 「暖房をつけます。送信しました。」と応答があり、アクションは終了します。
@@ -506,7 +498,6 @@ Chromeで開いたvoiceflowの画面に戻り、残りを編集します。
 * 一番左の細いペインの一番上のアイコン「Blocks」をクリック
 * 「▶︎Logic」→「Set」ブロックをCanvasにドラッグし、Interactionブロックの右側の「2」から線を繋ぐ
 * 上記のsetブロックをクリックし、設定画面を開いたら、以下のように指定。
-
 ```
 set {device} to: 「aircon」
 set {onoff} to: 「off」
