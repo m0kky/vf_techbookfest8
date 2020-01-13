@@ -569,6 +569,8 @@ URL：https://github.com/sitopp/vf_techbookfest8_sampleCode
 * 書き込みにかかる時間、数十秒を待ちます。
 * 「ツール」→「シリアルモニタ」をクリックして、窓を開きます。
 
+#### IFTTT〜MQTT〜M5StickCの結合テスト
+
 IFTTTのWebhooksに付属のTestツールを使って、結合テストしてみましょう。
 
 * ChromeでIFTTTの「My Services」にアクセス https://ifttt.com/my_services 
