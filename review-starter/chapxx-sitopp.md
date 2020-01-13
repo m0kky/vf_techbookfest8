@@ -11,12 +11,12 @@ IoTのプロトタイピングにも使えるいろんなテクを寄せ集め�
 
 ### やること
 
-* 1. M5StickCで自宅エアコンの赤外線リモコンを作成 
-* 2. AdafruitのMQTTブローカの設定 
-* 3. IFTTTでMQTTの簡易パブリッシャーを作る 
-* 4. VoiceflowでActions On Googleを作成 
-* 5. M5StickCリモコンをMQTT対応にする
-* 6. 全部をつなげて動作確認
+* M5StickCで赤外線リモコン作成 
+* AdafruitのMQTTブローカの設定 
+* IFTTTでMQTTの簡易パブリッシャーを作る 
+* VoiceflowでActions On Googleを作成 
+* M5StickCリモコンをMQTT対応にする
+* 全部をつなげて動作確認
 
 
 
@@ -182,8 +182,11 @@ Daikinの場合、
 
 ![M5StickCでエアコンを操作しているところ](images/chapxx-sitopp/s023.jpg)
 
+### トラブルシュート
 
+赤外線は可視光線ではないので、出ているかどうかわからないのですが、スマホのフロントカメラで赤外線送受信ユニットの出力部分を見ると、光った場合にわかります。以下はiPhone Xで撮ったの写真です。写真は撮影しなくても、画面で弱く紫っぽい色がかすかに光る所が見えています。
 
+![スマホのフロントカメラだと赤外線が映る](images/chapxx-sitopp/s038)
 
 ### 他のメーカーの場合
 
@@ -201,7 +204,7 @@ https://kuratsuki.net/2019/07/
 
 
 
-## 2. AdafruitのMQTTブローカの設定
+## AdafruitのMQTTブローカの設定
 
 * Adafruit（エイダフルート）https://io.adafruit.com/ にアクセスし、アカウントを作成します。
 * 「Actions」 → 「Create a New Dashboard」で、ダッシュボードを作成します。
@@ -237,7 +240,7 @@ Password	Your Adafruit IO Key
 
 
 
-## 3. IFTTTでMQTTの簡易パブリッシャーを作る
+## IFTTTでMQTTの簡易パブリッシャーを作る
 
 webhooksで発行されたURLにアクセスすると、AdafruitのMQTTブローカーにTopicをパブリッシュするという仕組みを作ります。
 
@@ -249,7 +252,7 @@ webhooksで発行されたURLにアクセスすると、AdafruitのMQTTブロー
 * 「Receive a web request」のパネルをクリック→ Event Nameの設定画面で、文字を入力する
 
 ```
-Event Name：M5StckCIRRemoCon
+Event Name：M5StickCIRRemoCon
 ```
 
 * 「Create trigger」→ 「That」をクリック →「Search services」という入力欄に「Adafruit」と入力
@@ -270,7 +273,7 @@ Event Name：M5StckCIRRemoCon
 
 * ChromeでIFTTTの「My Services」にアクセス https://ifttt.com/my_services 
 * 「webhooks」 → 「Documentation」
-* 「Make a POST or GET web request to:」の下にあるURLの{event}のところに「M5StckCIRRemoCon」と入力し、URL全体をコピーして、メモ帳などに控えておく。
+* 「Make a POST or GET web request to:」の下にあるURLの{event}のところに「M5StickCIRRemoCon」と入力し、URL全体をコピーして、メモ帳などに控えておく。
 * 「With an optional JSON body of:」の下にあるJsonをコピーして、メモ帳などに控えておく。
 
 ```
@@ -281,7 +284,7 @@ JSON：{ "value1" : "", "value2" : "", "value3" : "" }
 ![webhooksのURL](images/chapxx-sitopp/s028)
 
 
-## 4. VoiceflowでActions On Googleを作成
+## VoiceflowでActions On Googleを作成
 
 ### 「暖房をつける」フローの作成
 
@@ -526,7 +529,7 @@ Speaking as Alexa
 
 
 
-## 5. M5StickCリモコンをMQTT対応にする
+## M5StickCリモコンをMQTT対応にする
 
 AdafruitのMQTTライブラリを使います。
 Adafruit のMQTT Library をインストールするとついてくるMQTTのサンプルコード「mqtt_2subs_esp8266」をアレンジして使いました。
@@ -601,7 +604,25 @@ IFTTTのWebhooksに付属のTestツールを使って、結合テストしてみ
 
 
 
+## 全部をつなげて動作確認
+
+まず、Actions On Googleのコンソールから実行してみましょう。
+* Chromeで https://console.actions.google.com/ にアクセス
+* 「Test」→ 左下の入力欄に「しょういんじにつないで」と表示されているので、クリックしてからエンター押下
+* 「わかりました。しょういんじのテストバージョンです。」と応答があったら、「暖房つけて」と記入してエンター押下
+* 「暖房をつけます。送信しました。」と男性の声で読み上げたあと、1秒後にエアコンがつく。
+
+![Simulator](images/chapxx-sitopp/s039)
 
 
+うまくいったら、今度は実機から試してみましょう。
+Google homeやGoogle Home Mini、Nest Hubなどをお持ちの人は、開発で使ったのと同じGoogleアカウントでログインしておいてください。
 
-![スマホのフロントカメラだと赤外線が映る](images/chapxx-sitopp/s038)
+
+* 「OK Google、しょういんじを呼んで」と呼びかけると、「はい、しょういんじのテストバージョンです」と応答。
+* つづけて「暖房をつけて」とお願いすると、「暖房をつけます。送信しました。」と応答し、エアコンがつく。
+
+* 「OK Google、しょういんじを呼んで」と呼びかけると、「はい、しょういんじのテストバージョンです」と応答。
+* つづけて「暖房を消して」とお願いすると、「暖房を消します。送信しました。」と応答し、エアコンが停止。
+
+スマホのGoogle Assistantでももちろん利用可能です。iPhoneかAndroidのスマホに、アプリをインストールしておき、アプリを開いた状態で、「しょういんじを呼んで」と呼びかけると、Google Homeの実機と同じようにテストができます。
