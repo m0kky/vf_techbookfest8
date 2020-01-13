@@ -389,14 +389,15 @@ VALUE t7d=ClVt （任意の文字列を入力してください。）
 
 ### Voiceflow内でブロックの単体テスト
 
-- 入力欄の右の下の方にある「Test Request」をクリック。
-- ポップアップが開いたら「Raw」タブを開く。
-- 「Congratulations! You're fired the M5StickCIRRemoCon event"」と表示されればOK。もしエラーなら、POSTのURLが間違っているので見直す。
+* 入力欄の右の下の方にある「Test Request」をクリック。
+* ポップアップが開いたら「Raw」タブを開く。
+* 「Congratulations! You're fired the M5StickCIRRemoCon event"」と表示されればOK。もしエラーなら、POSTのURLが間違っているので見直す。
 
-- IFTTT側の発火履歴も確認してみる。IFTTTのMyAppletsにアクセス https://ifttt.com/my_applets 
-- 先ほど作ったレシピ「If Maker Event "M5StickCIRRemoCon", then Send data to onoff feed」が一番上に出てくるのでクリック→「Settings」
-- 「View activity」ボタンをクリックすると以下の画面が開く。Voiceflowで「Test Request」した時間と、「Applet ran」の時間があってればOK。
-- もし履歴が無かったら、Voiceflow側で指定したURLの中のEvent部分と、IFTTT側で指定したEvent Nameが違うので、見直す。正しくは「M5StickCIRRemoCon」。
+* IFTTT側の発火履歴も確認してみる。IFTTTのMyAppletsにアクセス
+** https://ifttt.com/my_applets 
+* 先ほど作ったレシピ「If Maker Event "M5StickCIRRemoCon", then Send data to onoff feed」が一番上に出てくるのでクリック→「Settings」
+* 「View activity」ボタンをクリックすると以下の画面が開く。Voiceflowで「Test Request」した時間と、「Applet ran」の時間があってればOK。
+* もし履歴が無かったら、Voiceflow側で指定したURLの中のEvent部分と、IFTTT側で指定したEvent Nameが違うので、見直す。正しくは「M5StickCIRRemoCon」。
 
 ![IFTTTのWebhoooksの発火履歴](images/chapxx-sitopp/s031)
 
@@ -522,7 +523,7 @@ Speaking as Alexa
 * 上記のSpeakブロックの右側からIntegrationsブロックに線を繋ぐ。
 
 
-<!-- ![全体図](images/chapxx-sitopp/s037) ビルドエラーが出てしまうのでコメントアウト★-->
+![全体図](images/chapxx-sitopp/s037) 
 
 * 全部できたらGoogleにuploadし、先ほどと同じようにシミュレーターで「しょういんじにつないで」→「暖房を消して」と入力し、応答を確認してみましょう。
 
