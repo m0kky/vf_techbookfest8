@@ -602,7 +602,7 @@ IFTTTのWebhooksに付属のTestツールを使って、結合テストしてみ
 * M5StickCをUSBケーブルから外し、エアコンの1m以内程度に置いてきてください。（赤外線ユニットは繋いだまま！）
 * ChromeのIFTTTのWebhook テストツールから、onやoffの信号を送り、エアコンがついたり消えたりすることを確認してください。
 
-<!-- 
+
 
 
 ## 全部をつなげて動作確認
@@ -637,4 +637,4 @@ Google homeやGoogle Home Mini、Nest Hubなどをお持ちの人は、開発で
 なおVoiceflowを使うと、Amazon AlexaとGoogle Homeの両方に対応できるのですが、これまで技術書典で「温泉BBA」で本を売っているときにお客さんと話すと、Google Homeを持っているという人が多かったので
 
 
- -->
+
