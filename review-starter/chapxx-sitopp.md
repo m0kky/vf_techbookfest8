@@ -138,12 +138,12 @@ Hard resetting via RTS pin...
 * 以下のURLに、私が書いたDaikinの赤外線リモコンを送信するコードが置いてありますので、アクセスしてください。
 ※404エラーが出た場合はGithubにログインしてからもう一度開いてください。（アカウントがない場合はまずは作ってからログインを。） 
 
-
+```
 URL：https://github.com/sitopp/vf_techbookfest8_sampleCode
-
 ファイルパス：M5StickC/IRsendDemo_DAIKIN.ino
 
-```
+コード：
+
 #include <M5StickC.h>
 #include <IRremoteESP8266.h>
 #include <IRsend.h>
@@ -425,7 +425,7 @@ VALUE t7d=ClVt （任意の文字列を入力してください。）
 * 「If Maker Event "M5StickCIRRemoCon", then Send data to onoff feed」→「Settings」
 * 「View activity」画面でVoiceflowで「暖房つけて」と入力した時間と、「Applet ran」の時間があってればOK。
 
-<!-- 
+
 ### Googleのデベロッパーアカウントとの連携
 
 
@@ -443,7 +443,7 @@ VALUE t7d=ClVt （任意の文字列を入力してください。）
 * https://console.actions.google.com/ で該当のプロジェクトを選び、「Overview」をクリック
 * 「Build your Action」→「Add Action(s)」→「Add Action」→「CREATE Action」のポップアップを開く
 * （ここから先はVoice公式の説明と同じです。）
- -->
+
 <!-- 
 Jsonが発行されたら、voiceflowに戻り、「Drop Json File here or Browse」の所にjsonファイルをドラッグ＆ドロップして「Upload」をクリックします。
 
