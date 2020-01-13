@@ -568,7 +568,7 @@ URL：https://github.com/sitopp/vf_techbookfest8_sampleCode
 96      //ダミー。自分のリモコンの信号に書き換えること        
 97      irsend.sendDaikin(daikin_code); //メーカー毎にクラスが異なる
 ``` -->
-
+<!-- 
 
 * スケッチエディタの左上にある「→」アイコンをクリックして、M5StickCに書き込みします。
 * 保存場所を聞かれるので、適当に指定します。
@@ -584,7 +584,7 @@ IFTTTのWebhooksに付属のTestツールを使って、結合テストしてみ
 * 「Test It」をクリック
 * シリアルモニタに、以下のメッセージが表示される事を確認。
 
-<!-- 
+
 ```
 19:26:32.531 -> On-Off button: M5StickCIRRemoCon aircon on t7d=ClVt
 19:26:32.568 -> onを通過
