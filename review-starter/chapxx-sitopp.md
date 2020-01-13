@@ -435,7 +435,10 @@ VALUE t7d=ClVt （任意の文字列を入力してください。）
 * 別タブが開いてガイダンスが表示されるので、この通り進めていく。
 * Project Nameは「voiceflow-IRRemocon」などとしておきましょう。
 
-```Voiceflow公式ガイダンス：https://learn.voiceflow.com/en/articles/2705386-uploading-your-project-to-google-assistant```
+Voiceflow公式ガイダンス@<br>{}
+https://learn.voiceflow.com/en/articles/@<br>{}
+2705386-uploading-your-project-to-google-assistant
+
 
 ![](images/chapxx-sitopp/s032)
 
