@@ -453,7 +453,7 @@ Speaking as Alexa
 
 ![IFTTTのWebhoooksの発火履歴](images/chapxx-sitopp/s033)
 
-<!-- 
+
 ### Googleにアップロード
 
 アップする前にもう一度ロケールを確認します。
@@ -488,6 +488,7 @@ Google Assistant voice：Male 1
 
 ![しょういんじのテスト](images/chapxx-sitopp/s036)
 
+<!-- 
 
 もし日本語は認識しません、、系のエラーが出たら、以下を試してみてください。
 
