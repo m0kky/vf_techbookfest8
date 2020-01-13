@@ -496,7 +496,7 @@ Google Assistant voice：Male 1
 * 「General Language MLSettings〜」とタブが並んでいるので「Languages」をクリック
 * 「Select Additional Language」をクリックし、「Japanese - ja」を選択
 * 「SAVE」をクリック
-
+<!-- 
 ### 暖房を消すフローの作成
 
 Chromeで開いたvoiceflowの画面に戻り、残りを編集します。
@@ -526,7 +526,7 @@ Speaking as Alexa
 * 全部できたらGoogleにuploadし、先ほどと同じようにシミュレーターで「しょういんじにつないで」→「暖房を消して」と入力し、応答を確認してみましょう。
 
 
-<!-- 
+
 ## M5StickCリモコンをMQTT対応にする
 
 AdafruitのMQTTライブラリを使います。
