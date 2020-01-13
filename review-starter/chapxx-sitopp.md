@@ -425,7 +425,7 @@ VALUE t7d=ClVt （任意の文字列を入力してください。）
 * 「If Maker Event "M5StickCIRRemoCon", then Send data to onoff feed」→「Settings」
 * 「View activity」画面でVoiceflowで「暖房つけて」と入力した時間と、「Applet ran」の時間があってればOK。
 
-
+<!-- 
 ### Googleのデベロッパーアカウントとの連携
 
 
@@ -443,8 +443,8 @@ VALUE t7d=ClVt （任意の文字列を入力してください。）
 * https://console.actions.google.com/ で該当のプロジェクトを選び、「Overview」をクリック
 * 「Build your Action」→「Add Action(s)」→「Add Action」→「CREATE Action」のポップアップを開く
 * （ここから先はVoice公式の説明と同じです。）
-
-
+ -->
+<!-- 
 Jsonが発行されたら、voiceflowに戻り、「Drop Json File here or Browse」の所にjsonファイルをドラッグ＆ドロップして「Upload」をクリックします。
 
 
@@ -514,14 +514,12 @@ set {onoff} to: 「off」
 Speaking as Alexa
 暖房を消します
 ```
-* 上記のSpeakブロックの右側からIntegrationsブロックに線を繋ぐ。
+* 上記のSpeakブロックの右側からIntegrationsブロックに線を繋ぐ。 -->
 
 
 <!-- ![全体図](images/chapxx-sitopp/s037)  -->
 
 * 全部できたらGoogleにuploadし、先ほどと同じようにシミュレーターで「しょういんじにつないで」→「暖房を消して」と入力し、応答を確認してみましょう。
-
-
 
 
 ## M5StickCリモコンをMQTT対応にする
