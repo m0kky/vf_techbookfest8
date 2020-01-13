@@ -274,7 +274,7 @@ Event Name：M5StckCIRRemoCon
 * 「With an optional JSON body of:」の下にあるJsonをコピーして、メモ帳などに控えておく。
 
 ```
-URL：https://maker.ifttt.com/trigger/M5StckCIRRemoCon/with/key/(略)
+URL：https://maker.ifttt.com/trigger/M5StickCIRRemoCon/with/key/(略)
 JSON：{ "value1" : "", "value2" : "", "value3" : "" }
 ```
 
@@ -283,9 +283,9 @@ JSON：{ "value1" : "", "value2" : "", "value3" : "" }
 
 ## 4. VoiceflowでActions On Googleを作成
 
-### フローの作成
+### 「暖房をつける」フローの作成
 
-* voiceflowにログインします。https://www.voiceflow.com/
+* Chromeでvoiceflowにアクセスし、ログインします。https://www.voiceflow.com/
 * create Project」クリック → 「Enter your Project name」に、Actions名を入力する。
 
 例）Actions名を「しょういんじ」にした場合、Google Homeに「OK Google しょういんじを呼んで」と話しかけると起動できるようになります。
@@ -465,19 +465,22 @@ Speaking as Alexa
 ![IFTTTのWebhoooksの発火履歴](images/chapxx-sitopp/s035)
 
 
-* シミュレーターはいったんスルーして、「Develop」タブを開き、「Japanese」→「Display name」にアクション名を入力。自分の場合、M-1のぺこぱが面白かったので、以下のようにしましたー。右上の「Save」をクリック。
+* シミュレーターはいったんスルーして、「Develop」タブを開き、「Japanese」→「Display name」にアクション名を入力。自分の場合、M-1のぺこぱが面白かったので、以下のようにしました。
+
 
 ```
 Display name：しょういんじ
 Google Assistant voice：Male 1
 ```
+
+* 右上の「Save」をクリック。
 * 「Don't forget to update sample invocations in the directory information page」というガイダンスが出るのですがいったんスルー。
 * 「Modify Languages」をクリック、「English」のチェックを外して、「Japanese」だけにチェックが入ってる状態にして、「Save」をクリック。Deleting Languagesの警告がでますが、OKをクリック。
 
 * 「Overview Develop Test Deploy Analytics」のうち「Test」をクリック、
 
-* 画面左下の入力欄に「しょういんじにつないで」と出ているので、カーソルをあわせてエンター押下
-* 「はい。しょういんじのテストバージョンです」と応答があったら、「暖房つけて」と入力してエンター押下
+* 画面左下の入力欄に「しょういんじにつないで」と出ているので、カーソルをあわせてエンター押下。
+* 「はい。しょういんじのテストバージョンです」と応答があったら、「暖房つけて」と入力してエンター押下。
 * 「暖房をつけます。送信しました。」と応答があり、アクションは終了します。
 
 ![しょういんじのテスト](images/chapxx-sitopp/s036)
@@ -492,6 +495,113 @@ Google Assistant voice：Male 1
 * 「SAVE」をクリック
 
 
+### 「暖房を消す」フローの作成
+
+Chromeで開いたvoiceflowの画面に戻り、残りを編集します。
+
+* 
+* 一番左の細いペインの一番上のアイコン「Blocks」をクリック
+* 「▶︎Logic」→「Set」ブロックをCanvasにドラッグし、Interactionブロックの右側の「2」から線を繋ぐ
+* 上記のsetブロックをクリックし、設定画面を開いたら、以下のように指定。
+
+```
+set {device} to: 「aircon」
+set {onoff} to: 「off」
+```
+※2個目を追加するときには「Add Variable Set」をクリックすると入力欄が追加される。
+
+
+* 「▶︎Basic」→「Speak」ブロックをCanvasにドラッグし、上記のSetの右側から線を繋ぐ
+* Speakブロックをクリックし、設定画面を開いたら、以下のように指定。
+
+```
+Speaking as Alexa
+暖房を消します
+```
+* 上記のSpeakブロックの右側からIntegrationsブロックに線を繋ぐ。
+
+![全体図](images/chapxx-sitopp/s037)
+
+* 全部できたらGoogleにuploadし、先ほどと同じようにシミュレーターで「しょういんじにつないで」→「暖房を消して」と入力し、応答を確認してみましょう。
+
+
 
 ## 5. M5StickCリモコンをMQTT対応にする
 
+AdafruitのMQTTライブラリを使います。
+Adafruit のMQTT Library をインストールするとついてくるMQTTのサンプルコード「mqtt_2subs_esp8266」をアレンジして使いました。
+
+* Arduino IDEを開き、「スケッチ」→「ライブラリをインクルード」→「ライブラリを管理」→ 検索をフィルタ欄に「Adafruit_mqtt」と検索し、表示されたものをインストール。
+* 「ファイル」→「新規ファイル」でスケッチエディタを開きます。下敷き表示されたコードは削除してください。
+
+* Guthubから私の書いたコードをコピーして、スケッチエディタに貼り付けてください。
+
+URL：https://github.com/sitopp/voiceflow_mqtt_M5StickC_IRremo-con/
+
+ファイルパス：M5StickC/IRsend_DAIKIN_MQTT_forM5StickC.ino
+
+
+* Wifiのアカウント、Adafruitのユーザー情報、赤外線のパターンを、ご自分の情報で書き換えてください。
+
+```
+10 #define WLAN_SSID       ""  //WiFiのSSID
+11 #define WLAN_PASS       ""  //WiFiのパスワード
+
+17 #define AIO_USERNAME    ""  //AdafruitのUsername
+18 #define AIO_KEY         ""  //AdafruitのActive Key
+
+79    uint8_t daikin_code[35] = {
+80      0x11, 0xDA, 0x27, 0x00, 0xC5, 0x00, 0x00, 0xD7,
+81      0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000,
+82      0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000,
+83      0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0x00, 0x00, 0x39};  
+84      //ダミー。自分のリモコンの信号に書き換えること        
+85      irsend.sendDaikin(daikin_code); //メーカー毎にクラスが異なる
+
+91    uint8_t daikin_code[35] = {
+92      0x11, 0xDA, 0x27, 0x00, 0xC5, 0x00, 0x00, 0xD7,
+93      0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000,
+94      0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000,
+95      0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0x00, 0x00, 0x39};  
+96      //ダミー。自分のリモコンの信号に書き換えること        
+97      irsend.sendDaikin(daikin_code); //メーカー毎にクラスが異なる
+```
+
+* スケッチエディタの左上にある「→」アイコンをクリックして、M5StickCに書き込みします。
+* 保存場所を聞かれるので、適当に指定します。
+* 書き込みにかかる時間、数十秒を待ちます。
+* 「ツール」→「シリアルモニタ」をクリックして、窓を開きます。
+
+IFTTTのWebhooksに付属のTestツールを使って、結合テストしてみましょう。
+
+* ChromeでIFTTTの「My Services」にアクセス https://ifttt.com/my_services 
+* 「webhooks」 → 「Documentation」
+* 「Make a POST or GET web request to:」の下にあるURLの{event}のところに「M5StickCIRRemoCon」と入力
+* 「With an optional JSON body of:」に「{ "value1" : "aircon", "value2" : "on", "value3" : "t7d=ClVt" }」と入力
+* 「Test It」をクリック
+* シリアルモニタに、以下のメッセージが表示される事を確認。
+
+```
+19:26:32.531 -> On-Off button: M5StickCIRRemoCon aircon on t7d=ClVt
+19:26:32.568 -> onを通過
+```
+
+* OFFの方も確認しましょう。「With an optional JSON body of:」の「"value2" : **"on"**」を「 "value2" : **"off"**」に変更
+* 「Test It」をクリック
+* シリアルモニタに、以下のメッセージが表示される事を確認。
+
+```
+19:26:37.849 -> On-Off button: M5StickCIRRemoCon aircon off t7d=ClVt
+19:26:37.886 -> offを通過
+```
+
+
+* M5StickCをUSBケーブルから外し、エアコンの1m以内程度に置いてきてください。（赤外線ユニットは繋いだまま！）
+* ChromeのIFTTTのWebhook テストツールから、onやoffの信号を送り、エアコンがついたり消えたりすることを確認してください。
+
+
+
+
+
+
+![スマホのフロントカメラだと赤外線が映る](images/chapxx-sitopp/s038)
