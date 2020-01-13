@@ -49,10 +49,10 @@ IoTのプロトタイピングにも使えるいろんなテクを寄せ集め�
 
 参考）
 
-* 公式「M5StickCクイックスタート-Arduino Win」
+公式「M5StickCクイックスタート-Arduino Win」@<br>{}
 https://docs.m5stack.com/#/ja/quick_start/m5stickc/m5stickc_quick_start_with_arduino_Windows
 
-* 「くらつきねっと」さんの「M5StickC で開発を行うための Arduino IDE のセットアップ」
+「くらつきねっと」さんの「M5StickC で開発を行うための Arduino IDE のセットアップ」@<br>{}
 https://kuratsuki.net/2019/07/
 
 
@@ -517,7 +517,7 @@ Speaking as Alexa
 * 上記のSpeakブロックの右側からIntegrationsブロックに線を繋ぐ。
 
 
-![全体図](images/chapxx-sitopp/s037) 
+<!-- ![全体図](images/chapxx-sitopp/s037)  -->
 
 * 全部できたらGoogleにuploadし、先ほどと同じようにシミュレーターで「しょういんじにつないで」→「暖房を消して」と入力し、応答を確認してみましょう。
 
