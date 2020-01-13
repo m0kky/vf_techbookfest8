@@ -541,7 +541,7 @@ AdafruitのMQTTライブラリを使います。また、Adafruit のMQTT Librar
 URL：https://github.com/sitopp/vf_techbookfest8_sampleCode
 ファイルパス：M5StickC/IRsend_DAIKIN_MQTT_forM5StickC.ino
 ```
-<!-- 
+
 * Wifiのアカウント、Adafruitのユーザー情報、赤外線のパターンは、ご自分の情報で書き換えてください。
 10〜11行目、17〜18行目、79〜85行目、91〜97行目の部分です。
 
@@ -567,7 +567,7 @@ URL：https://github.com/sitopp/vf_techbookfest8_sampleCode
 95      0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0x00, 0x00, 0x39};  
 96      //ダミー。自分のリモコンの信号に書き換えること        
 97      irsend.sendDaikin(daikin_code); //メーカー毎にクラスが異なる
-``` -->
+``` 
 <!-- 
 
 * スケッチエディタの左上にある「→」アイコンをクリックして、M5StickCに書き込みします。
