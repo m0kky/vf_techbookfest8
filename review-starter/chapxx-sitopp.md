@@ -511,7 +511,6 @@ set {onoff} to: 「off」
 ```
 ※2個目を追加するときには「Add Variable Set」をクリックすると入力欄が追加される。
 
-<!-- 
 * 「▶︎Basic」→「Speak」ブロックをCanvasにドラッグし、上記のSetの右側から線を繋ぐ
 * Speakブロックをクリックし、設定画面を開いたら、以下のように指定。
 
@@ -521,11 +520,13 @@ Speaking as Alexa
 ```
 * 上記のSpeakブロックの右側からIntegrationsブロックに線を繋ぐ。
 
-![全体図](images/chapxx-sitopp/s037)
+
+<!-- ![全体図](images/chapxx-sitopp/s037) -->
 
 * 全部できたらGoogleにuploadし、先ほどと同じようにシミュレーターで「しょういんじにつないで」→「暖房を消して」と入力し、応答を確認してみましょう。
 
 
+<!-- 
 
 ## M5StickCリモコンをMQTT対応にする
 
