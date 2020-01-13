@@ -394,7 +394,7 @@ VALUE t7d=ClVt （任意の文字列を入力してください。）
 * 「Congratulations! You're fired the M5StickCIRRemoCon event"」と表示されればOK。もしエラーなら、POSTのURLが間違っているので見直す。
 
 * IFTTT側の発火履歴も確認してみる。IFTTTのMyAppletsにアクセス
-** https://ifttt.com/my_applets 
+ * * https://ifttt.com/my_applets 
 * 先ほど作ったレシピ「If Maker Event "M5StickCIRRemoCon", then Send data to onoff feed」が一番上に出てくるのでクリック→「Settings」
 * 「View activity」ボタンをクリックすると以下の画面が開く。Voiceflowで「Test Request」した時間と、「Applet ran」の時間があってればOK。
 * もし履歴が無かったら、Voiceflow側で指定したURLの中のEvent部分と、IFTTT側で指定したEvent Nameが違うので、見直す。正しくは「M5StickCIRRemoCon」。
