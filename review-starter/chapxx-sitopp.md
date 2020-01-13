@@ -531,21 +531,20 @@ Speaking as Alexa
 
 ## M5StickCリモコンをMQTT対応にする
 
-AdafruitのMQTTライブラリを使います。
-Adafruit のMQTT Library をインストールするとついてくるMQTTのサンプルコード「mqtt_2subs_esp8266」をアレンジして使いました。
+AdafruitのMQTTライブラリを使います。また、Adafruit のMQTT Library をインストールするとついてくるMQTTのサンプルコード「mqtt_2subs_esp8266」をアレンジして使いました。
 
 * Arduino IDEを開き、「スケッチ」→「ライブラリをインクルード」→「ライブラリを管理」→ 検索をフィルタ欄に「Adafruit_mqtt」と検索し、表示されたものをインストール。
 * 「ファイル」→「新規ファイル」でスケッチエディタを開きます。下敷き表示されたコードは削除してください。
-
 * Guthubから私の書いたコードをコピーして、スケッチエディタに貼り付けてください。
 
+```
 URL：https://github.com/sitopp/vf_techbookfest8_sampleCode
-
 ファイルパス：M5StickC/IRsend_DAIKIN_MQTT_forM5StickC.ino
+```
 
-
-* Wifiのアカウント、Adafruitのユーザー情報、赤外線のパターンを、ご自分の情報で書き換えてください。
-
+* Wifiのアカウント、Adafruitのユーザー情報、赤外線のパターンは、ご自分の情報で書き換えてください。
+10〜11行目、17〜18行目、79〜85行目、91〜97行目の部分です。
+<!-- 
 ```
 10 #define WLAN_SSID       ""  //WiFiのSSID
 11 #define WLAN_PASS       ""  //WiFiのパスワード
@@ -568,9 +567,9 @@ URL：https://github.com/sitopp/vf_techbookfest8_sampleCode
 95      0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0x00, 0x00, 0x39};  
 96      //ダミー。自分のリモコンの信号に書き換えること        
 97      irsend.sendDaikin(daikin_code); //メーカー毎にクラスが異なる
-```
+``` -->
 
-<!-- 
+
 * スケッチエディタの左上にある「→」アイコンをクリックして、M5StickCに書き込みします。
 * 保存場所を聞かれるので、適当に指定します。
 * 書き込みにかかる時間、数十秒を待ちます。
@@ -585,6 +584,7 @@ IFTTTのWebhooksに付属のTestツールを使って、結合テストしてみ
 * 「Test It」をクリック
 * シリアルモニタに、以下のメッセージが表示される事を確認。
 
+<!-- 
 ```
 19:26:32.531 -> On-Off button: M5StickCIRRemoCon aircon on t7d=ClVt
 19:26:32.568 -> onを通過
