@@ -522,7 +522,7 @@ Speaking as Alexa
 * 上記のSpeakブロックの右側からIntegrationsブロックに線を繋ぐ。
 
 
-<!-- ![全体図](images/chapxx-sitopp/s037) -->
+![全体図](images/chapxx-sitopp/s037)
 
 * 全部できたらGoogleにuploadし、先ほどと同じようにシミュレーターで「しょういんじにつないで」→「暖房を消して」と入力し、応答を確認してみましょう。
 
