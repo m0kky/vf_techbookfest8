@@ -169,10 +169,10 @@ void setup() {
 Daikinの場合、
 「uint8_t daikin_code[35]={}」の中身を、先ほど採取した赤外線のパターンの「uint8_t state[35] ={}」の中身で上書きをします。
 
-![From](images/chapxx-sitopp/s024)
-↓上書きする
-![To](images/chapxx-sitopp/s025)
+![コピー元](images/chapxx-sitopp/s024)
 
+![コピー先](images/chapxx-sitopp/s025)
+このサンプルコードでは、見やすいよう改行を入れています。
 
 * スケッチエディタの左上にある「→」アイコンをクリックして、M5StickCに書き込みします。
 * ファイルの保存場所を聞かれるので、適当に指定します。
@@ -258,8 +258,8 @@ webhooksで発行されたURLにアクセスすると、AdafruitのMQTTブロー
 * 初めての人は、「Connect Webhooks」という画面が表示されるので、Connectをクリックする。 
 * 「Receive a web request」のパネルをクリック→ Event Nameの設定画面で、文字を入力する
 
-例）
-Event Name：Daikin_OnOff
+
+Event Name：M5StckCIRRemoCon
 
 * 「Create trigger」→ 「That」をクリック →「Search services」という入力欄に「Adafruit」と入力
 * 表示された「Adafruit」のパネルをクリック
@@ -279,12 +279,13 @@ Event Name：Daikin_OnOff
 
 * ChromeでIFTTTの「My Services」にアクセス https://ifttt.com/my_services 
 * 「webhooks」 → 「Documentation」
-* 「Make a POST or GET web request to:」の下にあるURLをコピーして、メモ帳などに控えておく。
+* 「Make a POST or GET web request to:」の下にあるURLの{event}のところに「M5StckCIRRemoCon」と入力し、URL全体をコピーして、メモ帳などに控えておく。
 * 「With an optional JSON body of:」の下にあるJsonをコピーして、メモ帳などに控えておく。
 
-例）
-URL：https://maker.ifttt.com/trigger//with/key/xxxxxxxxxxxxx_xxxxxxxxxxxxxx
+```
+URL：https://maker.ifttt.com/trigger/M5StckCIRRemoCon/with/key/(略)
 JSON：{ "value1" : "", "value2" : "", "value3" : "" }
+```
 
 ![webhooksのURL](images/chapxx-sitopp/s028)
 
@@ -304,7 +305,8 @@ canvasが開いたら、淡々と作っていきます。
 
 ![AlexaとGoogle切り替えスイッチ](images/chapxx-sitopp/s030)
 
-* 「Advanced」→「Interaction」ブロックをcanvasにドラッグ。
+* Blocksメニューの「▶︎Advanced」をクリックして開き、「Interaction」ブロックをcanvasにドラッグ。
+* Homeブロックの「Start」の右端から線を出して繋ぐ。
 * クリックして設定画面を開き「Intents」→「+Add Intent」をクリック
 * 「Intent_one」の字の上をクリックして編集できる状態にし、「aircon_on」と上書き入力
 * 「Enter user reply」入力欄に「暖房つけて」と入力してエンター
@@ -325,13 +327,102 @@ user reply : 暖房けして、暖房を消して、エアコン消して
 
 脚注：ChoicesはAlexaとGoogleで異なるため、アップロード先をAlexaにする場合はそれ用に追加して作る必要があります。お忘れなきよう。
 
-* 一番左のペインの上から3番目のアイコン「Variables」をクリック
-* Create Variable(Project)の入力欄に「aircon」と入力してエンター
-* するとそのすぐ下のVariablesのリストの末尾に「{aircon}」が追加される
+* 一番左の細いペインの上から3番目のアイコン「Variables」をクリック
+* Create Variable(Project)の入力欄に「device」と入力してエンター
+* するとそのすぐ下のVariablesのリストの末尾に「{device}」が追加される
+* 同様に{onoff}も追加
 
-* 「Logic」→「Set」ブロックをCanvasにドラッグ
-* setブロックをクリックし、設定画面を開いたら、以下のように指定
-set {aircon} to: 「on」
+```
+Variablesに追加するパラメタ：
+{device}
+{onoff}
+```
+
+* 一番左の細いペインの一番上のアイコン「Blocks」をクリック
+* 「▶︎Logic」→「Set」ブロックをCanvasにドラッグ、Interactionの右側「１」から線を出して繋ぐ
+* setブロックをクリックし、設定画面を開いたら、以下のように指定。2個目を追加するときには「Add Variable Set」をクリックすると入力欄が追加される。
+
+```
+set {device} to: 「aircon」
+set {onoff} to: 「on」
+```
+
+* 「▶︎Basic」→「Speak」ブロックをCanvasにドラッグ、Setの右側から線を出して繋ぐ
+* Speakブロックをクリックし、設定画面を開いたら、以下のように指定。
+
+```
+Speaking as Alexa
+暖房をつけます
+```
+* 「▶︎Advanced」→「Integrations」ブロックをCanvasにドラッグ、Speakの右側から線を出して繋ぐ
+* Integrationsブロックをクリックし、設定画面を開く。
+* 「Chose an Integration」では「Custom API」をクリックし、以下のように指定。
+
+
+```
+Request URL
+POST▼　https://maker.ifttt.com/trigger/M5StickCIRRemoCon/with/key/(略)
+
+※先ほどIFTTTのWebhooksで発行されたURLを使います。(略)の所はユーザーごとに異なるkeyが入っているためセキュリティ上省略してますが、記入するときは省略せずに入れてください。
+```
+
+* その下にある、「Headers Body Params」のうち、「Headers」をクリックして以下のように設定。
+
+```
+Enter HTTP Header：Content-Type
+VALUE application/json
+```
+
+* その下にある「Headers Body Params」の「body」→「Raw」をクリックして以下のように入力
+
+```
+{
+  "value1":"aircon",
+  "value2":"on",
+  "value3":"t7d=ClVt"
+}
+```
+なお、「t7d=ClVt」の部分の8文字は、他の人に知られていない文字列を考えて代入してください。
+目をつぶってキーボードを滅多打ちにするか、パスワード自動生成サイトなどを使うと良いです。
+
+* 入力欄の右の下の方にある「Test Request」をクリック。
+* ポップアップが開いたら「Raw」タブを開く。
+* 「Congratulations! You're fired the M5StickCIRRemoCon event"」と表示されればOK。もしエラーなら、POSTのURLが間違っているので見直す。
+
+* IFTTT側の発火履歴も確認してみる。IFTTTのMyAppletsにアクセス https://ifttt.com/my_applets 
+* 先ほど作ったレシピ「If Maker Event "M5StickCIRRemoCon", then Send data to onoff feed」が一番上に出てくるのでクリック→「Settings」
+* 「View activity」ボタンをクリックすると以下の画面が開く。Voiceflowで「Test Request」した時間と、「Applet ran」の時間があってればOK。
+* もし履歴が無かったら、Voiceflow側で指定したURLの中のEvent部分と、IFTTT側で指定したEvent Nameが違うので、見直す。正しくは「M5StickCIRRemoCon」。
+
+![IFTTTのWebhoooksの発火履歴](images/chapxx-sitopp/s031)
+
+
+* 「▶︎Basic」→「Speak」ブロックをCanvasにドラッグし、Integrationsブロックの右側から線を出して繋ぐ
+* Speakブロックをクリックし、設定画面を開く。
+
+```
+Speaking as Alexa
+送信しました。
+```
+これで「暖房をつける」というフローが完成しました。
+「暖房を消す」のフローは後で作成することにして、テストをしてみます。
+
+### 「暖房をつける」フローだけテスト
+
+* ヘッダの一列下にある「Canvas Test Publish」のうち「Test」をクリック
+* 画面右下に「Start Test」ボタンが出たらクリック
+* 「USER SAYS」入力欄に「暖房つけて」と記入し、エンター押下。すると応答が返ってきます。
+
+```
+暖房をつけます。
+送信しました。
+```
+
+* 先ほどと同様、IFTTTのWebhooksにリクエストが飛んでいるかどうかを確認します。
+
+* IFTTTのMyAppletsにアクセス https://ifttt.com/my_applets 
+* 「If Maker Event "M5StickCIRRemoCon", then Send data to onoff feed」→「Settings」
+* 「View activity」画面でVoiceflowで「暖房つけて」と入力した時間と、「Applet ran」の時間があってればOK。
 
 
 
