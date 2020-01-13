@@ -527,7 +527,7 @@ Speaking as Alexa
 * 全部できたらGoogleにuploadし、先ほどと同じようにシミュレーターで「しょういんじにつないで」→「暖房を消して」と入力し、応答を確認してみましょう。
 
 
-
+<!-- 
 
 ## M5StickCリモコンをMQTT対応にする
 
@@ -544,7 +544,7 @@ URL：https://github.com/sitopp/vf_techbookfest8_sampleCode
 
 * Wifiのアカウント、Adafruitのユーザー情報、赤外線のパターンは、ご自分の情報で書き換えてください。
 10〜11行目、17〜18行目、79〜85行目、91〜97行目の部分です。
-<!-- 
+
 ```
 10 #define WLAN_SSID       ""  //WiFiのSSID
 11 #define WLAN_PASS       ""  //WiFiのパスワード
