@@ -484,6 +484,7 @@ Google Assistant voice：Male 1
 
 ![しょういんじのテスト](images/chapxx-sitopp/s036)
 
+-->
 
 もしエラーが出たら、以下を試してみてください。
 
@@ -514,7 +515,7 @@ set {onoff} to: 「off」
 Speaking as Alexa
 暖房を消します
 ```
-* 上記のSpeakブロックの右側からIntegrationsブロックに線を繋ぐ。 -->
+* 上記のSpeakブロックの右側からIntegrationsブロックに線を繋ぐ。 
 
 
 <!-- ![全体図](images/chapxx-sitopp/s037)  -->
