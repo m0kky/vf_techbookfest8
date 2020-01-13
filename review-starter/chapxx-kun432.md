@@ -53,17 +53,17 @@ Googleスプレッドシートとの連携は「Integrationブロック」を使
 
 ![](images/chapxx-kun432/s004.png)
 
+//embed[latex]{
+\clearpage
+//}
+
 はじめてアカウント連携を行う場合は以下のようにGooogleへのログインを促す画面が表示されます。「Login with Google」をクリックします。
 
 ![](images/chapxx-kun432/s005.png)
 
-Googleアカウントの選択画面が表示されますので、Googleスプレッドシートを作成したアカウントを選択します。アカウント・パスワードを入力する画面が表示される場合もあります。その場合はお手持ちのGoogleアカウントとパスワードでログインしてください。
+Googleアカウントの選択画面が表示されますので、Googleスプレッドシートを作成したアカウントを選択します。アカウント・パスワードを入力する画面が表示される場合もあります。その場合はお手持ちのGoogleアカウントとパスワードでログインしてください。そしてVoiceflowからGoogleスプレッドシートへのアクセスを「許可」してください。
 
-![](images/chapxx-kun432/s006.png)
-
-VoiceflowからGoogleスプレッドシートへのアクセス許可設定を行う必要があります。「許可」をクリックします。
-
-![](images/chapxx-kun432/s007.png)
+![](images/chapxx-kun432/s006-3.png)
 
 以下のように表示されればGoogleアカウントとの紐付けは完了しています。「Using Sheet」をクリックして次に進みます。
 
