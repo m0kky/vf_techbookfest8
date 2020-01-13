@@ -194,7 +194,7 @@ Speechconとは、アシスタントが表情豊かに発話してくれる特�
 - Alexa
   - https://developer.amazon.com/ja-JP/docs/alexa/custom-skills/speechcon-reference-interjections-japanese.html
 
-@<br>{}
+//@<br>{}
 例題では、最初のあいさつ「こんにちは」をSpeechconを使って発話させます。  
 「speak」ブロックに`say-as`タグ、属性`interpret-as="interjection"`を入力します。
 
