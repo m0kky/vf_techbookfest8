@@ -45,11 +45,7 @@ Googleスプレッドシートとの連携は「Integrationブロック」を使
 
 ![](images/chapxx-kun432/s002-2.png)
 
-まず、シートのデータをどうしたいのか？を選択します。
-
-![](images/chapxx-kun432/s003.png)
-
-Retrieve Data（スプレッドシートからデータを読み出す）、Create Data（スプレッドシートにデータを1行追加する）、Update Data（スプレッドシートのデータを1行更新する）、Delete Data（スプレッドシートのデータを削除する）の4つから選択ができます。今回は、レシピ名と材料名のデータをGoogleスプレッドシートから読み出したいので、「Retrieve Data」をクリックします。
+まず、スプレッドシートのデータをどうしたいのか？を選択します。Retrieve Data（スプレッドシートからデータを読み出す）、Create Data（スプレッドシートにデータを1行追加する）、Update Data（スプレッドシートのデータを1行更新する）、Delete Data（スプレッドシートのデータを削除する）の4つから選択ができます。今回は、レシピ名と材料名のデータをGoogleスプレッドシートから読み出したいので、「Retrieve Data」をクリックします。
 
 ![](images/chapxx-kun432/s003-2.png)
 
