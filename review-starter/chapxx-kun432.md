@@ -49,7 +49,7 @@ Googleスプレッドシートとの連携は「Integrationブロック」を使
 
 ![](images/chapxx-kun432/s003.png)
 
-Retrieve Data（スプレッドシートからデータを読み出す）、Create Data（スプレッドシートにデータを1行追加する）、Update Data（スプレッドシートのデータを1行更新する）、Delete Data（スプレッドシートのデータを削除する）から選択ができます。今回は、レシピ名と材料名のデータをGoogleスプレッドシートから読み出したいので、「Retrieve Data」をクリックします。
+Retrieve Data（スプレッドシートからデータを読み出す）、Create Data（スプレッドシートにデータを1行追加する）、Update Data（スプレッドシートのデータを1行更新する）、Delete Data（スプレッドシートのデータを削除する）の4つから選択ができます。今回は、レシピ名と材料名のデータをGoogleスプレッドシートから読み出したいので、「Retrieve Data」をクリックします。
 
 ![](images/chapxx-kun432/s003-2.png)
 
@@ -319,7 +319,7 @@ Ifブロックは条件を指定してその結果によって処理の流れを
 最後にAlexa開発者コンソールでテストして問題なければ完了です。お疲れさまでした！
 
 //note[undefinedの判定について]{
-もちろんストレートにundefindを判定することもできます。VoiceflowのIfブロックにはAdvanced Expressionという記述があり、これを使うとプログラム的な書き方で判定することが可能です。プログラムに慣れた人はこちらのほうがわかりやすいかもしれません。公式のドキュメントもご覧ください。@<br>{}
+もちろんストレートにundefindを判定することもできます。VoiceflowのIfブロックにはAdvanced Expressionという記述方式があり、これを使うとプログラム的な書き方で判定することが可能です。プログラミングに慣れた人はこちらのほうがわかりやすいかもしれません。公式のドキュメントもご覧ください。@<br>{}
 
 Advanced expression (IF and SET blocks) - Voiceflow Docs（英語）@<br>{}
 @<href>{https://docs.voiceflow.com/voiceflow-documentation/logic-in-voiceflow/advanced-expression-if-and-set-blocks} 
