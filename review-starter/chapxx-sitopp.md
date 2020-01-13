@@ -286,7 +286,7 @@ JSON：{ "value1" : "", "value2" : "", "value3" : "" }
 
 ## VoiceflowでActions On Googleを作成
 
-### 「暖房をつける」フローの作成
+### 暖房をつけるフローの作成
 
 * Chromeでvoiceflowにアクセスし、ログインします。https://www.voiceflow.com/
 * create Project」クリック → 「Enter your Project name」に、Actions名を入力する。
@@ -489,8 +489,7 @@ Google Assistant voice：Male 1
 ![しょういんじのテスト](images/chapxx-sitopp/s036)
 
 
-
-もし日本語は認識しません、、系のエラーが出たら、以下を試してみてください。
+もしエラーが出たら、以下を試してみてください。
 
 * DialogFlowのコンソールを開く https://dialogflow.cloud.google.com/
 * 左上の三本線のメニューアイコンをクリックして、先ほど作ったプロジェクトを選び、歯車をクリックします。
@@ -498,12 +497,10 @@ Google Assistant voice：Male 1
 * 「Select Additional Language」をクリックし、「Japanese - ja」を選択
 * 「SAVE」をクリック
 
-
-### 「暖房を消す」フローの作成
+### 暖房を消すフローの作成
 
 Chromeで開いたvoiceflowの画面に戻り、残りを編集します。
 
-* 
 * 一番左の細いペインの一番上のアイコン「Blocks」をクリック
 * 「▶︎Logic」→「Set」ブロックをCanvasにドラッグし、Interactionブロックの右側の「2」から線を繋ぐ
 * 上記のsetブロックをクリックし、設定画面を開いたら、以下のように指定。
@@ -529,6 +526,7 @@ Speaking as Alexa
 * 全部できたらGoogleにuploadし、先ほどと同じようにシミュレーターで「しょういんじにつないで」→「暖房を消して」と入力し、応答を確認してみましょう。
 
 
+<!-- 
 ## M5StickCリモコンをMQTT対応にする
 
 AdafruitのMQTTライブラリを使います。
@@ -569,7 +567,6 @@ URL：https://github.com/sitopp/vf_techbookfest8_sampleCode
 96      //ダミー。自分のリモコンの信号に書き換えること        
 97      irsend.sendDaikin(daikin_code); //メーカー毎にクラスが異なる
 ```
-<!-- 
 
 * スケッチエディタの左上にある「→」アイコンをクリックして、M5StickCに書き込みします。
 * 保存場所を聞かれるので、適当に指定します。
