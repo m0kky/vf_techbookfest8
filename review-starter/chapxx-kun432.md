@@ -321,7 +321,7 @@ Ifブロックは条件を指定してその結果によって処理の流れを
 //note[undefinedの判定について]{
 もちろんストレートにundefindを判定することもできます。VoiceflowのIfブロックにはAdvanced Expressionという記述があり、これを使うとプログラム的な書き方で判定することが可能です。プログラムに慣れた人はこちらのほうがわかりやすいかもしれません。公式のドキュメントもご覧ください。@<br>{}
 
-- Advanced expression (IF and SET blocks) - Voiceflow Docs（英語）@<br>{}
+Advanced expression (IF and SET blocks) - Voiceflow Docs（英語）@<br>{}
 @<href>{https://docs.voiceflow.com/voiceflow-documentation/logic-in-voiceflow/advanced-expression-if-and-set-blocks} 
 //}
 
