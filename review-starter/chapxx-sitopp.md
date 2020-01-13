@@ -427,7 +427,7 @@ Speaking as Alexa
 * 「If Maker Event "M5StickCIRRemoCon", then Send data to onoff feed」→「Settings」
 * 「View activity」画面でVoiceflowで「暖房つけて」と入力した時間と、「Applet ran」の時間があってればOK。
 
-
+<!-- 
 ### Googleのデベロッパーアカウントとの連携
 
 
@@ -628,4 +628,4 @@ Google homeやGoogle Home Mini、Nest Hubなどをお持ちの人は、開発で
 スマホのGoogle Assistantでももちろん利用可能です。iPhoneかAndroidのスマホに、アプリをインストールしておき、アプリを開いた状態で、「しょういんじを呼んで」と呼びかけると、Google Homeの実機と同じようにテストができます。
 
 
-
+ -->
