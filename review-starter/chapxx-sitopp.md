@@ -366,17 +366,22 @@ Enter HTTP Header：Content-Type
 VALUE application/json
 ```
 
-* その下にある「Headers Body Params」の「body」→「Raw」をクリックして以下のように入力
+* その下にある「Headers Body Params」の「body」→「Form Data」をクリックして以下のように入力
 
 ```
-{
-  "value1":"aircon",
-  "value2":"on",
-  "value3":"t7d=ClVt"
-}
+value1
+VALUE {device}
+
+value2
+VALUE {onoff}
+
+value3
+VALUE t7d=ClVt （任意の文字列を入力してください。）
 ```
-なお、「t7d=ClVt」の部分の8文字は、他の人に知られていない文字列を考えて代入してください。
-目をつぶってキーボードを滅多打ちにするか、パスワード自動生成サイトなどを使うと良いです。
+注：「t7d=ClVt」の部分の8文字は、他の人に知られていない文字列を考えて代入してください。
+目をつぶってキーボードを滅多打ちにするか、パスワード自動生成サイトなどを使うと良いです(^o^)
+
+![](images/chapxx-sitopp/s029)
 
 ### Voiceflow内でブロックの単体テスト
 
