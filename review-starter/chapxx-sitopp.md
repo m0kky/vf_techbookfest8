@@ -20,7 +20,7 @@ IoTのプロトタイピングにも使えるいろんなテクを寄せ集め�
 
 
 
-![アーキテクチャ](images/chapxx-sitopp/s001.jpg)
+![アーキテクチャ](images/chapxx-sitopp/s001)
 
 ### 開発環境
 
@@ -39,7 +39,7 @@ IoTのプロトタイピングにも使えるいろんなテクを寄せ集め�
 
 //footnote[sitopp_plice][値段は2020年1月12日時点でのスイッチサイエンスの通販税込価格です。]
 
-![使用した部品](images/chapxx-sitopp/s002.jpg)
+![使用した部品](images/chapxx-sitopp/s002)
 
 //embed[latex]{
 \clearpage
@@ -66,7 +66,7 @@ Mac上でArduino IDEを起動し、M5StickCをMacにUSB Type-Cケーブルで接
 * 「ツール」→「ボード」→「M5StickC」を選択します。
 * 「ツール」→「シリアルポート」→表示された複数の選択肢の中から、「/dev/cu.usbserial-」の文字が入っているものを選択します。
 
-![Arduino IDEのツールメニュー、M5StickCがシリアルポート接続できた状態](images/chapxx-sitopp/s003.jpg)
+![Arduino IDEのツールメニュー、M5StickCがシリアルポート接続できた状態](images/chapxx-sitopp/s003)
 
 
 * Arduino IDEの「ツール」→「ライブラリを管理」→「IRremoteESP8266」と入力し、表示されたライブラリをインストールします。
@@ -102,7 +102,7 @@ Hard resetting via RTS pin...
 * 赤外線ユニットの20〜30センチ以内でリモコンを操作してください。
 * シリアルモニタにコードが出力されます。
 
-![リモコン](images/chapxx-sitopp/s021.jpg)
+![リモコン](images/chapxx-sitopp/s021)
 
 例）Daikinのエアコン（古すぎて型番不明）
 オフとオンを一回づつ押したところ
@@ -142,7 +142,7 @@ Hard resetting via RTS pin...
 ※404エラーが出た場合はGithubにログインしてからもう一度開いてください。（アカウントがない場合はまずは作ってからログインを。） 
 
 
-URL：https://github.com/sitopp/voiceflow_mqtt_M5StickC_IRremo-con/
+URL：https://github.com/sitopp/vf_techbookfest8_sampleCode
 
 ファイルパス：M5StickC/IRsendDemo_DAIKIN.ino
 
@@ -180,7 +180,7 @@ Daikinの場合、
 * スケッチエディタの下半分にインストールログがどどっと出力され、「Hard resetting via RTS pin...」メッセージが出たらインストール完了です。
 * USBケーブルを抜いて、M5StickCをエアコンの50cn以内に持って行きます。赤外線送受信ユニットは抜かずにさしたままです。M5ボタンを押すと、エアコンがつきました。
 
-![M5StickCでエアコンを操作しているところ](images/chapxx-sitopp/s023.jpg)
+![M5StickCでエアコンを操作しているところ](images/chapxx-sitopp/s023)
 
 ### トラブルシュート
 
@@ -220,7 +220,7 @@ Description: Daikin 赤外線リモコン なりすまし用
 * 「Feeds」 → 「View All」→ 「daikin_onoff」 → 「Feed Info」
 「MQTT by Key」のところにMQTTのTopicが自動生成されていますので、メモ帳にコピーしておきます。
 
-![MQTTのTopics](images/chapxx-sitopp/s027.jpg)
+![MQTTのTopics](images/chapxx-sitopp/s027)
 
 
 * MQTTブローカーのサーバー情報を調べておきます。
@@ -539,7 +539,7 @@ Adafruit のMQTT Library をインストールするとついてくるMQTTのサ
 
 * Guthubから私の書いたコードをコピーして、スケッチエディタに貼り付けてください。
 
-URL：https://github.com/sitopp/voiceflow_mqtt_M5StickC_IRremo-con/
+URL：https://github.com/sitopp/vf_techbookfest8_sampleCode
 
 ファイルパス：M5StickC/IRsend_DAIKIN_MQTT_forM5StickC.ino
 
@@ -626,3 +626,6 @@ Google homeやGoogle Home Mini、Nest Hubなどをお持ちの人は、開発で
 * つづけて「暖房を消して」とお願いすると、「暖房を消します。送信しました。」と応答し、エアコンが停止。
 
 スマホのGoogle Assistantでももちろん利用可能です。iPhoneかAndroidのスマホに、アプリをインストールしておき、アプリを開いた状態で、「しょういんじを呼んで」と呼びかけると、Google Homeの実機と同じようにテストができます。
+
+
+
