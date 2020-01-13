@@ -468,10 +468,12 @@ Jsonが発行されたら、voiceflowに戻り、「Drop Json File here or Brows
 さてシミュレーターが開きましたが、いったんスルーしてActionsの呼び名を設定します。一般公開しないのでなんでも良いです。年末のM-1のぺこぱが面白かったので、「しょういんじ」にしてみます。
 
 * 「Develop」タブを開き、「Japanese」→「Display name」の設定欄で、Actionsの呼び名を入力
+
 ```
 Display name：しょういんじ
 Google Assistant voice：Male 1
 ```
+
 * 右上の「Save」をクリック。
 * 「Don't forget to update sample invocations in the directory information page」というガイダンスが出るのですがいったんスルー。
 * 「Modify Languages」をクリック、「English」のチェックを外して、「Japanese」だけにチェックが入ってる状態にして、「Save」をクリック。Deleting Languagesの警告がでますが、OKをクリック。
@@ -498,6 +500,7 @@ Chromeで開いたvoiceflowの画面に戻り、残りを編集します。
 * 一番左の細いペインの一番上のアイコン「Blocks」をクリック
 * 「▶︎Logic」→「Set」ブロックをCanvasにドラッグし、Interactionブロックの右側の「2」から線を繋ぐ
 * 上記のsetブロックをクリックし、設定画面を開いたら、以下のように指定。
+
 ```
 set {device} to: 「aircon」
 set {onoff} to: 「off」
