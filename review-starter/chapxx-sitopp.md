@@ -568,7 +568,6 @@ URL：https://github.com/sitopp/vf_techbookfest8_sampleCode
 96      //ダミー。自分のリモコンの信号に書き換えること        
 97      irsend.sendDaikin(daikin_code); //メーカー毎にクラスが異なる
 ``` 
-<!-- 
 
 * スケッチエディタの左上にある「→」アイコンをクリックして、M5StickCに書き込みします。
 * 保存場所を聞かれるので、適当に指定します。
@@ -603,6 +602,7 @@ IFTTTのWebhooksに付属のTestツールを使って、結合テストしてみ
 * M5StickCをUSBケーブルから外し、エアコンの1m以内程度に置いてきてください。（赤外線ユニットは繋いだまま！）
 * ChromeのIFTTTのWebhook テストツールから、onやoffの信号を送り、エアコンがついたり消えたりすることを確認してください。
 
+<!-- 
 
 
 ## 全部をつなげて動作確認
