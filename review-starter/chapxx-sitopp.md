@@ -131,7 +131,7 @@ Hard resetting via RTS pin...
 
 * このログを全文コピーして、メモ帳などに保存しておきます。
 
-### 赤外線リモコンの命令パターンの抽出
+### 赤外線リモコンの命令パターンの抽出と、C++コードへの反映
 
 赤外線リモコンの命令はメーカー間で統一されておらず、にフォーマットが違います。
 この本ではDaikinのエアコンのやり方について説明します。
@@ -185,29 +185,19 @@ Daikinの場合、
 
 
 
-**他のメーカーの場合**
+### 他のメーカーの場合
 
 ありがたい事に、IRremoteESP8266ライブラリの作者のGithubにサンプルコードがあります。
 
 https://github.com/crankyoldgit/IRremoteESP8266
 
-しかしこれだけでは良くわからないかもしれません。
+しかしこれだけでは良くわからないかもしれません。2019年にM5StickCが発売されてから、赤外線リモコンを作るのがちょっとしたブームになりました。ブログを書かれた方もいて、そちらを参考にすると国内の主要メーカーのフォーマットはわかると思います。参考にさせていただいた**神ブログ**をいくつかご紹介します。
 
-2019年に、M5StickCで赤外線リモコンを作って技術ブログを書いた人が何人もいらっしゃったので、そちらを参考にすると、国内の主要メーカーのフォーマットはわかると思います。
-
-参考にさせていただいた神ブログをいくつかご紹介します。
-
-* NEC
-
-M5StickCでスマホから操作できる家電リモコンを作る
+* M5StickCでスマホから操作できる家電リモコンを作る(NECの例)
 https://elchika.com/article/218f5072-28a6-461c-a801-43390305f4cc/
 
-
-* 各種テレビメーカー　
-
-M5StickC を赤外線リモコンにする
+* M5StickC を赤外線リモコンにする（各種テレビメーカーの例）
 https://kuratsuki.net/2019/07/
-
 
 
 
@@ -247,7 +237,7 @@ Password	Your Adafruit IO Key
 
 
 
-### 3. IFTTTでMQTTの簡易パブリッシャーを作る
+## 3. IFTTTでMQTTの簡易パブリッシャーを作る
 
 webhooksで発行されたURLにアクセスすると、AdafruitのMQTTブローカーにTopicをパブリッシュするという仕組みを作ります。
 
@@ -258,8 +248,9 @@ webhooksで発行されたURLにアクセスすると、AdafruitのMQTTブロー
 * 初めての人は、「Connect Webhooks」という画面が表示されるので、Connectをクリックする。 
 * 「Receive a web request」のパネルをクリック→ Event Nameの設定画面で、文字を入力する
 
-
+```
 Event Name：M5StckCIRRemoCon
+```
 
 * 「Create trigger」→ 「That」をクリック →「Search services」という入力欄に「Adafruit」と入力
 * 表示された「Adafruit」のパネルをクリック
@@ -291,6 +282,8 @@ JSON：{ "value1" : "", "value2" : "", "value3" : "" }
 
 
 ## 4. VoiceflowでActions On Googleを作成
+
+### フローの作成
 
 * voiceflowにログインします。https://www.voiceflow.com/
 * create Project」クリック → 「Enter your Project name」に、Actions名を入力する。
@@ -385,6 +378,8 @@ VALUE application/json
 なお、「t7d=ClVt」の部分の8文字は、他の人に知られていない文字列を考えて代入してください。
 目をつぶってキーボードを滅多打ちにするか、パスワード自動生成サイトなどを使うと良いです。
 
+### Voiceflow内でブロックの単体テスト
+
 * 入力欄の右の下の方にある「Test Request」をクリック。
 * ポップアップが開いたら「Raw」タブを開く。
 * 「Congratulations! You're fired the M5StickCIRRemoCon event"」と表示されればOK。もしエラーなら、POSTのURLが間違っているので見直す。
@@ -407,7 +402,7 @@ Speaking as Alexa
 これで「暖房をつける」というフローが完成しました。
 「暖房を消す」のフローは後で作成することにして、テストをしてみます。
 
-### 「暖房をつける」フローだけテスト
+### Voiceflow内でフローの通しテスト
 
 * ヘッダの一列下にある「Canvas Test Publish」のうち「Test」をクリック
 * 画面右下に「Start Test」ボタンが出たらクリック
@@ -424,6 +419,48 @@ Speaking as Alexa
 * 「If Maker Event "M5StickCIRRemoCon", then Send data to onoff feed」→「Settings」
 * 「View activity」画面でVoiceflowで「暖房つけて」と入力した時間と、「Applet ran」の時間があってればOK。
 
+
+### Googleのデベロッパーアカウントとの連携
+
+
+* Canvasに戻り、右上の「Upload to Google」ボタンを押下
+* 「Please provide Dialogflow Credentials Setup instructions can be found here」の「here」をクリック
+* 別タブが開いてガイダンスが表示されるので、英語だけど、頑張って読みながら、この通り進めていく。
+* Project Nameは「voiceflow-IRRemocon」などとしておきましょう。
+
+![https://learn.voiceflow.com/en/articles/2705386-uploading-your-project-to-google-assistant](images/chapxx-sitopp/s032)
+
+なお、2020年1月12日現在では、「Login with the same account, go back to the Google Actions Console window and hit the Add your first action again.」の次の部分のGoogle側の画面手順が変わっているので、以下のように進めてください。
+
+* https://console.actions.google.com/ で該当のプロジェクトを選び、「Overview」をクリック
+* 「Build your Action」→「Add Action(s)」→「Add Action」→「CREATE Action」のポップアップが開く
+* （ここからVoice公式の説明に戻ります。）
+
+
+
+
+* Jsonが発行されたら、voiceflowに戻り、「Drop Json File here or Browse」の所にjsonファイルをドラッグ＆ドロップ→「Upload」をクリック
+* 接続できたら以下のメッセージが出る
+
+
+![IFTTTのWebhoooksの発火履歴](images/chapxx-sitopp/s033)
+
+
+### Googleにアップロード
+
+いよいよです。
+
+* 「Upload to Google」のボタンをクリック
+* インジケーターが周り、10数秒ほどでアップロード完了し、「Action Upload Successfull」と表示される
+* 「You may test on the Google Actions Simulator. 」の部分をクリックすると、別窓でシミュレーターが開く。
+* もし失敗したら、ネットワークの接続ミスか、「Googleのデベロッパーアカウントとの連携」を見直してください。
+
+* 「Talk to my test app」の所に「暖房つけて」と入力してエンター
+* 「We're sorry, but something went wrong. Please try again.」と出るはず。
+* DialogFlowのコンソールを開く https://dialogflow.cloud.google.com/
+* さっき作ったプロジェクトが開くはずですが、もし違うプロジェクトが開いたら、左上の三本線のメニューアイコンをクリックして、プロジェクトを選び直します
+
+![IFTTTのWebhoooksの発火履歴](images/chapxx-sitopp/s034)
 
 
 ## 5. M5StickCリモコンをMQTT対応にする
