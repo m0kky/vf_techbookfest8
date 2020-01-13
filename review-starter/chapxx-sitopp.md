@@ -488,7 +488,7 @@ Google Assistant voice：Male 1
 
 ![しょういんじのテスト](images/chapxx-sitopp/s036)
 
-<!-- 
+
 
 もし日本語は認識しません、、系のエラーが出たら、以下を試してみてください。
 
@@ -529,7 +529,7 @@ Speaking as Alexa
 * 全部できたらGoogleにuploadし、先ほどと同じようにシミュレーターで「しょういんじにつないで」→「暖房を消して」と入力し、応答を確認してみましょう。
 
 
-
+<!-- 
 ## M5StickCリモコンをMQTT対応にする
 
 AdafruitのMQTTライブラリを使います。
