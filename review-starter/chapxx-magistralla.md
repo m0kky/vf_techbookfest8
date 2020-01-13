@@ -48,10 +48,6 @@ ferretより。URL: https://ferret-plus.com/8116
 整理する内容については様々な考え方がありますが、最初は分かっていることを並べるだけでもよいと思います。  
 大事なのは、この時点で「情報の取捨選択をしない」ことです。どこでどう役立つか分かりませんので、選択肢は残しておきましょう。@<br>{}
 
-//embed[latex]{
-\clearpage
-//}
-
 ここでは、同じテーマであっても求められるものに違いが出ることが分かるように、二人の小学生のペルソナを書いてみます。
 
 ![長女と次女のペルソナ](images/chapxx-magistralla/persona1.png)
@@ -164,9 +160,6 @@ SSMLとは、Speech Synthesis Markup Language（合成音声マークアップ�
 - google
   - https://cloud.google.com/text-to-speech/docs/ssml?hl=ja
 
-//embed[latex]{
-\clearpage
-//}
 
 #### サウンドライブラリ
 アシスタントで、効果音を鳴らしたい時は、サウンドライブラリを使ってみましょう。  
@@ -176,6 +169,10 @@ SSMLとは、Speech Synthesis Markup Language（合成音声マークアップ�
   - https://developer.amazon.com/ja-JP/docs/alexa/custom-skills/ask-soundlibrary.html
 - Google Assistant Sound Library
   - https://developers.google.com/assistant/tools/sound-library
+
+//embed[latex]{
+\clearpage
+//}
 
 例題では、「準備はできましたか？」の問いに対して「できました」と回答した場合、ベンダーが用意している音声ファイルを使って効果音を鳴らします。  
 「speak」ブロックに`audio`タグを入力します。Alexaスキルの場合、サウンドライブラリでタグのコピーが可能ですので、コピペします。
@@ -201,6 +198,9 @@ Speechconとは、アシスタントが表情豊かに発話してくれる特�
 - Alexa
   - https://developer.amazon.com/ja-JP/docs/alexa/custom-skills/speechcon-reference-interjections-japanese.html
 
+//embed[latex]{
+\clearpage
+//}
 
 例題では、最初のあいさつ「こんにちは」をSpeechconを使って発話させます。  
 「speak」ブロックに`say-as`タグ、属性`interpret-as="interjection"`を入力します。
@@ -214,10 +214,6 @@ Speechconとは、アシスタントが表情豊かに発話してくれる特�
 ![Speechcon](images/chapxx-magistralla/speechcon.png)
 
 これで、「こんにちは」が表情豊かになりました。
-
-//embed[latex]{
-\clearpage
-//}
 
 ## おわりに
 他にも
