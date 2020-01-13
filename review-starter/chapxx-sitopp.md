@@ -527,7 +527,7 @@ Speaking as Alexa
 * 全部できたらGoogleにuploadし、先ほどと同じようにシミュレーターで「しょういんじにつないで」→「暖房を消して」と入力し、応答を確認してみましょう。
 
 
-<!-- 
+
 
 ## M5StickCリモコンをMQTT対応にする
 
@@ -570,6 +570,7 @@ URL：https://github.com/sitopp/vf_techbookfest8_sampleCode
 97      irsend.sendDaikin(daikin_code); //メーカー毎にクラスが異なる
 ```
 
+<!-- 
 * スケッチエディタの左上にある「→」アイコンをクリックして、M5StickCに書き込みします。
 * 保存場所を聞かれるので、適当に指定します。
 * 書き込みにかかる時間、数十秒を待ちます。
