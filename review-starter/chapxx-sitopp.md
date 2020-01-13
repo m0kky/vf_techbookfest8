@@ -496,7 +496,7 @@ Google Assistant voice：Male 1
 * 「General Language MLSettings〜」とタブが並んでいるので「Languages」をクリック
 * 「Select Additional Language」をクリックし、「Japanese - ja」を選択
 * 「SAVE」をクリック
-<!-- 
+
 ### 暖房を消すフローの作成
 
 Chromeで開いたvoiceflowの画面に戻り、残りを編集します。
@@ -511,7 +511,7 @@ set {onoff} to: 「off」
 ```
 ※2個目を追加するときには「Add Variable Set」をクリックすると入力欄が追加される。
 
-
+<!-- 
 * 「▶︎Basic」→「Speak」ブロックをCanvasにドラッグし、上記のSetの右側から線を繋ぐ
 * Speakブロックをクリックし、設定画面を開いたら、以下のように指定。
 
