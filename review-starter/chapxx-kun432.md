@@ -49,12 +49,7 @@ Googleスプレッドシートとの連携は「Integrationブロック」を使
 
 ![](images/chapxx-kun432/s003.png)
 
-以下の4つから選択ができますが、このスキルでは、レシピ名と材料名のデータをGoogleスプレッドシートから取り出しますので、「Retrieve Data」をクリックします。
-
-- Retrieve Data（データの取得： スプレッドシートからデータを読み出す）
-- Create Data（データの登録： スプレッドシートにデータを1行追加する）
-- Update Data（データの更新： スプレッドシートのデータを1行更新する）
-- Delete Data（データの削除： スプレッドシートのデータを削除する）
+Retrieve Data（スプレッドシートからデータを読み出す）、Create Data（スプレッドシートにデータを1行追加する）、Update Data（スプレッドシートのデータを1行更新する）、Delete Data（スプレッドシートのデータを削除する）から選択ができます。今回は、レシピ名と材料名のデータをGoogleスプレッドシートから読み出したいので、「Retrieve Data」をクリックします。
 
 ![](images/chapxx-kun432/s003-2.png)
 
@@ -70,7 +65,7 @@ Googleアカウントの選択画面が表示されますので、Googleスプ�
 
 ![](images/chapxx-kun432/s006.png)
 
-初回のみ、VoiceflowからGoogleスプレッドシートへのアクセス許可設定を行う必要があります。「許可」をクリックします。
+VoiceflowからGoogleスプレッドシートへのアクセス許可設定を行う必要があります。「許可」をクリックします。
 
 ![](images/chapxx-kun432/s007.png)
 
@@ -275,7 +270,7 @@ Interactionブロックでインテント/サンプル発話/スロットを作�
 
 うまく動いてますね。
 
-### 検索がない場合の処理
+### 検索結果がない場合の処理
 
 さきほどのテストの続きで、今度はレシピデータに登録していないレシピ名で試してみてください。
 
@@ -289,7 +284,7 @@ Integrationブロックと、Integrationブロックが成功したときのSpea
 
 Ifブロックは条件を指定してその結果によって処理の流れを分岐させるブロックです。ここでは、Integrationブロックでレシピ名からデータが検索できた場合と、できなかった場合の分岐を行うようにします。@<br>{}
 
-![](images/chapxx-kun432/s090.png)
+![](images/chapxx-kun432/s091.png)
 
 ストレートに考えると、スプレッドシートから取得したデータが入っている変数```varName```か変数```varContent```が```undefined```かどうか、を比較すればよいのですが、```undefined```はプログラム的にいうと少し特殊で、以下のように設定してもうまく動きません。
 
@@ -326,7 +321,7 @@ Ifブロックは条件を指定してその結果によって処理の流れを
 //note[undefinedの判定について]{
 もちろんストレートにundefindを判定することもできます。VoiceflowのIfブロックにはAdvanced Expressionという記述があり、これを使うとプログラム的な書き方で判定することが可能です。プログラムに慣れた人はこちらのほうがわかりやすいかもしれません。公式のドキュメントもご覧ください。@<br>{}
 
-Advanced expression (IF and SET blocks) - Voiceflow Docs（英語）@<br>{}
+- Advanced expression (IF and SET blocks) - Voiceflow Docs（英語）@<br>{}
 @<href>{https://docs.voiceflow.com/voiceflow-documentation/logic-in-voiceflow/advanced-expression-if-and-set-blocks} 
 //}
 
@@ -346,7 +341,7 @@ Advanced expression (IF and SET blocks) - Voiceflow Docs（英語）@<br>{}
 
 ## 最後に
 
-いかがでしょうか？Googleスプレッドシートを使ってデータを読み出すと、一気にデータベースな雰囲気が出てきますね。今回は紙面の都合上、データの参照のみ紹介しましたが、もちろんスプレッドシートへ登録・更新・削除も可能です。 詳しくは以下のサイトにまとめています。またGoogleスプレッドシート連携以外にも多数VoiceflowのTipsなどを紹介していますので、ぜひご覧ください。
+いかがでしょうか？Googleスプレッドシートを使ってデータを読み出すと、一気にデータベースな雰囲気が出てきますね。今回は紙面の都合上、データの参照のみ紹介しましたが、もちろんスプレッドシートへ登録・更新・削除も可能です。 詳しくは以下のサイトにまとめています。またGoogleスプレッドシート連携以外にも多数VoiceflowのTipsなどを紹介していますので、ぜひご覧ください。@<br>{}
 
-Voiceflow夏休みAdvent Calendar@<br>{}
+- Voiceflow夏休みAdvent Calendar@<br>{}
 @<href>{https://qiita.com/kun432/items/666ae13f097004ea7935}
