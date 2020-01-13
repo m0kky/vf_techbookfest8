@@ -427,7 +427,7 @@ Speaking as Alexa
 * 「If Maker Event "M5StickCIRRemoCon", then Send data to onoff feed」→「Settings」
 * 「View activity」画面でVoiceflowで「暖房つけて」と入力した時間と、「Applet ran」の時間があってればOK。
 
-<!-- 
+
 ### Googleのデベロッパーアカウントとの連携
 
 
@@ -453,7 +453,7 @@ Speaking as Alexa
 
 ![IFTTTのWebhoooksの発火履歴](images/chapxx-sitopp/s033)
 
-
+<!-- 
 ### Googleにアップロード
 
 アップする前にもう一度ロケールを確認します。
