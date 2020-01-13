@@ -3,5 +3,7 @@ review-starter/images/chapxx-wakasa/.DS_Store
 node_modules
 /techbookfest7.pdf
 *.pdf
+review-starter/images/.DS_Store
+.DS_Store
 Thumbs.db
 67_old.png
