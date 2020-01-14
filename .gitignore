@@ -5,3 +5,4 @@ node_modules
 *.pdf
 Thumbs.db
 67_old.png
+.DS_Store
