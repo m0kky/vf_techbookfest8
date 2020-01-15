@@ -1,36 +1,71 @@
-= あとがき
+= 著者紹介
 
-いかがだったでしょうか。
-感想や質問は随時受けつけています。
-@<br>{}
-@<br>{}
+//blankline
+//blankline
 
 
-=== 著者紹介
 
-//sideimage[tw-icon][20mm][side=L,sep=7mm,border=on]{
+//sideimage[mr-mo-icon][24mm][side=L,sep=7mm,border=on]{
 //noindent
-@<strong>{カウプラン機関極東支部}@<br>{}
-@<href>{https://twitter.com/_kauplan/, @_kauplan}@<br>{}
-#@#@<href>{https://kauplan.org/}@<br>{}      ← 等幅フォントになる
-@<href>{https://kauplan.org/, https://kauplan.org/}@<br>{}
-#@# 例：近況を報告する
-#@#MacBookのペチペチキーボードに嫌気が差して、安い外付けキーボードを買ったのが始まりでした。そう、キーボード沼です…
-#@# 例：推しを布教する
-「@<href>{https://www.amazon.co.jp/dp/4063348792, パンプキン・シザーズ}」は傑作（カウプラン特許すごすぎぃぃ！）。@<br>{}
-「@<href>{http://worldtrigger.info/, ワールド・トリガー}」は傑作（祝連載再開！たしかなまんぞく）。@<br>{}
-「@<href>{https://pripri-anime.jp/, プリンセス・プリンシパル}」は傑作（5話のアクションだいすき）。@<br>{}
-#@# 例：よさげな言葉を並べてドヤ顔する
-#@#“賞味期限が1年にも満たないようなツールやフレームワークに振り回されるのを許しておけるほど、我々の人生は長くはない。”
+第1章 担当 @<strong>{もっちゃん}@<br>{}
+普段は機械学習系エンジニア。趣味はLT登壇です！
+//}
+
+　
+
+= Voiceflowで作られたおすすめの音声アプリケーション
+
+//blankline
+//blankline
+
+【海外版】
+//sideimage[tw-icon][24mm][side=L,sep=7mm,border=on]{
+//noindent
+xxx
 //}
 
 //blankline
 
-=== 既刊一覧
+【国内版】
+//sideimage[tw-icon][24mm][side=L,sep=7mm,border=on]{
+//noindent
+xxx
+//}
 
- * 『SQL高速化 in PostgreSQL』（技術書典2）
- * 『オブジェクト指向言語解体新書』（技術書典3）
- * 『@<href>{https://kauplan.org/books/jquery/, jQueryだって複雑なアプリ作れるもん！}』（技術書典4）
- * 『@<href>{https://kauplan.org/books/serversetup/, Shellスクリプトでサーバ設定を自動化する本}』（技術書典5）
- * 『@<href>{https://kauplan.org/books/errmsg/, Rubyのエラーメッセージが読み解けるようになる本}』（技術書典6）
- * 『@<href>{https://kauplan.org/books/sql/, わかりみSQL}』（技術書典7）
+= Voiceflowの活用事例
+
+//blankline
+//blankline
+
+【企業向け】
+//sideimage[tw-icon][48mm][side=L,sep=7mm,border=on]{
+//noindent
+xxx
+//}
+
+//blankline
+
+【子供向け】
+//sideimage[oyacolab-workshop-icon][48mm][side=L,sep=7mm,border=on]{
+//noindent
+子供向けのワークショップでVoiceflowを使って、プログラミングの勉強会を行いました。左の絵は子供向けプログラミング教室「プログラミング☆親子ラボ」でのワークショップの様子です。
+//}
+
+//blankline
+
+【個人開発】
+//sideimage[tw-icon][48mm][side=L,sep=7mm,border=on]{
+//noindent
+xxx
+//}
+
+//blankline
+
+【コミュニティー】
+//sideimage[tw-icon][48mm][side=L,sep=7mm,border=on]{
+//noindent
+xxx
+//}
+
+//blankline
+
