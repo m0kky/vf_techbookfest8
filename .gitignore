@@ -7,6 +7,9 @@ review-starter/images/.DS_Store
 .DS_Store
 Thumbs.db
 67_old.png
+
+.DS_Store
+=======
 ### https://raw.github.com/github/gitignore/94d87c504178b3a4e8b95eb95e78e96c6ccefe46/Global/macOS.gitignore
 
 *.DS_Store
@@ -35,5 +38,6 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
 
 
