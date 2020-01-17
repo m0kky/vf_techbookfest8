@@ -1,19 +1,4 @@
-= 著者紹介
-
-//blankline
-//blankline
-
-
-
-//sideimage[mr-mo-icon][24mm][side=L,sep=7mm,border=on]{
-//noindent
-第1章 担当 @<strong>{もっちゃん}@<br>{}
-普段は機械学習系エンジニア。趣味はLT登壇です！
-//}
-
-　
-
-= Voiceflowで作られたおすすめの音声アプリケーション
+# Voiceflowで作られたおすすめの音声アプリケーション
 
 //blankline
 //blankline
@@ -32,7 +17,7 @@ xxx
 xxx
 //}
 
-= Voiceflowの活用事例
+# Voiceflowの活用事例
 
 //blankline
 //blankline
@@ -67,5 +52,18 @@ xxx
 xxx
 //}
 
+
+# 著者紹介
+
+//blankline
 //blankline
 
+
+
+//sideimage[mr-mo-icon][24mm][side=L,sep=7mm,border=on]{
+//noindent
+第1章 担当 @<strong>{もっちゃん}@<br>{}
+普段は機械学習系エンジニア。趣味はLT登壇です！
+//}
+
+　
