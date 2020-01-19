@@ -132,6 +132,10 @@ Googleスプレッドシートとの連携ができましたが、まだスキ�
 
 ![](images/chapxx-kun432/s051.png)
 
+//embed[latex]{
+\clearpage
+//}
+
 変数と取得したデータの紐付けは「Mapping Output」で行います。「+Add Mapping」をクリックします。
 
 ![](images/chapxx-kun432/s050.png)
@@ -202,6 +206,10 @@ Speakブロックの設定は以下のように設定します。
 我が家のレシピスキルにようこそ。このスキルでは、レシピの名前を言うと材料名を聞くことができるよ。例えば「ハンバーグのレシピが知りたい」と言ってみてね。
 ```
 
+//embed[latex]{
+\clearpage
+//}
+
 最初のSpeakブロックとIntegrationブロックの間に、InteractionブロックとSpeakブロックを追加して、以下のようにつなげてください。
 
 ![](images/chapxx-kun432/s072.png)
@@ -231,6 +239,10 @@ Interactionブロックでインテント/サンプル発話/スロットを作�
 [slot_recipe_name] の材料
 [slot_recipe_name]
 ```
+
+//embed[latex]{
+\clearpage
+//}
 
 最後にChoicesタブです。ここでインテントと会話のフローを紐付けます。
 
