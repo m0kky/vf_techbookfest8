@@ -132,29 +132,21 @@ Googleスプレッドシートとの連携ができましたが、まだスキ�
 
 ![](images/chapxx-kun432/s051.png)
 
-変数と取得したデータの紐付けは「Mapping Output」で行います。「+Add Mapping」をクリックします。
-
-![](images/chapxx-kun432/s050.png)
-
 //embed[latex]{
 \clearpage
 //}
+
+変数と取得したデータの紐付けは「Mapping Output」で行います。「+Add Mapping」をクリックします。
+
+![](images/chapxx-kun432/s050.png)
 
 「+Add Mapping」をクリックすると、「Column」と「Variable」をそれぞれ選択できるようになります。「Column」でスプレッドシートから取得したデータのカラム名を、「Variable」でそれを紐付ける変数名を指定します。これでスプレッドシートのデータと変数が紐付けられるというわけです。
 
 ![](images/chapxx-kun432/s053.png)
 
-では、まず「レシピ名」から紐付けを行っていきましょう。「Column」をクリックして```recipe_name```を選択します。
+では紐付けを行っていきましょう。「Column」には```recipe_name```、「Variable」には```varName```を選択します。
 
-![](images/chapxx-kun432/s024.png)
-
-//embed[latex]{
-\clearpage
-//}
-
-次に「Variable」は```varName```を選択します。
-
-![](images/chapxx-kun432/s055.png)
+![](images/chapxx-kun432/s024-2.png)
 
 これで、スプレッドシートの```recipe_name```カラムに入っていたデータが変数```varName```に入るようになりました。同様にして「材料、```recipe_content```カラムと変数```varContent```も紐付けます。「+Add Mapping」をクリックして同じように設定を追加してください。
 
