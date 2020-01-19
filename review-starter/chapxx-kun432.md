@@ -13,9 +13,8 @@ VoiceflowのGoogleスプレッドシート連携機能を使うと、普段お�
 ![](images/chapxx-kun432/s009.png)
 
 - スプレッドシート名は「我が家のレシピデータ」、シート名（下のタブ）は「レシピ一覧」とします。
-- 以下のようなデータを入力します。
-  - A1に```recipe_name```、B1に```recipe_content```と入力します。1行目が必ず見出しの行となります。日本語での指定はできませんのでご注意ください。
-  - 2行目以降は、A列にレシピ名、B列に材料を入力していきます。
+- A1に```recipe_name```、B1に```recipe_content```と入力します。1行目が必ず見出しの行となります。日本語での指定はできませんのでご注意ください。
+- 2行目以降は、A列にレシピ名、B列に材料を入力していきます。
 
 次に、Voiceflow側で以下のようなプロジェクトを作成して、ブロックを配置してください。
 
@@ -35,6 +34,10 @@ VoiceflowのGoogleスプレッドシート連携機能を使うと、普段お�
 @<href>{https://developer.amazon.com/ja-JP/docs/alexa/custom-skills/ask-soundlibrary.html}
 //}
 
+//embed[latex]{
+\clearpage
+//}
+
 ### Googleスプレッドシートとの連携を行う「Integrationブロック」
 
 Googleスプレッドシートとの連携は「Integrationブロック」を使います。左のBlocksメニューにあるAdvancedから、Integrationブロックをドラッグ&ドロップでSpeakブロックの右側に配置して、線でつないでください。
@@ -44,6 +47,10 @@ Googleスプレッドシートとの連携は「Integrationブロック」を使
 右側に表示されるIntegrationブロックの設定で、「Google Sheets」（Googleスプレッドシートのことを英語ではGoogle Sheetsと呼びます）をクリックします。
 
 ![](images/chapxx-kun432/s002-2.png)
+
+//embed[latex]{
+\clearpage
+//}
 
 まず、スプレッドシートのデータをどうしたいのか、を選択します。Retrieve Data（スプレッドシートからデータを読み出す）/Create Data（スプレッドシートにデータを1行追加する）/Update Data（スプレッドシートのデータを1行更新する）/Delete Data（スプレッドシートのデータを削除する）の4つから選択ができます。今回は、レシピ名と材料名のデータをGoogleスプレッドシートから読み出したいので、「Retrieve Data」をクリックします。
 
@@ -77,6 +84,10 @@ Googleアカウントの選択画面が表示されますので、Googleスプ�
 
 ![](images/chapxx-kun432/s011.png)
 
+//embed[latex]{
+\clearpage
+//}
+
 スプレッドシートの選択が完了すると、「With Settings」が表示されます。ここで本来は検索条件を指定しますが、ランダムの場合は、左側の「Column」にリストから「Row Number」を選択し、右側の「Value to Match」は何も入力せずに「Next」をクリックします。
 
 ![](images/chapxx-kun432/s035.png)
@@ -84,6 +95,10 @@ Googleアカウントの選択画面が表示されますので、Googleスプ�
 「Mapping Output」のところも、あとで設定しますのでそのまま「Next」をクリックします。
 
 ![](images/chapxx-kun432/s036.png)
+
+//embed[latex]{
+\clearpage
+//}
 
 「Test Integration」では、実際にGoogleスプレッドシートへの接続テストが行えます。「Test Integration」をクリックしてください。
 
@@ -96,6 +111,10 @@ Googleアカウントの選択画面が表示されますので、Googleスプ�
 ### 変数を使ってスプレッドシートのデータをスキル内で使用する
 
 Googleスプレッドシートとの連携ができましたが、まだスキル内からはそのデータを使うことはできません。スプレッドシートから取得したデータをスキル内で使用するには「変数」を使う必要があります。最初に変数を作成しましょう。
+
+//embed[latex]{
+\clearpage
+//}
 
 変数の作成は「Variablesメニュー」から行います。画面の一番左、縦に3つ並んでいるアイコンの中から、一番下のアイコンをクリックしてください。
 
