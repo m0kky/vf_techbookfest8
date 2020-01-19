@@ -108,25 +108,13 @@ Googleアカウントの選択画面が表示されますので、Googleスプ�
 
 ![](images/chapxx-kun432/s014.png)
 
-//embed[latex]{
-\clearpage
-//}
-
 ### 変数を使ってスプレッドシートのデータをスキル内で使用する
 
 Googleスプレッドシートとの連携ができましたが、まだスキル内からはそのデータを使うことはできません。スプレッドシートから取得したデータをスキル内で使用するには「変数」を使う必要があります。最初に変数を作成しましょう。
 
-変数の作成は「Variablesメニュー」から行います。画面の一番左、縦に3つ並んでいるアイコンの中から、一番下のアイコンをクリックしてください。
+変数の作成は「Variablesメニュー」から行います。画面の一番左、縦に3つ並んでいるアイコンの中から、一番下のアイコンをクリックするとメニューが切り替わります。「Create Variable」と書いてあるすぐ下の入力フォームに変数名を入力してENTERキーを押すと変数が作成されます。まず```varName```と入力してENTERキーを押してください。
 
-![](images/chapxx-kun432/s016.png)
-
-今まで表示されていた「Blocksメニュー」から表示が切り替わりました。これが「Variablesメニュー」です。「Create Variable」と書いてあるすぐ下の入力フォームに変数名を入力してENTERキーを押すと変数が作成されます。まず```varName```と入力してENTERキーを押してください。
-
-![](images/chapxx-kun432/s038.png)
-
-//embed[latex]{
-\clearpage
-//}
+![](images/chapxx-kun432/s016-2.png)
 
 入力欄のすぐ下に表示されている ```sessions``` 等の最後に```varName```が表示されていれば、変数の作成成功です。同様に、```varContent```という変数も作成してください。
 
@@ -160,6 +148,10 @@ Googleスプレッドシートとの連携ができましたが、まだスキ�
 
 ![](images/chapxx-kun432/s024.png)
 
+//embed[latex]{
+\clearpage
+//}
+
 次に「Variable」は```varName```を選択します。
 
 ![](images/chapxx-kun432/s055.png)
@@ -167,6 +159,10 @@ Googleスプレッドシートとの連携ができましたが、まだスキ�
 これで、スプレッドシートの```recipe_name```カラムに入っていたデータが変数```varName```に入るようになりました。同様にして「材料、```recipe_content```カラムと変数```varContent```も紐付けます。「+Add Mapping」をクリックして同じように設定を追加してください。
 
 ![](images/chapxx-kun432/s056.png)
+
+//embed[latex]{
+\clearpage
+//}
 
 2つとも紐付けができてこのようになっていればOKです。「Next」をクリックして「Test Integration」でテストしておいてください。
 
