@@ -120,13 +120,13 @@ Googleスプレッドシートとの連携ができましたが、まだスキ�
 
 ![](images/chapxx-kun432/s039.png)
 
-以下のように2つの変数が作成されていればOKです。一番左の3つのアイコンの、一番上のアイコンをクリックして「Blocksメニュー」に戻りましょう。
-
-![](images/chapxx-kun432/s041.png)
-
 //embed[latex]{
 \clearpage
 //}
+
+以下のように2つの変数が作成されていればOKです。一番左の3つのアイコンの、一番上のアイコンをクリックして「Blocksメニュー」に戻りましょう。
+
+![](images/chapxx-kun432/s110.png)
 
 次に、Googleスプレッドシートから取得したデータを変数と紐付けます。これによって、変数に入っているデータ（「値」と言います）を他のブロック内で呼び出すことができるようになります。Integration Blockをクリックして設定画面を表示し、「Mapping Output」をクリックします。
 
@@ -157,12 +157,6 @@ Googleスプレッドシートとの連携ができましたが、まだスキ�
 ![](images/chapxx-kun432/s055.png)
 
 これで、スプレッドシートの```recipe_name```カラムに入っていたデータが変数```varName```に入るようになりました。同様にして「材料、```recipe_content```カラムと変数```varContent```も紐付けます。「+Add Mapping」をクリックして同じように設定を追加してください。
-
-![](images/chapxx-kun432/s056.png)
-
-//embed[latex]{
-\clearpage
-//}
 
 2つとも紐付けができてこのようになっていればOKです。「Next」をクリックして「Test Integration」でテストしておいてください。
 
