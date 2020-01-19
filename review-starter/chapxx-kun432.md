@@ -271,7 +271,7 @@ Interactionブロックでインテント/サンプル発話/スロットを作�
 
 ランダムの場合は、左側は「Row Number」を選択、右側の「Value to Match」は空にしていました。これを以下のように、左側は「recipe\_name」に、右側は```{varUserRecipe}```を入力します。これで「recipe\_name」カラムに変数```varUserRecipe```で発話したものを指定して検索ができるということです。「Next」をクリックします。
 
-![](images/chapxx-kun432/s082-2.png)
+![](images/chapxx-kun432/s082.png)
 
 「Mapping Output」はそのまま「Next」をクリックして、「Test Integration」に進み、「Test Integration」をクリックします。
 
