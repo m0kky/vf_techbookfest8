@@ -132,10 +132,6 @@ Googleスプレッドシートとの連携ができましたが、まだスキ�
 
 ![](images/chapxx-kun432/s051.png)
 
-//embed[latex]{
-\clearpage
-//}
-
 変数と取得したデータの紐付けは「Mapping Output」で行います。「+Add Mapping」をクリックします。
 
 ![](images/chapxx-kun432/s050.png)
@@ -143,6 +139,10 @@ Googleスプレッドシートとの連携ができましたが、まだスキ�
 「+Add Mapping」をクリックすると、「Column」と「Variable」をそれぞれ選択できるようになります。「Column」でスプレッドシートから取得したデータのカラム名を、「Variable」でそれを紐付ける変数名を指定します。これでスプレッドシートのデータと変数が紐付けられるというわけです。
 
 ![](images/chapxx-kun432/s053.png)
+
+//embed[latex]{
+\clearpage
+//}
 
 では紐付けを行っていきましょう。「Column」には```recipe_name```、「Variable」には```varName```を選択します。
 
@@ -154,8 +154,8 @@ Googleスプレッドシートとの連携ができましたが、まだスキ�
 
 ![](images/chapxx-kun432/s058.png)
 
-//note[IntegrationブロックでGoogleスプレッドシート連携を選択した場合のテストについて]{
-IntegrationブロックでGoogleスプレッドシート連携を選択した場合、「Test Integration」で確認できるのはスプレッドシートのデータが取得できたかどうか、だけです。データが変数に入ったかどうかまではわかりません。実際の確認はSpeakブロックなどでその変数を使ってみて確認する必要があります。
+//note[IntegrationブロックのGoogleスプレッドシート連携テストについて]{
+「Test Integration」で確認できるのは、スプレッドシートのデータが取得できたかどうかだけです。データが変数に入ったかどうかまではわかりません。実際の確認はSpeakブロックなどでその変数を使ってみて確認する必要があります。
 //}
 
 では、スプレッドシートから取得したデータをスキルの中から使ってみましょう。Interactionブロックの横にSpeakブロックを配置して、Interactionブロックの「fail」と書いていない方とつなげます。
