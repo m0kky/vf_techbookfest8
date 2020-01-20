@@ -50,7 +50,7 @@ xxx
 //sideimage[vfjug-icon][48mm][side=L,sep=7mm,border=on]{
 //noindent
 @<strong>{Voiceflow Japan User Group(#VFJUG)}@<br>{}
-日本のユーザグループによるFacebookグループです。スキル開発に関する質問や、ハンズオン等のイベント情報、また、こんなスキル作ってみたよ、など、色んな情報を発信しています。@<br>{}
+日本のユーザグループによるFacebookグループです。スキル開発Tipsやハンズオン等のイベント情報など色んな情報を発信しています。また、皆様からの質問や、こんなスキル作ってみたよ、などもお待ちしております。@<br>{}
 https://www.facebook.com/groups/vfjug/
 //}
 
