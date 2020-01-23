@@ -109,7 +109,7 @@ Alexa Champion（'20〜）/ LINE API Expert（'19〜）
 //sideimage[kun432-icon][24mm][side=L,sep=7mm,border=on]{
 //noindent
 第5章 担当 @<strong>{kun432}@<br>{}
-普段の仕事では一切VUIに関わっていないインフラエンジニア。関西のVUIイベントによく出没してます。VOICEFLOWの「西の人」と言われてます。（ちなみに「東の人」はもっちゃんさんです！）@<BR>{}
+普段の仕事では一切VUIに関わっていないインフラエンジニア。関西のVUIイベントによく出没してます。VOICEFLOWの「西の人」と言われてます。（ちなみに「東の人」はもっちゃんさんです！）@<br>{}
 Voiceflow Global Ambassador / Voiceflow Growth Award 2019 / AWS認定Alexaスキルビルダー
 //}
 //blankline
