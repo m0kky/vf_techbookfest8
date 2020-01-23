@@ -46,7 +46,7 @@ VUIでの実機とは、Amazon EchoやGoogle Homeのスマートスピーカー�
 VUIは1つのフローではなく当然分岐することがありますが、いったんそれは置いておいて、まずは成功例を考えます。
 私が公開しているAlexaスキル「乾杯の音頭」を例に、ハッピーパスを見てみましょう。
 
-[review-starter/images/chapxx-aiminakajima/Voiceflow-happypath.jpeg]
+![](review-starter/images/chapxx-aiminakajima/Voiceflow-happypath.jpeg)
 
 実線がハッピーパス、点線がハッピーパスではないフローです。まずスキルのコア機能を試すには、ハッピーパスだけ作ればスタートとしては事足りています。
 
@@ -56,24 +56,24 @@ VUIは1つのフローではなく当然分岐することがありますが、�
 
 1.画面右上のShareアイコンをクリックします。
 
-[review-starter/images/chapxx-aiminakajima/Browser-Test-1.png]
+![](review-starter/images/chapxx-aiminakajima/Browser-Test-1.png)
 
 2.共有用URLが表示されますので、右の「Copy link」をクリックします。
 
-[review-starter/images/chapxx-aiminakajima/Browser-Test-2.png]
+![](review-starter/images/chapxx-aiminakajima/Browser-Test-2.png)
 
 3.URLを共有された人には、この画面が表示されます。「Start Test」をクリックします。
 
-[review-starter/images/chapxx-aiminakajima/Browser-Test-3.png]
+![](review-starter/images/chapxx-aiminakajima/Browser-Test-3.png)
 
 4.テキストフォームにユーザーが発話するテキストを入力するか、もしくはPCのマイクボタンを長押しすることで自分の声でもテストできます。
 せっかくなので声でテストしてみると良いでしょう。
 
-[review-starter/images/chapxx-aiminakajima/Browser-Test-4.png]
+![](review-starter/images/chapxx-aiminakajima/Browser-Test-4.png)
 
 ブラウザ上でも他人に使ってもらうと、何かしらのフィードバックをもらえると思います。将来的にフィードバックコメントが入力できたりすることを期待したいですね。そこからVUIの改善をしたら、Amazon Developer ConsoleやActions on Googleで、βテストを送りましょう。いよいよ実機でテストしてもらうことができます。
 
-[review-starter/images/chapxx-aiminakajima/test-google.png]
+![](review-starter/images/chapxx-aiminakajima/test-google.png)
 
 ## AlexaとGoogle Assistantの使い分け
 
