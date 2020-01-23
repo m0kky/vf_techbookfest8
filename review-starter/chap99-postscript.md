@@ -68,7 +68,7 @@ https://www.facebook.com/groups/voiceflowgroup/
 //sideimage[aajug-icon][48mm][side=L,sep=7mm,border=on]{
 //noindent
 @<strong>{AAJUG（Amazon Alexa Japan User Group）}@<br>{}
-日本のAlexa Championである、伊東知治さん、岡本秀高さんが主催するAmazon Alexaのユーザグループです。ただ聞くだけじゃなくて、みんなで色々話そうという参加型の勉強会やイベントを毎月開催してます。自作スキル紹介などのライトなテーマから、がっつりディープなAWSやask-sdkなどの開発話まで、幅広いテーマを取り扱っています。関西と東京中心ですが、全国各地に広がっています。@<br>{}
+日本のAlexa Championである、伊東知治さん、岡本秀高さんが主催するAmazon Alexaのユーザグループです。自作スキル紹介などのライトなテーマから、がっつりディープなAWSやask-sdkなどの開発話まで、幅広いテーマを取り扱っています。関西と東京中心ですが、全国各地に広がっています。@<br>{}
 https://www.facebook.com/groups/voiceflowgroup/
 //}
 
@@ -109,7 +109,7 @@ Alexa Champion（'20〜）/ LINE API Expert（'19〜）
 //sideimage[kun432-icon][24mm][side=L,sep=7mm,border=on]{
 //noindent
 第5章 担当 @<strong>{kun432}@<br>{}
-普段の仕事では一切VUIに関わっていないインフラエンジニア。関西のVUIイベントによく出没してます。VOICEFLOWの「西の人」と言われてます。（ちなみに「東の人」はもっちゃんさんです！）@<br>{}
+普段の仕事では一切VUIに関わっていないインフラエンジニア。関西のVUIイベントによく出没してます。Voiceflowの「西の人」と言われてます。@<br>{}
 Voiceflow Global Ambassador / Voiceflow Growth Award 2019 / AWS認定Alexaスキルビルダー
 //}
 //blankline
@@ -119,6 +119,10 @@ Voiceflow Global Ambassador / Voiceflow Growth Award 2019 / AWS認定Alexaスキ
 第6章 担当 @<strong>{渡辺泰久}@<br>{}
 //}
 //blankline
+
+//embed[latex]{
+\clearpage
+//}
 
 //sideimage[sitopp-icon][24mm][side=L,sep=7mm,border=on]{
 //noindent
