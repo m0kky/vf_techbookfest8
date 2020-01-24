@@ -27,9 +27,9 @@ Googleアクションをノンコーディングで作成できます。（Googl
 - BASIC  
 無料で無制限にプロジェクトを作ることができ、すべてのコア機能も使うことができます。
 - PROFESSIONAL  
-最大3人まで音声アプリケーションを共同に開発することができます。また、無制限にバックアップができ、優先的にサポートを受けられます。
+最大3人まで音声アプリケーションを共同で開発できます。また、無制限にバックアップができ、優先的にサポートを受けられます。
 - TEAM  
-PROFESSIONALの機能に加えて、最大10人まで音声アプリケーションを共同に開発することができます。さらに専用のサポートが付いています。
+PROFESSIONALの機能に加えて、最大10人まで音声アプリケーションを共同で開発できます。さらに専用のサポートが付いています。
 - ENTERPRISE  
 より大規模な要件が必要になった時、選択するプランです。詳細に関しては問い合わせが必要になります。
 
@@ -37,7 +37,7 @@ PROFESSIONALの機能に加えて、最大10人まで音声アプリケーショ
 ![料金プラン](images/chapxx-mr-mo/vf2.png)
 
 ### ドキュメントについて
-ドキュメント類は動画で分かりやすく使い方が解説されています。下記にてURLを記載しますので、それぞれの「Get started」から参考にしてみてください。なお、動画で解説されているものは後述の【動画解説】にまとまっております。  
+ドキュメント類は動画で分かりやすく使い方が解説されています。下記にてURLを記載しますので、それぞれの「Get started」から参考にしてみてください。なお、動画で解説されているものは後述の【動画解説】にまとまっています。
 
 - ドキュメント  
 [https://docs.voiceflow.com/home/get-started-with-voiceflow/](https://docs.voiceflow.com/home/get-started-with-voiceflow)
@@ -60,7 +60,7 @@ PROFESSIONALの機能に加えて、最大10人まで音声アプリケーショ
 - Facebook  
 [https://www.facebook.com/groups/voiceflowgroup/](https://www.facebook.com/groups/voiceflowgroup/)
 
-- Voiceflow日本ユーザグループ  
+- Voiceflow日本ユーザーグループ  
 [https://www.facebook.com/groups/vfjug/](https://www.facebook.com/groups/vfjug/)
 
 
@@ -79,7 +79,7 @@ PROFESSIONALの機能に加えて、最大10人まで音声アプリケーショ
 下記URLを開き、右上にある「Sign Up」ボタンをクリックします。  
 [https://www.voiceflow.com/](https://www.voiceflow.com/)  
 サインアップには名前、メールアドレス、パスワードを入力します。
-Voiceflowは「Google」と「Facebook」でソーシャルログインができますので、ご利用の方はそちらからでもサインアップすることができます。そのあと、いくつかのアンケートに答えていくと、利用できます。
+Voiceflowは「Google」と「Facebook」でソーシャルログインができますので、ご利用の方はそちらからでもサインアップできます。そのあと、いくつかのアンケートに答えていくと、利用できます。
 ![アカウント作成](images/chapxx-mr-mo/vf4.png)
 
 ### 画面の説明
@@ -119,7 +119,7 @@ Voiceflowは「Google」と「Facebook」でソーシャルログインができ
 ![2つのSpeak Block](images/chapxx-mr-mo/vf9.png)
  
 ### 動作確認
-作ったものを動かして確認しましょう。Voiceflow上で動作を確認することが可能です。「Testタブ」に移動して、「Start Test」ボタンをクリックします。
+作ったものを動かして確認しましょう。Voiceflow上で動作確認が可能です。「Testタブ」に移動して、「Start Test」ボタンをクリックします。
 ![テスト](images/chapxx-mr-mo/vf10.png)
 
 //embed[latex]{
@@ -141,7 +141,7 @@ Voiceflowは「Google」と「Facebook」でソーシャルログインができ
 ![プロジェクトの作成](images/chapxx-mr-mo/vf13.png)
 
 ## アップロード
-アップロードをすると、それぞれのプラットフォームで動作を確認することができます。詳しくは他の章で説明されています。なお、Alexaスキルは、Alexa開発アカウントが必要になります。詳しくは下記URLで説明されていますので、参考にしてください。  
+アップロードをすると、それぞれのプラットフォームで動作を確認できます。詳しくは、ほかの章で説明されています。なお、Alexaスキルは、Alexa開発アカウントが必要になります。詳しくは下記URLで説明されていますので、参考にしてください。  
 [https://dev.classmethod.jp/voice-assistant/how-to-safety-create-alexa-developers-account/](https://dev.classmethod.jp/voice-assistant/how-to-safety-create-alexa-developers-account/)
 ![アップロードの方法](images/chapxx-mr-mo/vf29.png)
 
@@ -191,7 +191,7 @@ Share Testボタンをクリックして、「Share testable link」からリン
 ![リンク解除](images/chapxx-mr-mo/vf31.png)
 
 ### サポート機能
-ドキュメントなどを見ても分からないことがあったら、右下の吹き出しからVoiceflowのメンバーに直接質問をすることができます。
+ドキュメントなどを見ても分からないことがあったら、右下の吹き出しからVoiceflowのメンバーに質問ができます。
 英語でのやりとりとなります。時差はありますが、業務時間内ならすぐに返事がもらえます。
 ![サポート](images/chapxx-mr-mo/vf16.png)
 
