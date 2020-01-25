@@ -133,5 +133,7 @@ Voiceflow Global Ambassador / Voiceflow Growth Award 2019 / AWS認定Alexaスキ
 //sideimage[vui-rie-icon][24mm][side=L,sep=7mm,border=on]{
 //noindent
 第8章 担当 @<strong>{元木理恵}@<br>{}
+本業がVoice UI一本という、業界が滅んだら己も滅ぶストロングスタイル。企画、Voice UI/UXデザイン、設計、営業など開発以外は何でもやります。@<br>{}
+Voice UI/UX Designer Groupの運営。LT・アイデアソン・ハッカソンなど神出鬼没。@<br>{}
 //}
 //blankline
